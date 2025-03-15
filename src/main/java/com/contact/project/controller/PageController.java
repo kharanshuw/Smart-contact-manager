@@ -12,13 +12,23 @@ import lombok.extern.slf4j.Slf4j;
 public class PageController {
 
     @GetMapping("/about")
-    public String aboutPage(@RequestParam String param) {
+    public String aboutPage() {
         log.info("running aboutPage");
         return "about";
     }
 
 
+    @GetMapping("/service")
+    public String servicePage() {
+        log.info("running servicePage");
+        return new String("service");
+    }
     
+    
+    @GetMapping("/testbase2")
+    public String testBase2page() {
+        return new String("test-base-2");
+    }
     
     
 
