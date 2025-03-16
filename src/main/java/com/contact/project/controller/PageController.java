@@ -25,10 +25,28 @@ public class PageController {
     }
     
     
-    @GetMapping("/testbase2")
-    public String testBase2page() {
-        return new String("test-base-2");
+    @GetMapping("/")
+    public String homePage() {
+        return new String("home");
     }
+    
+    @GetMapping("/contact")
+    public String contactPage() {
+        return new String("contact");
+    }
+
+
+    @GetMapping("/login")
+    public String loginPage() {
+        return new String("login");
+    }
+
+
+    @GetMapping("/register")
+    public String registerPage() {
+        return new String("register");
+    }
+    
     
     
 
