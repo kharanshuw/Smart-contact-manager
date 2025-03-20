@@ -1,9 +1,13 @@
 console.log("Theme Switcher Script Loaded");
 console.log("theme stored in localStorage is ", localStorage.getItem('theme'));
 
-// Get the theme from localStorage or default to "light"
+//This line sets a variable currentTheme to the value of the theme stored in local storage.
+//If no value is found in local storage, it defaults to "light".
 let currentTheme = localStorage.getItem("theme") || "light";
 
+
+//This line selects the <html> element in the document and sets its class attribute to an empty string.
+//This effectively removes any existing classes from the <html> element.
 document.querySelector('html').setAttribute('class', "");
 
 // Apply the initial theme
