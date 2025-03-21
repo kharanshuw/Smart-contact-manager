@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en" class="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -37,7 +37,7 @@
                 Unlock Effortless Contact Management
             </p>
             <!-- form start -->
-            <form action="">
+            <form data-th-action="@{'/do-register'}" method="post" data-th-object="${user}">
 
 
 
@@ -45,7 +45,7 @@
 
                     <!-- name -->
                     <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
-                    <input type="text" id="name" placeholder="Enter your name Here"
+                    <input type="text" id="name" placeholder="Enter your name Here" data-th-field="*{userName}"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
                     <!-- name -->
@@ -60,7 +60,7 @@
 
                     <label for="email"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                    <input type="email" id="email" placeholder="Enter your email Here"
+                    <input type="email" id="email" data-th-field="*{email}" placeholder="Enter your email Here"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
 
@@ -76,7 +76,8 @@
 
                     <label for="password"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                    <input type="password" id="password" placeholder="Enter your Password Here"
+                    <input type="password" data-th-field="*{password}" id="password"
+                        placeholder="Enter your Password Here"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
 
@@ -95,7 +96,8 @@
 
                     <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contact
                         no</label>
-                    <input type="number" id="phone" placeholder="Enter your Contact no Here"
+                    <input type="number" data-th-field="*{phoneNumber}" id="phone"
+                        placeholder="Enter your Contact no Here"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
 
@@ -113,7 +115,7 @@
 
                     <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Write
                         about your self</label>
-                    <textarea id="message" rows="4"
+                    <textarea id="message" data-th-field="*{about}" rows="4"
                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Write here....."></textarea>
 
