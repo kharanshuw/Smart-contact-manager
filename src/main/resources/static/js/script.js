@@ -32,7 +32,7 @@ function updateButtonText() {
     const themeButton = document.querySelector("#theme_change_button_span");
 
     if (themeButton) {
-        console.log("themeButton selected successfully ", themeButton);
+        //console.log("themeButton selected successfully ", themeButton);
 
         if (currentTheme === "light") {
             themeButton.textContent = "Dark Mode";
@@ -49,7 +49,7 @@ document.addEventListener(
         const themeButton = document.querySelector("#theme_change_button");
 
         if (themeButton) {
-            console.log("themeButton successfully selected in addEventListener", themeButton);
+            //console.log("themeButton successfully selected in addEventListener", themeButton);
 
             themeButton.addEventListener("click", toggleTheme);
 
