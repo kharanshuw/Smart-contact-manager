@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -26,6 +26,7 @@ import com.contact.project.domain.Providers;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Builder
 public class User {
 
     @Id
@@ -48,7 +49,7 @@ public class User {
     private boolean enabled = false;
 
     private boolean emailVerified = false;
-
+    
     private boolean phoneVerified = false;
 
     private Providers provider = Providers.SELF;
