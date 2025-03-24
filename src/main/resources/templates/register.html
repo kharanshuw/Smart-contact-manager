@@ -36,6 +36,13 @@
             <p class="font-normal text-gray-500 dark:text-gray-400">
                 Unlock Effortless Contact Management
             </p>
+
+
+            <!-- message box -->
+                <div data-th-replace="~{message :: messagebox}">
+
+                </div>
+            <!-- message box -->
             <!-- form start -->
             <form data-th-action="@{'/do-register'}" method="post" data-th-object="${user}">
 

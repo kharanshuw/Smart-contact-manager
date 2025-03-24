@@ -8,8 +8,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.contact.project.dto.UserForm;
 import com.contact.project.entity.User;
+import com.contact.project.helpers.Message;
+import com.contact.project.helpers.MessageType;
 import com.contact.project.services.UserService;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -96,22 +99,33 @@ public class PageController {
      * @return
      */
     @PostMapping("/do-register")
-    public String registerUser(@ModelAttribute("user") UserForm userForm) {
+    public String registerUser(@ModelAttribute("user") UserForm userForm,HttpSession httpSession) {
 
         log.info("register started");
 
         log.info("printing userform " + userForm.toString());
 
-        User user = User.builder()
-                .userName(userForm.getUserName())
-                .email(userForm.getEmail())
-                .password(userForm.getPassword())
-                .about(userForm.getAbout())
-                .phoneNumber(userForm.getPhoneNumber())
-                .profilePic("https://www.freepik.com/vectors/default-profile-pic")
-                .build();
+        User user = new User();
+
+        user.setUserName(userForm.getUserName());
+
+        user.setEmail(userForm.getEmail());
+
+        user.setPassword(userForm.getPassword());
+
+        user.setAbout(userForm.getAbout());
+
+        user.setPhoneNumber(userForm.getPhoneNumber());
+
+        user.setProfilePic(
+                "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?t=st=1742800389~exp=1742803989~hmac=e822aa8e1edaa83e54c5231701e05580aaeef39628e1af4673d86e3835304a96&w=740");
 
         log.info("saving user");
+
+        Message message = Message.builder().content("Successfully registerd").type(MessageType.green).build();
+
+        httpSession.setAttribute("message", message);
+
         userService.saveUser(user);
 
         log.info("user saved successfully");
