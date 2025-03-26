@@ -26,7 +26,7 @@ public class UserForm {
 
     @NotEmpty(message = "Email is required")
     @Email(message = "Invalid email address")
-    @Pattern(regexp = "^[a-zA-Z0-9_]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")
+    @Pattern(regexp = "^[a-zA-Z0-9_]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$" ,message = "Invalid email address must follow standard pattern")
     /**
      * ^ matches the start of the string
      * [a-zA-Z0-9._%+-]+ matches one or more of the following characters:
@@ -51,7 +51,7 @@ public class UserForm {
 
     @NotEmpty(message = "Password is required")
     @Size(min = 8, max = 128, message = "Password must be between 8 and 128 characters")
-    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$")
+    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$" , message = "Invalid password must follow standard pattern")
     /**
      * At least 8 characters
      * At least 1 uppercase letter
@@ -67,7 +67,7 @@ public class UserForm {
     private String about;
 
     // pattern ^\\d{10}$ matches exactly 10 digits (for a phone number).
-    @Pattern(regexp = "^\\d{10}$", message = "Invalid phone number")
+    @Pattern(regexp = "^\\d{10}$", message = "Invalid phone number must be of 10 digit strictly")
     private String phoneNumber;
 
 }

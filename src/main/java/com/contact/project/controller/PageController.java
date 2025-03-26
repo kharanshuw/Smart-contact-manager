@@ -1,6 +1,5 @@
 package com.contact.project.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -24,7 +23,6 @@ public class PageController {
 
     private UserService userService;
 
-    @Autowired
     public PageController(UserService userService) {
         this.userService = userService;
     }
@@ -82,10 +80,10 @@ public class PageController {
         return new String("login");
     }
 
-    /**
-     * This request mapping is for register page
-     * 
-     * @return
+    /*
+     * * Creates a new `UserForm` object
+     * Adds the `UserForm` object to the model with the attribute name "user"
+     * Returns the string "register", which will render the "register" view
      */
     @GetMapping("/register")
     public String registerPage(Model model) {
@@ -95,23 +93,30 @@ public class PageController {
         return new String("register");
     }
 
-    /**
-     * This request mapping is for register form submission
-     * 
-     * @return
+    /*
+     * * Validating the `UserForm` object
+     * Creating a new `User` object based on the validated form data
+     * Saving the `User` object to the database
+     * Setting a success message in the HTTP session
+     * Redirecting the user to the `/register` endpoint
      */
     @PostMapping("/process-Register")
-    public String processRegister(@Valid @ModelAttribute("user") UserForm userForm , BindingResult bindingResult ,HttpSession httpSession    ) {
+    public String processRegister(@Valid @ModelAttribute("user") UserForm userForm, BindingResult bindingResult,
+            HttpSession httpSession) {
 
         log.info("register started");
-
-        log.info("printing userform " + userForm.toString());
-
+        /*
+         * This line checks if there are any validation errors in the `BindingResult`
+         * object. If there are errors, the method returns the "register" view.
+         */
         if (bindingResult.hasErrors()) {
             log.error("error in register form");
             return "register";
         }
 
+        /*
+         * creates a new `User` object.
+         */
         User user = new User();
 
         user.setUserName(userForm.getUserName());
@@ -129,8 +134,15 @@ public class PageController {
 
         log.info("saving user");
 
+        /*
+         * This line creates a new `Message` object with a success message.
+         */
         Message message = Message.builder().content("Successfully registerd").type(MessageType.green).build();
 
+        /*
+         * This line sets the `message` attribute in the HTTP session to the newly
+         * created `Message` object.
+         */
         httpSession.setAttribute("message", message);
 
         userService.saveUser(user);
