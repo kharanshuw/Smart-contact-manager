@@ -3,6 +3,7 @@ package com.contact.project.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -13,6 +14,7 @@ import com.contact.project.helpers.MessageType;
 import com.contact.project.services.UserService;
 
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -98,12 +100,17 @@ public class PageController {
      * 
      * @return
      */
-    @PostMapping("/do-register")
-    public String registerUser(@ModelAttribute("user") UserForm userForm,HttpSession httpSession) {
+    @PostMapping("/process-Register")
+    public String processRegister(@Valid @ModelAttribute("user") UserForm userForm , BindingResult bindingResult ,HttpSession httpSession    ) {
 
         log.info("register started");
 
         log.info("printing userform " + userForm.toString());
+
+        if (bindingResult.hasErrors()) {
+            log.error("error in register form");
+            return "register";
+        }
 
         User user = new User();
 
