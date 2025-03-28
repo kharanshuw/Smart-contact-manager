@@ -1,13 +1,16 @@
 package com.contact.project.services.implementation;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.contact.project.entity.User;
 import com.contact.project.exception.ResouseNotFound;
+import com.contact.project.helpers.AppConstant;
 import com.contact.project.repositories.UserRepository;
 import com.contact.project.services.UserService;
 
@@ -19,9 +22,12 @@ public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
 
+    private PasswordEncoder passwordEncoder;
+
     @Autowired
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     /**
@@ -31,6 +37,17 @@ public class UserServiceImpl implements UserService {
     @Override
     public User saveUser(User user) {
         log.info("saving user in service");
+
+        String passwordString = passwordEncoder.encode(user.getPassword());
+
+        user.setPassword(passwordString);
+
+        List<String> roleList = new ArrayList<>();
+
+        roleList.add(AppConstant.ROLE_USER);
+
+        user.setRoleList(roleList);
+
         return userRepository.save(user);
     }
 
