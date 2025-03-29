@@ -16,6 +16,7 @@ import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 @Slf4j
@@ -149,6 +150,12 @@ public class PageController {
 
         log.info("user saved successfully");
         return "redirect:/register";
+    }
+
+    @PostMapping("/do-logout")
+    public String logout() {
+        log.info("logging out from PageController");
+        return "";
     }
 
 }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login </title>
 
+    <!-- flowbite css -->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 
     <!-- font awasome -->
@@ -14,16 +15,122 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        <link rel="stylesheet" data-th-href="@{'/output.css'}">
+        <!-- custom css -->
+    <link rel="stylesheet" data-th-href="@{'/output.css'}">
 </head>
 
 <body class="bg-white dark:bg-gray-900">
     <div data-th-replace="~{navbar :: navbar}">
 
     </div>
-    <h1>
-        welcome to the login page
-    </h1>
+
+    <!-- form  start -->
+
+    <div class="flex flex-row flex-wrap justify-center  align-middle">
+
+        <div
+            class=" border-b-[10px] border-t-[10px] border-blue-800 block w-1/2 p-6 bg-white   rounded-lg shadow-sm  dark:bg-gray-800 dark:border-blue-700 ">
+
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Login Here</h5>
+            <p class="font-normal text-gray-500 dark:text-gray-400">
+                Unlock Effortless Contact Management
+            </p>
+
+
+            <!-- message box -->
+            <div data-th-replace="~{message :: messagebox}">
+
+            </div>
+            <!-- message box -->
+
+
+
+
+
+            <!-- form start -->
+            <form method="post" data-th-action="@{'/authenticate'}"  >
+
+
+
+
+
+
+                <div class="mb-4">
+
+
+                    <!-- email  -->
+
+
+                    <label for="email"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email Here"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+
+
+                    <!-- email -->
+
+                    <!-- validation -->
+                    <!-- <p data-th-if="${#fields.hasErrors('email')}" data-th-errors="*{email}" class="text-red-600">
+                        name is required
+                    </p> -->
+
+                </div>
+
+                <!-- password -->
+                <div class="mb-4">
+
+
+
+
+                    <label for="password"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+
+
+                    <input type="password" name="password" id="password" placeholder="Enter your Password Here"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+
+                    <!-- validation -->
+                    <!-- <p data-th-if="${#fields.hasErrors('password')}" data-th-errors="*{password}" class="text-red-600">
+                        name is required
+                    </p> -->
+
+
+                </div>
+                <!-- password -->
+
+
+
+
+
+
+
+
+
+                <!-- login button and reset  -->
+
+                <div class="mb-3 flex justify-center ">
+                    <button type="submit"
+                        class="me-5 text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center  mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button>
+
+
+                    <button type="reset"
+                        class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Reset</button>
+
+
+
+
+
+                </div>
+                <!-- login button end -->
+
+
+
+            </form>
+            <!-- form end -->
+        </div>
+    </div>
+
+    <!-- form end -->
 
 
     <!-- custom script -->

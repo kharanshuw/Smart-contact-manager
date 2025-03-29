@@ -29,7 +29,7 @@ public class SecurityConfig {
     /*
      * This method creates a `DaoAuthenticationProvider` bean, which is a type of
      * authentication provider that uses a `UserDetailsService` to load user
-     * details.
+     * details from database .
      */
     @Bean
     public AuthenticationProvider authenticationProvider() {
@@ -63,11 +63,37 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeHttpRequests(auth -> {
             auth.requestMatchers("user/**").authenticated();
+
+            
             auth.anyRequest().permitAll();
+
+            
         });
 
 
-        httpSecurity.formLogin(Customizer.withDefaults());
+        httpSecurity.formLogin(
+            formlogin -> {
+                formlogin.loginPage("/login");
+
+                formlogin.loginProcessingUrl("/authenticate");
+
+                formlogin.defaultSuccessUrl("/user/dashboard");
+
+                formlogin.failureForwardUrl("/login?error=true");
+
+                formlogin.usernameParameter("email");
+
+                formlogin.passwordParameter("password");
+
+                
+            }
+        );
+
+
+        httpSecurity.logout(logoutform ->{
+            log.info("logging out ");
+            logoutform.logoutUrl("do-logout");
+        });
 
         return httpSecurity.build();
     }
