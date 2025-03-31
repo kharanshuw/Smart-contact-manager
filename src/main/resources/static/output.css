@@ -230,6 +230,9 @@
   .-my-1\.5 {
     margin-block: calc(var(--spacing) * -1.5);
   }
+  .my-3 {
+    margin-block: calc(var(--spacing) * 3);
+  }
   .ms-3 {
     margin-inline-start: calc(var(--spacing) * 3);
   }

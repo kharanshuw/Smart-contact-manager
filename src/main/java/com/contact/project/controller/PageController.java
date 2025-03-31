@@ -152,10 +152,6 @@ public class PageController {
         return "redirect:/register";
     }
 
-    @PostMapping("/do-logout")
-    public String logout() {
-        log.info("logging out from PageController");
-        return "";
-    }
+    
 
 }

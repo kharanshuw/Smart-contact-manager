@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,19 @@
     </h1>
 
 
-    <a data-th-href="do-logout">Logout</a>
+    <a href="#"  onclick="logout()">Logout</a>
+
+    <form id="logout-form" data-th-action="@{/logout}" method="post" th:hidden="true">
+        <input hidden type="submit" value="log out" />
+    </form>
+
+
+    <script>
+        function logout() {
+            document.getElementById("logout-form").submit();
+        }
+    </script>
+
 </body>
 
 </html>

@@ -64,35 +64,33 @@ public class SecurityConfig {
         httpSecurity.authorizeHttpRequests(auth -> {
             auth.requestMatchers("user/**").authenticated();
 
-            
             auth.anyRequest().permitAll();
 
-            
         });
 
-
         httpSecurity.formLogin(
-            formlogin -> {
-                formlogin.loginPage("/login");
+                formlogin -> {
+                    formlogin.loginPage("/login");
 
-                formlogin.loginProcessingUrl("/authenticate");
+                    formlogin.loginProcessingUrl("/authenticate");
 
-                formlogin.defaultSuccessUrl("/user/dashboard");
+                    formlogin.defaultSuccessUrl("/user/dashboard");
 
-                formlogin.failureForwardUrl("/login?error=true");
+                    // formlogin.failureForwardUrl("/login?error=true");
 
-                formlogin.usernameParameter("email");
+                    formlogin.usernameParameter("email");
 
-                formlogin.passwordParameter("password");
+                    formlogin.passwordParameter("password");
 
-                
-            }
-        );
+                });
 
+        httpSecurity.logout(logoutform -> {
+            log.info("logging out..... ");
+            logoutform.logoutUrl("/logout");
 
-        httpSecurity.logout(logoutform ->{
-            log.info("logging out ");
-            logoutform.logoutUrl("do-logout");
+            logoutform.logoutSuccessUrl("/login?logout=true");
+
+            log.info("logged out successfully");
         });
 
         return httpSecurity.build();
