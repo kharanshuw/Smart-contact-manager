@@ -2,3 +2,9 @@ npx @tailwindcss/cli -i ./src/main/resources/static/input.css -o ./src//main/res
 
 imporatant end points
 http://localhost:8080/user/dashboard
+
+
+steps for oauth
+1.add dependency of oauth cliend
+
+2.generate outh consent screen and credential of that respective service like google
