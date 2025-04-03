@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -20,9 +21,14 @@ public class SecurityConfig {
 
     private CustomUserDetailService customUserDetailService;
 
+    private OAuthAuthenticationSuccessHandler oAuthSuccessHandler;
+
     @Autowired
-    public SecurityConfig(CustomUserDetailService customUserDetailService) {
+    public SecurityConfig(CustomUserDetailService customUserDetailService,
+            OAuthAuthenticationSuccessHandler oAuthSuccessHandler) {
         this.customUserDetailService = customUserDetailService;
+
+        this.oAuthSuccessHandler = oAuthSuccessHandler;
     }
 
     /*
@@ -91,6 +97,14 @@ public class SecurityConfig {
 
             log.info("logged out successfully");
         });
+
+        // oauth2 configuration
+        httpSecurity.oauth2Login(
+                oauth2 -> {
+                    oauth2.loginPage("/login");
+
+                    oauth2.successHandler(oAuthSuccessHandler);
+                });
 
         return httpSecurity.build();
     }
