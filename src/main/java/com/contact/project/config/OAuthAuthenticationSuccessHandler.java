@@ -144,6 +144,8 @@ public class OAuthAuthenticationSuccessHandler implements AuthenticationSuccessH
 
             user.setProviderUserId(providerId);
 
+            user.setEmailVerified(true);
+
         }
 
         else {
