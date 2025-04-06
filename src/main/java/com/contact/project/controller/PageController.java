@@ -71,8 +71,6 @@ public class PageController {
 
     /**
      * This request mapping is for login page
-     * 
-     * @return
      */
     @GetMapping("/login")
     public String loginPage() {
@@ -86,6 +84,7 @@ public class PageController {
      */
     @GetMapping("/register")
     public String registerPage(Model model) {
+        log.info("register request called");
         UserForm userForm = new UserForm();
 
         model.addAttribute("user", userForm);
@@ -93,6 +92,7 @@ public class PageController {
     }
 
     /*
+     * this request is used to procress registration form
      * * Validating the `UserForm` object
      * Creating a new `User` object based on the validated form data
      * Saving the `User` object to the database
@@ -104,6 +104,7 @@ public class PageController {
             HttpSession httpSession) {
 
         log.info("register started");
+
         /*
          * This line checks if there are any validation errors in the `BindingResult`
          * object. If there are errors, the method returns the "register" view.
@@ -116,6 +117,9 @@ public class PageController {
         /*
          * creates a new `User` object.
          */
+
+        log.info("creating new user");
+
         User user = new User();
 
         user.setUserName(userForm.getUserName());
@@ -131,8 +135,6 @@ public class PageController {
         user.setProfilePic(
                 "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?t=st=1742800389~exp=1742803989~hmac=e822aa8e1edaa83e54c5231701e05580aaeef39628e1af4673d86e3835304a96&w=740");
 
-        log.info("saving user");
-
         /*
          * This line creates a new `Message` object with a success message.
          */
@@ -144,6 +146,8 @@ public class PageController {
          */
         httpSession.setAttribute("message", message);
 
+        log.info("saving new user....");
+        
         userService.saveUser(user);
 
         log.info("user saved successfully");

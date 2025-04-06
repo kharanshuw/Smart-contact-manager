@@ -66,6 +66,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+        
         httpSecurity.authorizeHttpRequests(auth -> {
             auth.requestMatchers("user/**").authenticated();
 
@@ -91,6 +92,7 @@ public class SecurityConfig {
 
         httpSecurity.logout(logoutform -> {
             log.info("logging out..... ");
+
             logoutform.logoutUrl("/logout");
 
             logoutform.logoutSuccessUrl("/login?logout=true");
