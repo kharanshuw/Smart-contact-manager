@@ -126,4 +126,19 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll();
     }
 
+    @Override
+    public User findByEmail(String emailString) {
+        try {
+            return userRepository.findByEmail(emailString)
+                    .orElseThrow(() -> new RuntimeException("User with this email is not present in database"));
+
+        } catch (Exception e) {
+            log.error("Error occurred while finding user by email", e);
+            throw new RuntimeException("Error occurred while finding user by email", e);
+        }
+    }
+
+
+    
+
 }

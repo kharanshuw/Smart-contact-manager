@@ -26,6 +26,7 @@ public class SecurityConfig {
     @Autowired
     public SecurityConfig(CustomUserDetailService customUserDetailService,
             OAuthAuthenticationSuccessHandler oAuthSuccessHandler) {
+                
         this.customUserDetailService = customUserDetailService;
 
         this.oAuthSuccessHandler = oAuthSuccessHandler;
