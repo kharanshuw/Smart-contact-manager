@@ -26,7 +26,7 @@ public class SecurityConfig {
     @Autowired
     public SecurityConfig(CustomUserDetailService customUserDetailService,
             OAuthAuthenticationSuccessHandler oAuthSuccessHandler) {
-                
+
         this.customUserDetailService = customUserDetailService;
 
         this.oAuthSuccessHandler = oAuthSuccessHandler;
@@ -67,7 +67,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-        
+
         httpSecurity.authorizeHttpRequests(auth -> {
             auth.requestMatchers("user/**").authenticated();
 

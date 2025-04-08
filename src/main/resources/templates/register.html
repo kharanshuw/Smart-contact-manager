@@ -17,15 +17,34 @@
 
     <link rel="stylesheet" data-th-href="@{'/output.css'}">
 
+    <link rel="stylesheet" data-th-href="@{'/custom.css'}">
+
+
 </head>
 
 <body class="bg-white dark:bg-gray-900  dark:text-white text-black ">
 
-    <!-- navbar start -->
-    <div data-th-replace="~{navbar :: navbar}">
 
+    <!-- logout form hidden -->
+    <form id="logout-form" data-th-action="@{/logout}" method="post" th:hidden="true">
+        <input hidden type="submit" value="log out" />
+    </form>
+
+
+
+    <!-- user navbar only after login -->
+    <div th:if="${user}">
+        <div data-th-replace="~{user/user_navbar :: user-navbar}">
+
+        </div>
     </div>
-    <!-- navbar end -->
+
+    <!-- normal navbar for guest who are not logged in  -->
+    <div th:unless="${user}">
+        <div data-th-replace="~{navbar :: navbar}">
+
+        </div>
+    </div>
 
 
     <!-- form  start -->
@@ -198,6 +217,14 @@
     <script data-th-src="@{'/js/script.js'}">
 
     </script>
+
+
+    <script>
+        function logout() {
+            document.getElementById("logout-form").submit();
+        }
+    </script>
+
 </body>
 
 </html>

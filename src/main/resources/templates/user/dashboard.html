@@ -1,13 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" class="dark" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- flowbite css -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+
+    <!-- font awasome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- custom css -->
+    <link rel="stylesheet" data-th-href="@{'/output.css'}">
 </head>
 
-<body>
+<body class="bg-white dark:bg-gray-900">
+
+    <!-- user navbar only after login -->
+    <div th:if="${user}">
+        <div data-th-replace="~{user/user_navbar :: user-navbar}">
+
+        </div>
+    </div>
+
+    <!-- normal navbar for guest who are not logged in  -->
+    <div th:unless="${user}">
+        <div data-th-replace="~{navbar :: navbar}">
+
+        </div>
+    </div>
+
+
+
     <h1>
         this is dashboard page
     </h1>
@@ -36,6 +65,12 @@
         function logout() {
             document.getElementById("logout-form").submit();
         }
+    </script>
+
+
+    <!-- custom script for theme switcher -->
+    <script data-th-src="@{'/js/script.js'}">
+
     </script>
 
 </body>
