@@ -21,7 +21,7 @@
     <link rel="stylesheet" data-th-href="@{'/output.css'}">
 </head>
 
-<body class="bg-white dark:bg-gray-900">
+<body class="bg-white dark:bg-gray-900 text-white">
 
     <!-- logout form hidden -->
     <form id="logout-form" data-th-action="@{/logout}" method="post" th:hidden="true">
@@ -35,6 +35,13 @@
         </div>
     </div>
 
+    <!-- user sidebar only if user is logged in  -->
+    <div th:if="${user}">
+        <div data-th-replace="~{user/sidebar :: sidebar}">
+
+        </div>
+    </div>
+
     <!-- normal navbar for guest who are not logged in  -->
     <div th:unless="${user}">
         <div data-th-replace="~{navbar :: navbar}">
@@ -42,18 +49,26 @@
         </div>
     </div>
 
-    <h1>
-        this is user profile
-    </h1>
 
 
-    <h1 data-th-text="${user.userName}">
+    <div id="content" class="pl-66 pt-20 ">
+        <h1  style="height: 1000px;">
+            this is user profile
+        </h1>
+    
+    
+        <h1 data-th-text="${user.userName}">
+    
+        </h1>
+    
+        <h1 data-th-text="${user.email}">
+    
+        </h1>
+    
+    </div>
+    
 
-    </h1>
 
-    <h1 data-th-text="${user.email}">
-
-    </h1>
 
 
 
@@ -62,7 +77,7 @@
 
     </script>
 
-
+    <!-- custom script for logout functionality -->
     <script>
         function logout() {
             document.getElementById("logout-form").submit();
