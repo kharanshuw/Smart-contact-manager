@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile</title>
 
     <!-- flowbite cdn -->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
@@ -21,7 +21,7 @@
     <link rel="stylesheet" data-th-href="@{'/output.css'}">
 </head>
 
-<body class="bg-white dark:bg-gray-900 text-white">
+<body class="bg-white dark:bg-gray-900 text-black dark:text-white">
 
     <!-- logout form hidden -->
     <form id="logout-form" data-th-action="@{/logout}" method="post" th:hidden="true">
@@ -50,23 +50,33 @@
     </div>
 
 
+    <!-- content start -->
+    <div id="content" class="sm:pl-66 pt-20 ">
 
-    <div id="content" class="pl-66 pt-20 ">
-        <h1  style="height: 1000px;">
-            this is user profile
-        </h1>
-    
-    
-        <h1 data-th-text="${user.userName}">
-    
-        </h1>
-    
-        <h1 data-th-text="${user.email}">
-    
-        </h1>
-    
+        <div class="flex justify-center flex-col items-center">
+
+
+            <h1 style="height: 1000px;" class="text-5xl">
+                this is user profile
+            </h1>
+
+
+            <h1 data-th-text="${user.userName}">
+
+            </h1>
+
+            <h1 data-th-text="${user.email}">
+
+            </h1>
+
+        </div>
+
+
+
+
     </div>
-    
+    <!-- content end -->
+
 
 
 
@@ -83,6 +93,11 @@
             document.getElementById("logout-form").submit();
         }
     </script>
+
+
+    <!-- flowbit js  -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
 
 </body>
 

@@ -18,13 +18,22 @@
     <link rel="stylesheet" data-th-href="@{'/output.css'}">
 
     <link rel="stylesheet" data-th-href="@{'/custom.css'}">
+
 </head>
 
-<body class="bg-white dark:bg-gray-900">
+<body class="bg-white dark:bg-gray-900 text-black dark:text-white">
 
     <!-- user navbar only after login -->
     <div th:if="${user}">
         <div data-th-replace="~{user/user_navbar :: user-navbar}">
+
+        </div>
+    </div>
+
+
+    <!-- user sidebar only if user is logged in  -->
+    <div th:if="${user}">
+        <div data-th-replace="~{user/sidebar :: sidebar}">
 
         </div>
     </div>
@@ -37,31 +46,46 @@
     </div>
 
 
+    <!-- content start -->
+    <div class="sm:pl-66 pt-30" id="content">
 
-    <h1>
-        this is dashboard page
-    </h1>
-
-
-    <a href="#" onclick="logout()">Logout</a>
-
-    <form id="logout-form" data-th-action="@{/logout}" method="post" th:hidden="true">
-        <input hidden type="submit" value="log out" />
-    </form>
+        <div class="flex flex-col items-center justify-center">
 
 
-    <a data-th-href="@{'/user/profile'}">profile page</a>
+            <h1 class="text-5xl">
+                this is dashboard page
+            </h1>
 
 
-    <h1 data-th-text="${user.userName}">
+            <a href="#" onclick="logout()">Logout</a>
 
-    </h1>
-
-    <h1 data-th-text="${user.email}">
-
-    </h1>
+            <form id="logout-form" data-th-action="@{/logout}" method="post" th:hidden="true">
+                <input hidden type="submit" value="log out" />
+            </form>
 
 
+            <a data-th-href="@{'/user/profile'}">profile page</a>
+
+
+            <h1 data-th-text="${user.userName}">
+
+            </h1>
+
+            <h1 data-th-text="${user.email}">
+
+            </h1>
+
+        </div>
+
+
+    </div>
+    <!-- content end -->
+
+
+
+
+
+    <!-- js for logout  -->
     <script>
         function logout() {
             document.getElementById("logout-form").submit();
@@ -73,6 +97,10 @@
     <script data-th-src="@{'/js/script.js'}">
 
     </script>
+
+
+    <!-- flowbit js  -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 
 </body>
 

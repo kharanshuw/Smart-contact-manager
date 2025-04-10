@@ -704,3 +704,1155 @@
 2025-04-09T01:57:44.914+05:30  INFO 13092 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : user email manthan@gmail.com
 2025-04-09T01:57:44.914+05:30  INFO 13092 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : added successfully logged in user details in model
 2025-04-09T01:57:44.914+05:30  INFO 13092 --- [project] [http-nio-8080-exec-10] c.c.project.controller.UserController    : profile running
+2025-04-09T02:04:09.597+05:30  INFO 12744 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 12744 (D:\spring boot project vs-code\project\target\classes started by Pratik in d:\spring boot project vs-code\project)
+2025-04-09T02:04:09.612+05:30  INFO 12744 --- [project] [main] com.contact.project.ProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T02:04:10.314+05:30  INFO 12744 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-09T02:04:10.363+05:30  INFO 12744 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 1 JPA repository interface.
+2025-04-09T02:04:10.892+05:30  INFO 12744 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T02:04:10.914+05:30  INFO 12744 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T02:04:10.914+05:30  INFO 12744 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-09T02:04:10.979+05:30  INFO 12744 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T02:04:10.979+05:30  INFO 12744 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1322 ms
+2025-04-09T02:04:11.144+05:30  INFO 12744 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-09T02:04:11.195+05:30  INFO 12744 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-09T02:04:11.229+05:30  INFO 12744 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-09T02:04:11.503+05:30  INFO 12744 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-09T02:04:11.536+05:30  INFO 12744 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-09T02:04:11.853+05:30  INFO 12744 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@37f41a81
+2025-04-09T02:04:11.853+05:30  INFO 12744 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-09T02:04:11.939+05:30  INFO 12744 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-09T02:04:12.854+05:30  INFO 12744 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-09T02:04:12.929+05:30  INFO 12744 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09T02:04:13.210+05:30  INFO 12744 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-09T02:04:13.222+05:30  INFO 12744 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-09T02:04:13.283+05:30  INFO 12744 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-09T02:04:13.284+05:30  INFO 12744 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-09T02:04:13.378+05:30  INFO 12744 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-09T02:04:13.389+05:30  WARN 12744 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-09T02:04:13.434+05:30  WARN 12744 --- [project] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [user/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-04-09T02:04:13.455+05:30  INFO 12744 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-09T02:04:13.632+05:30  INFO 12744 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-09T02:04:13.632+05:30  INFO 12744 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-09T02:04:13.938+05:30  INFO 12744 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T02:04:13.946+05:30  INFO 12744 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 4.797 seconds (process running for 5.421)
+2025-04-09T02:04:22.262+05:30  INFO 12744 --- [project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T02:04:22.263+05:30  INFO 12744 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T02:04:22.264+05:30  INFO 12744 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-09T02:04:25.189+05:30  INFO 12744 --- [project] [http-nio-8080-exec-9] c.c.p.s.i.CustomUserDetailService        : User found with email: manthan@gmail.com
+2025-04-09T02:04:25.263+05:30  INFO 12744 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:04:25.263+05:30  INFO 12744 --- [project] [http-nio-8080-exec-3] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:04:25.264+05:30  INFO 12744 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:04:25.268+05:30  INFO 12744 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:04:25.268+05:30  INFO 12744 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:04:25.269+05:30  INFO 12744 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:04:25.269+05:30  INFO 12744 --- [project] [http-nio-8080-exec-3] c.c.project.controller.UserController    : profile running
+2025-04-09T02:07:46.417+05:30  INFO 12744 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:07:46.418+05:30  INFO 12744 --- [project] [http-nio-8080-exec-3] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:07:46.418+05:30  INFO 12744 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:07:46.423+05:30  INFO 12744 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:07:46.423+05:30  INFO 12744 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:07:46.423+05:30  INFO 12744 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:07:46.424+05:30  INFO 12744 --- [project] [http-nio-8080-exec-3] c.c.project.controller.UserController    : profile running
+2025-04-09T02:12:27.831+05:30  INFO 3084 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 3084 (D:\spring boot project vs-code\project\target\classes started by Pratik in d:\spring boot project vs-code\project)
+2025-04-09T02:12:27.834+05:30  INFO 3084 --- [project] [main] com.contact.project.ProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T02:12:28.603+05:30  INFO 3084 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-09T02:12:28.662+05:30  INFO 3084 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 1 JPA repository interface.
+2025-04-09T02:12:29.221+05:30  INFO 3084 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T02:12:29.235+05:30  INFO 3084 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T02:12:29.235+05:30  INFO 3084 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-09T02:12:29.310+05:30  INFO 3084 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T02:12:29.311+05:30  INFO 3084 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1422 ms
+2025-04-09T02:12:29.482+05:30  INFO 3084 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-09T02:12:29.528+05:30  INFO 3084 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-09T02:12:29.560+05:30  INFO 3084 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-09T02:12:29.816+05:30  INFO 3084 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-09T02:12:29.843+05:30  INFO 3084 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-09T02:12:30.179+05:30  INFO 3084 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@68c4db77
+2025-04-09T02:12:30.181+05:30  INFO 3084 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-09T02:12:30.257+05:30  INFO 3084 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-09T02:12:31.233+05:30  INFO 3084 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-09T02:12:31.304+05:30  INFO 3084 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09T02:12:31.593+05:30  INFO 3084 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-09T02:12:31.597+05:30  INFO 3084 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-09T02:12:31.610+05:30  INFO 3084 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-09T02:12:31.611+05:30  INFO 3084 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-09T02:12:31.715+05:30  INFO 3084 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-09T02:12:31.716+05:30  WARN 3084 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-09T02:12:31.762+05:30  WARN 3084 --- [project] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [user/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-04-09T02:12:31.793+05:30  INFO 3084 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-09T02:12:31.977+05:30  INFO 3084 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-09T02:12:31.977+05:30  INFO 3084 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-09T02:12:32.281+05:30  INFO 3084 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T02:12:32.291+05:30  INFO 3084 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 4.898 seconds (process running for 5.528)
+2025-04-09T02:12:50.553+05:30  INFO 3676 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 3676 (D:\spring boot project vs-code\project\target\classes started by Pratik in D:\spring boot project vs-code\project)
+2025-04-09T02:12:50.556+05:30  INFO 3676 --- [project] [main] com.contact.project.ProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T02:12:51.261+05:30  INFO 3676 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-09T02:12:51.329+05:30  INFO 3676 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 1 JPA repository interface.
+2025-04-09T02:12:51.881+05:30  INFO 3676 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T02:12:51.896+05:30  INFO 3676 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T02:12:51.897+05:30  INFO 3676 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-09T02:12:51.984+05:30  INFO 3676 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T02:12:51.985+05:30  INFO 3676 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1380 ms
+2025-04-09T02:12:52.131+05:30  INFO 3676 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-09T02:12:52.178+05:30  INFO 3676 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-09T02:12:52.210+05:30  INFO 3676 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-09T02:12:52.463+05:30  INFO 3676 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-09T02:12:52.489+05:30  INFO 3676 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-09T02:12:52.802+05:30  INFO 3676 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4387d2f4
+2025-04-09T02:12:52.804+05:30  INFO 3676 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-09T02:12:52.882+05:30  INFO 3676 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-09T02:12:53.732+05:30  INFO 3676 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-09T02:12:53.798+05:30  INFO 3676 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09T02:12:54.073+05:30  INFO 3676 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-09T02:12:54.078+05:30  INFO 3676 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-09T02:12:54.091+05:30  INFO 3676 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-09T02:12:54.092+05:30  INFO 3676 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-09T02:12:54.204+05:30  INFO 3676 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-09T02:12:54.205+05:30  WARN 3676 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-09T02:12:54.256+05:30  WARN 3676 --- [project] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [user/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-04-09T02:12:54.274+05:30  INFO 3676 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-09T02:12:54.458+05:30  INFO 3676 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-09T02:12:54.458+05:30  INFO 3676 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-09T02:12:54.752+05:30  INFO 3676 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T02:12:54.760+05:30  INFO 3676 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 4.698 seconds (process running for 5.102)
+2025-04-09T02:12:56.994+05:30  INFO 3676 --- [project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T02:12:56.995+05:30  INFO 3676 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T02:12:56.996+05:30  INFO 3676 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-09T02:12:59.151+05:30  INFO 3676 --- [project] [http-nio-8080-exec-7] c.c.p.s.i.CustomUserDetailService        : User with given username not found
+2025-04-09T02:12:59.152+05:30 ERROR 3676 --- [project] [http-nio-8080-exec-7] c.c.p.s.i.CustomUserDetailService        : Error in loadUserByUsername
+
+org.springframework.security.core.userdetails.UsernameNotFoundException: User not found with email: 
+	at com.contact.project.services.implementation.CustomUserDetailService.loadUserByUsername(CustomUserDetailService.java:92) ~[classes/:na]
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:107) ~[spring-security-core-6.4.3.jar:6.4.3]
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:133) ~[spring-security-core-6.4.3.jar:6.4.3]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182) ~[spring-security-core-6.4.3.jar:6.4.3]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:201) ~[spring-security-core-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:85) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:231) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter.doFilterInternal(OAuth2AuthorizationRequestRedirectFilter.java:198) ~[spring-security-oauth2-client-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:131) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238) ~[spring-security-config-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2025-04-09T02:12:59.156+05:30 ERROR 3676 --- [project] [http-nio-8080-exec-7] w.a.UsernamePasswordAuthenticationFilter : An internal error occurred while trying to authenticate the user.
+
+org.springframework.security.authentication.InternalAuthenticationServiceException: org.springframework.security.core.userdetails.UsernameNotFoundException: User not found with email: 
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:122) ~[spring-security-core-6.4.3.jar:6.4.3]
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:133) ~[spring-security-core-6.4.3.jar:6.4.3]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182) ~[spring-security-core-6.4.3.jar:6.4.3]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:201) ~[spring-security-core-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:85) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:231) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter.doFilterInternal(OAuth2AuthorizationRequestRedirectFilter.java:198) ~[spring-security-oauth2-client-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:131) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238) ~[spring-security-config-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: java.lang.RuntimeException: org.springframework.security.core.userdetails.UsernameNotFoundException: User not found with email: 
+	at com.contact.project.services.implementation.CustomUserDetailService.loadUserByUsername(CustomUserDetailService.java:96) ~[classes/:na]
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:107) ~[spring-security-core-6.4.3.jar:6.4.3]
+	... 71 common frames omitted
+Caused by: org.springframework.security.core.userdetails.UsernameNotFoundException: User not found with email: 
+	at com.contact.project.services.implementation.CustomUserDetailService.loadUserByUsername(CustomUserDetailService.java:92) ~[classes/:na]
+	... 72 common frames omitted
+
+2025-04-09T02:13:01.394+05:30  INFO 3676 --- [project] [http-nio-8080-exec-4] c.c.p.s.i.CustomUserDetailService        : User found with email: manthan@gmail.com
+2025-04-09T02:13:01.466+05:30  INFO 3676 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:13:01.466+05:30  INFO 3676 --- [project] [http-nio-8080-exec-5] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:13:01.467+05:30  INFO 3676 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:13:01.471+05:30  INFO 3676 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:13:01.472+05:30  INFO 3676 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:13:01.472+05:30  INFO 3676 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:13:01.472+05:30  INFO 3676 --- [project] [http-nio-8080-exec-5] c.c.project.controller.UserController    : dashboard running
+2025-04-09T02:13:49.260+05:30  INFO 5484 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 5484 (D:\spring boot project vs-code\project\target\classes started by Pratik in d:\spring boot project vs-code\project)
+2025-04-09T02:13:49.262+05:30  INFO 5484 --- [project] [main] com.contact.project.ProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T02:13:49.953+05:30  INFO 5484 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-09T02:13:50.013+05:30  INFO 5484 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 1 JPA repository interface.
+2025-04-09T02:13:50.550+05:30  INFO 5484 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T02:13:50.563+05:30  INFO 5484 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T02:13:50.563+05:30  INFO 5484 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-09T02:13:50.627+05:30  INFO 5484 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T02:13:50.627+05:30  INFO 5484 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1317 ms
+2025-04-09T02:13:50.793+05:30  INFO 5484 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-09T02:13:50.840+05:30  INFO 5484 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-09T02:13:50.867+05:30  INFO 5484 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-09T02:13:51.105+05:30  INFO 5484 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-09T02:13:51.132+05:30  INFO 5484 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-09T02:13:51.457+05:30  INFO 5484 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2e4d4d22
+2025-04-09T02:13:51.457+05:30  INFO 5484 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-09T02:13:51.537+05:30  INFO 5484 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-09T02:13:52.477+05:30  INFO 5484 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-09T02:13:52.543+05:30  INFO 5484 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09T02:13:52.811+05:30  INFO 5484 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-09T02:13:52.817+05:30  INFO 5484 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-09T02:13:52.827+05:30  INFO 5484 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-09T02:13:52.827+05:30  INFO 5484 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-09T02:13:52.953+05:30  INFO 5484 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-09T02:13:52.953+05:30  WARN 5484 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-09T02:13:52.995+05:30  WARN 5484 --- [project] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [user/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-04-09T02:13:53.010+05:30  INFO 5484 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-09T02:13:53.159+05:30  INFO 5484 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-09T02:13:53.159+05:30  INFO 5484 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-09T02:13:53.460+05:30  INFO 5484 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T02:13:53.469+05:30  INFO 5484 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 4.666 seconds (process running for 5.283)
+2025-04-09T02:13:56.234+05:30  INFO 5484 --- [project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T02:13:56.234+05:30  INFO 5484 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T02:13:56.234+05:30  INFO 5484 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-04-09T02:13:59.028+05:30  INFO 5484 --- [project] [http-nio-8080-exec-9] c.c.p.s.i.CustomUserDetailService        : User found with email: manthan@gmail.com
+2025-04-09T02:13:59.106+05:30  INFO 5484 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:13:59.107+05:30  INFO 5484 --- [project] [http-nio-8080-exec-10] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:13:59.107+05:30  INFO 5484 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:13:59.110+05:30  INFO 5484 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:13:59.110+05:30  INFO 5484 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:13:59.110+05:30  INFO 5484 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:13:59.110+05:30  INFO 5484 --- [project] [http-nio-8080-exec-10] c.c.project.controller.UserController    : dashboard running
+2025-04-09T02:14:19.923+05:30  INFO 5484 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:14:19.924+05:30  INFO 5484 --- [project] [http-nio-8080-exec-5] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:14:19.924+05:30  INFO 5484 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:14:19.929+05:30  INFO 5484 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:14:19.930+05:30  INFO 5484 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:14:19.930+05:30  INFO 5484 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:14:19.930+05:30  INFO 5484 --- [project] [http-nio-8080-exec-5] c.c.project.controller.UserController    : profile running
+2025-04-09T02:14:46.843+05:30  INFO 14832 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 14832 (D:\spring boot project vs-code\project\target\classes started by Pratik in d:\spring boot project vs-code\project)
+2025-04-09T02:14:46.846+05:30  INFO 14832 --- [project] [main] com.contact.project.ProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T02:14:47.555+05:30  INFO 14832 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-09T02:14:47.627+05:30  INFO 14832 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 1 JPA repository interface.
+2025-04-09T02:14:48.155+05:30  INFO 14832 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T02:14:48.172+05:30  INFO 14832 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T02:14:48.172+05:30  INFO 14832 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-09T02:14:48.242+05:30  INFO 14832 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T02:14:48.243+05:30  INFO 14832 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1347 ms
+2025-04-09T02:14:48.414+05:30  INFO 14832 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-09T02:14:48.457+05:30  INFO 14832 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-09T02:14:48.493+05:30  INFO 14832 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-09T02:14:48.734+05:30  INFO 14832 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-09T02:14:48.765+05:30  INFO 14832 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-09T02:14:49.140+05:30  INFO 14832 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6bc25ac2
+2025-04-09T02:14:49.142+05:30  INFO 14832 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-09T02:14:49.213+05:30  INFO 14832 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-09T02:14:50.105+05:30  INFO 14832 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-09T02:14:50.179+05:30  INFO 14832 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09T02:14:50.445+05:30  INFO 14832 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-09T02:14:50.446+05:30  INFO 14832 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-09T02:14:50.461+05:30  INFO 14832 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-09T02:14:50.461+05:30  INFO 14832 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-09T02:14:50.570+05:30  INFO 14832 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-09T02:14:50.571+05:30  WARN 14832 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-09T02:14:50.616+05:30  WARN 14832 --- [project] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [user/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-04-09T02:14:50.641+05:30  INFO 14832 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-09T02:14:50.803+05:30  INFO 14832 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-09T02:14:50.803+05:30  INFO 14832 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-09T02:14:51.114+05:30  INFO 14832 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T02:14:51.121+05:30  INFO 14832 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 4.702 seconds (process running for 5.329)
+2025-04-09T02:14:52.617+05:30  INFO 14832 --- [project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T02:14:52.620+05:30  INFO 14832 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T02:14:52.622+05:30  INFO 14832 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-04-09T02:14:55.474+05:30  INFO 14832 --- [project] [http-nio-8080-exec-10] c.c.p.s.i.CustomUserDetailService        : User found with email: manthan@gmail.com
+2025-04-09T02:14:55.553+05:30  INFO 14832 --- [project] [http-nio-8080-exec-9] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:14:55.553+05:30  INFO 14832 --- [project] [http-nio-8080-exec-9] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:14:55.554+05:30  INFO 14832 --- [project] [http-nio-8080-exec-9] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:14:55.559+05:30  INFO 14832 --- [project] [http-nio-8080-exec-9] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:14:55.559+05:30  INFO 14832 --- [project] [http-nio-8080-exec-9] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:14:55.560+05:30  INFO 14832 --- [project] [http-nio-8080-exec-9] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:14:55.560+05:30  INFO 14832 --- [project] [http-nio-8080-exec-9] c.c.project.controller.UserController    : profile running
+2025-04-09T02:23:09.443+05:30  INFO 7476 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 7476 (D:\spring boot project vs-code\project\target\classes started by Pratik in d:\spring boot project vs-code\project)
+2025-04-09T02:23:09.443+05:30  INFO 7476 --- [project] [main] com.contact.project.ProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T02:23:10.124+05:30  INFO 7476 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-09T02:23:10.193+05:30  INFO 7476 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 1 JPA repository interface.
+2025-04-09T02:23:10.704+05:30  INFO 7476 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T02:23:10.727+05:30  INFO 7476 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T02:23:10.729+05:30  INFO 7476 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-09T02:23:10.794+05:30  INFO 7476 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T02:23:10.794+05:30  INFO 7476 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1296 ms
+2025-04-09T02:23:10.958+05:30  INFO 7476 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-09T02:23:11.013+05:30  INFO 7476 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-09T02:23:11.041+05:30  INFO 7476 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-09T02:23:11.293+05:30  INFO 7476 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-09T02:23:11.323+05:30  INFO 7476 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-09T02:23:11.667+05:30  INFO 7476 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6bc25ac2
+2025-04-09T02:23:11.669+05:30  INFO 7476 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-09T02:23:11.739+05:30  INFO 7476 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-09T02:23:12.641+05:30  INFO 7476 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-09T02:23:12.721+05:30  INFO 7476 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09T02:23:13.000+05:30  INFO 7476 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-09T02:23:13.005+05:30  INFO 7476 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-09T02:23:13.019+05:30  INFO 7476 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-09T02:23:13.019+05:30  INFO 7476 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-09T02:23:13.133+05:30  INFO 7476 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-09T02:23:13.133+05:30  WARN 7476 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-09T02:23:13.187+05:30  WARN 7476 --- [project] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [user/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-04-09T02:23:13.209+05:30  INFO 7476 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-09T02:23:13.382+05:30  INFO 7476 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-09T02:23:13.382+05:30  INFO 7476 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-09T02:23:13.687+05:30  INFO 7476 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T02:23:13.695+05:30  INFO 7476 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 4.672 seconds (process running for 5.325)
+2025-04-09T02:23:16.059+05:30  INFO 7476 --- [project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T02:23:16.060+05:30  INFO 7476 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T02:23:16.062+05:30  INFO 7476 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-04-09T02:23:18.247+05:30  INFO 7476 --- [project] [http-nio-8080-exec-8] c.c.p.s.i.CustomUserDetailService        : User with given username not found
+2025-04-09T02:23:18.247+05:30 ERROR 7476 --- [project] [http-nio-8080-exec-8] c.c.p.s.i.CustomUserDetailService        : Error in loadUserByUsername
+
+org.springframework.security.core.userdetails.UsernameNotFoundException: User not found with email: 
+	at com.contact.project.services.implementation.CustomUserDetailService.loadUserByUsername(CustomUserDetailService.java:92) ~[classes/:na]
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:107) ~[spring-security-core-6.4.3.jar:6.4.3]
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:133) ~[spring-security-core-6.4.3.jar:6.4.3]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182) ~[spring-security-core-6.4.3.jar:6.4.3]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:201) ~[spring-security-core-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:85) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:231) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter.doFilterInternal(OAuth2AuthorizationRequestRedirectFilter.java:198) ~[spring-security-oauth2-client-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:131) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238) ~[spring-security-config-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2025-04-09T02:23:18.252+05:30 ERROR 7476 --- [project] [http-nio-8080-exec-8] w.a.UsernamePasswordAuthenticationFilter : An internal error occurred while trying to authenticate the user.
+
+org.springframework.security.authentication.InternalAuthenticationServiceException: org.springframework.security.core.userdetails.UsernameNotFoundException: User not found with email: 
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:122) ~[spring-security-core-6.4.3.jar:6.4.3]
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:133) ~[spring-security-core-6.4.3.jar:6.4.3]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182) ~[spring-security-core-6.4.3.jar:6.4.3]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:201) ~[spring-security-core-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:85) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:231) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter.doFilterInternal(OAuth2AuthorizationRequestRedirectFilter.java:198) ~[spring-security-oauth2-client-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:131) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238) ~[spring-security-config-6.4.3.jar:6.4.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: java.lang.RuntimeException: org.springframework.security.core.userdetails.UsernameNotFoundException: User not found with email: 
+	at com.contact.project.services.implementation.CustomUserDetailService.loadUserByUsername(CustomUserDetailService.java:96) ~[classes/:na]
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:107) ~[spring-security-core-6.4.3.jar:6.4.3]
+	... 71 common frames omitted
+Caused by: org.springframework.security.core.userdetails.UsernameNotFoundException: User not found with email: 
+	at com.contact.project.services.implementation.CustomUserDetailService.loadUserByUsername(CustomUserDetailService.java:92) ~[classes/:na]
+	... 72 common frames omitted
+
+2025-04-09T02:23:20.260+05:30  INFO 7476 --- [project] [http-nio-8080-exec-10] c.c.p.s.i.CustomUserDetailService        : User found with email: manthan@gmail.com
+2025-04-09T02:23:20.332+05:30  INFO 7476 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:23:20.333+05:30  INFO 7476 --- [project] [http-nio-8080-exec-3] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:23:20.333+05:30  INFO 7476 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:23:20.337+05:30  INFO 7476 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:23:20.337+05:30  INFO 7476 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:23:20.338+05:30  INFO 7476 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:23:20.338+05:30  INFO 7476 --- [project] [http-nio-8080-exec-3] c.c.project.controller.UserController    : dashboard running
+2025-04-09T02:24:49.574+05:30  INFO 7264 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 7264 (D:\spring boot project vs-code\project\target\classes started by Pratik in d:\spring boot project vs-code\project)
+2025-04-09T02:24:49.577+05:30  INFO 7264 --- [project] [main] com.contact.project.ProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T02:24:50.278+05:30  INFO 7264 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-09T02:24:50.348+05:30  INFO 7264 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interface.
+2025-04-09T02:24:50.886+05:30  INFO 7264 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T02:24:50.904+05:30  INFO 7264 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T02:24:50.904+05:30  INFO 7264 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-09T02:24:50.979+05:30  INFO 7264 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T02:24:50.979+05:30  INFO 7264 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1356 ms
+2025-04-09T02:24:51.157+05:30  INFO 7264 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-09T02:24:51.205+05:30  INFO 7264 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-09T02:24:51.238+05:30  INFO 7264 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-09T02:24:51.497+05:30  INFO 7264 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-09T02:24:51.525+05:30  INFO 7264 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-09T02:24:51.855+05:30  INFO 7264 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@68c4db77
+2025-04-09T02:24:51.855+05:30  INFO 7264 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-09T02:24:51.937+05:30  INFO 7264 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-09T02:24:52.849+05:30  INFO 7264 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-09T02:24:52.918+05:30  INFO 7264 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09T02:24:53.180+05:30  INFO 7264 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-09T02:24:53.185+05:30  INFO 7264 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-09T02:24:53.197+05:30  INFO 7264 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-09T02:24:53.197+05:30  INFO 7264 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-09T02:24:53.300+05:30  INFO 7264 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-09T02:24:53.300+05:30  WARN 7264 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-09T02:24:53.341+05:30  WARN 7264 --- [project] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [user/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-04-09T02:24:53.355+05:30  INFO 7264 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-09T02:24:53.552+05:30  INFO 7264 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-09T02:24:53.552+05:30  INFO 7264 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-09T02:24:53.868+05:30  INFO 7264 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T02:24:53.878+05:30  INFO 7264 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 4.735 seconds (process running for 5.373)
+2025-04-09T02:24:54.509+05:30  INFO 7264 --- [project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T02:24:54.509+05:30  INFO 7264 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T02:24:54.509+05:30  INFO 7264 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-04-09T02:24:57.551+05:30  INFO 7264 --- [project] [http-nio-8080-exec-9] c.c.p.s.i.CustomUserDetailService        : User found with email: manthan@gmail.com
+2025-04-09T02:24:57.632+05:30  INFO 7264 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:24:57.632+05:30  INFO 7264 --- [project] [http-nio-8080-exec-10] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:24:57.632+05:30  INFO 7264 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:24:57.637+05:30  INFO 7264 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:24:57.638+05:30  INFO 7264 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:24:57.638+05:30  INFO 7264 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:24:57.639+05:30  INFO 7264 --- [project] [http-nio-8080-exec-10] c.c.project.controller.UserController    : dashboard running
+2025-04-09T02:26:47.218+05:30  INFO 10764 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 10764 (D:\spring boot project vs-code\project\target\classes started by Pratik in D:\spring boot project vs-code\project)
+2025-04-09T02:26:47.220+05:30  INFO 10764 --- [project] [main] com.contact.project.ProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T02:26:48.002+05:30  INFO 10764 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-09T02:26:48.076+05:30  INFO 10764 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 1 JPA repository interface.
+2025-04-09T02:26:48.664+05:30  INFO 10764 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T02:26:48.680+05:30  INFO 10764 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T02:26:48.681+05:30  INFO 10764 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-09T02:26:48.762+05:30  INFO 10764 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T02:26:48.763+05:30  INFO 10764 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1497 ms
+2025-04-09T02:26:48.917+05:30  INFO 10764 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-09T02:26:48.968+05:30  INFO 10764 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-09T02:26:48.999+05:30  INFO 10764 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-09T02:26:49.388+05:30  INFO 10764 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-09T02:26:49.429+05:30  INFO 10764 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-09T02:26:49.760+05:30  INFO 10764 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@c754401
+2025-04-09T02:26:49.762+05:30  INFO 10764 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-09T02:26:49.848+05:30  INFO 10764 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-09T02:26:50.729+05:30  INFO 10764 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-09T02:26:50.795+05:30  INFO 10764 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09T02:26:51.075+05:30  INFO 10764 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-09T02:26:51.080+05:30  INFO 10764 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-09T02:26:51.095+05:30  INFO 10764 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-09T02:26:51.096+05:30  INFO 10764 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-09T02:26:51.195+05:30  INFO 10764 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-09T02:26:51.196+05:30  WARN 10764 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-09T02:26:51.243+05:30  WARN 10764 --- [project] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [user/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-04-09T02:26:51.262+05:30  INFO 10764 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-09T02:26:51.427+05:30  INFO 10764 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-09T02:26:51.427+05:30  INFO 10764 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-09T02:26:51.713+05:30  INFO 10764 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T02:26:51.721+05:30  INFO 10764 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 5.019 seconds (process running for 5.421)
+2025-04-09T02:27:00.730+05:30  INFO 10764 --- [project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T02:27:00.731+05:30  INFO 10764 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T02:27:00.732+05:30  INFO 10764 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-09T02:27:03.426+05:30  INFO 10764 --- [project] [http-nio-8080-exec-9] c.c.p.s.i.CustomUserDetailService        : User found with email: manthan@gmail.com
+2025-04-09T02:27:03.498+05:30  INFO 10764 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:27:03.499+05:30  INFO 10764 --- [project] [http-nio-8080-exec-10] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:27:03.500+05:30  INFO 10764 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:27:03.503+05:30  INFO 10764 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:27:03.504+05:30  INFO 10764 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:27:03.505+05:30  INFO 10764 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:27:03.505+05:30  INFO 10764 --- [project] [http-nio-8080-exec-10] c.c.project.controller.UserController    : dashboard running
+2025-04-09T02:28:12.497+05:30  INFO 4728 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 4728 (D:\spring boot project vs-code\project\target\classes started by Pratik in d:\spring boot project vs-code\project)
+2025-04-09T02:28:12.500+05:30  INFO 4728 --- [project] [main] com.contact.project.ProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T02:28:13.244+05:30  INFO 4728 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-09T02:28:13.299+05:30  INFO 4728 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 1 JPA repository interface.
+2025-04-09T02:28:13.825+05:30  INFO 4728 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T02:28:13.838+05:30  INFO 4728 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T02:28:13.838+05:30  INFO 4728 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-09T02:28:13.909+05:30  INFO 4728 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T02:28:13.910+05:30  INFO 4728 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1364 ms
+2025-04-09T02:28:14.081+05:30  INFO 4728 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-09T02:28:14.131+05:30  INFO 4728 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-09T02:28:14.162+05:30  INFO 4728 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-09T02:28:14.411+05:30  INFO 4728 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-09T02:28:14.439+05:30  INFO 4728 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-09T02:28:14.746+05:30  INFO 4728 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@c5a2d5
+2025-04-09T02:28:14.748+05:30  INFO 4728 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-09T02:28:14.822+05:30  INFO 4728 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-09T02:28:15.664+05:30  INFO 4728 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-09T02:28:15.735+05:30  INFO 4728 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09T02:28:15.994+05:30  INFO 4728 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-09T02:28:16.000+05:30  INFO 4728 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-09T02:28:16.011+05:30  INFO 4728 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-09T02:28:16.012+05:30  INFO 4728 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-09T02:28:16.111+05:30  INFO 4728 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-09T02:28:16.112+05:30  WARN 4728 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-09T02:28:16.157+05:30  WARN 4728 --- [project] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [user/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-04-09T02:28:16.175+05:30  INFO 4728 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-09T02:28:16.337+05:30  INFO 4728 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-09T02:28:16.337+05:30  INFO 4728 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-09T02:28:16.627+05:30  INFO 4728 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T02:28:16.635+05:30  INFO 4728 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 4.579 seconds (process running for 5.23)
+2025-04-09T02:28:19.336+05:30  INFO 4728 --- [project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T02:28:19.336+05:30  INFO 4728 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T02:28:19.337+05:30  INFO 4728 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-09T02:28:25.013+05:30  INFO 4728 --- [project] [http-nio-8080-exec-9] c.c.p.s.i.CustomUserDetailService        : User found with email: manthan@gmail.com
+2025-04-09T02:28:25.086+05:30  INFO 4728 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:28:25.087+05:30  INFO 4728 --- [project] [http-nio-8080-exec-5] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:28:25.088+05:30  INFO 4728 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:28:25.092+05:30  INFO 4728 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:28:25.092+05:30  INFO 4728 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:28:25.092+05:30  INFO 4728 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:28:25.092+05:30  INFO 4728 --- [project] [http-nio-8080-exec-5] c.c.project.controller.UserController    : dashboard running
+2025-04-09T02:28:33.265+05:30  INFO 4728 --- [project] [http-nio-8080-exec-7] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:28:33.265+05:30  INFO 4728 --- [project] [http-nio-8080-exec-7] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:28:33.265+05:30  INFO 4728 --- [project] [http-nio-8080-exec-7] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:28:33.270+05:30  INFO 4728 --- [project] [http-nio-8080-exec-7] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:28:33.271+05:30  INFO 4728 --- [project] [http-nio-8080-exec-7] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:28:33.271+05:30  INFO 4728 --- [project] [http-nio-8080-exec-7] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:28:33.272+05:30  INFO 4728 --- [project] [http-nio-8080-exec-7] c.c.project.controller.UserController    : profile running
+2025-04-09T02:34:09.288+05:30  INFO 1016 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 1016 (D:\spring boot project vs-code\project\target\classes started by Pratik in D:\spring boot project vs-code\project)
+2025-04-09T02:34:09.291+05:30  INFO 1016 --- [project] [main] com.contact.project.ProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T02:34:09.967+05:30  INFO 1016 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-09T02:34:10.035+05:30  INFO 1016 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 1 JPA repository interface.
+2025-04-09T02:34:10.598+05:30  INFO 1016 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T02:34:10.612+05:30  INFO 1016 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T02:34:10.613+05:30  INFO 1016 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-09T02:34:10.694+05:30  INFO 1016 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T02:34:10.694+05:30  INFO 1016 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1362 ms
+2025-04-09T02:34:10.849+05:30  INFO 1016 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-09T02:34:10.896+05:30  INFO 1016 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-09T02:34:10.925+05:30  INFO 1016 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-09T02:34:11.168+05:30  INFO 1016 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-09T02:34:11.204+05:30  INFO 1016 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-09T02:34:11.545+05:30  INFO 1016 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6fd7aba8
+2025-04-09T02:34:11.547+05:30  INFO 1016 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-09T02:34:11.619+05:30  INFO 1016 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-09T02:34:12.544+05:30  INFO 1016 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-09T02:34:12.611+05:30  INFO 1016 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09T02:34:12.882+05:30  INFO 1016 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-09T02:34:12.888+05:30  INFO 1016 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-09T02:34:12.900+05:30  INFO 1016 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-09T02:34:12.901+05:30  INFO 1016 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-09T02:34:13.003+05:30  INFO 1016 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-09T02:34:13.003+05:30  WARN 1016 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-09T02:34:13.055+05:30  WARN 1016 --- [project] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [user/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-04-09T02:34:13.075+05:30  INFO 1016 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-09T02:34:13.243+05:30  INFO 1016 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-09T02:34:13.244+05:30  INFO 1016 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-09T02:34:13.545+05:30  INFO 1016 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T02:34:13.560+05:30  INFO 1016 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 4.771 seconds (process running for 5.181)
+2025-04-09T02:34:25.891+05:30  INFO 1016 --- [project] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T02:34:25.892+05:30  INFO 1016 --- [project] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T02:34:25.893+05:30  INFO 1016 --- [project] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-09T02:34:28.701+05:30  INFO 1016 --- [project] [http-nio-8080-exec-4] c.c.p.s.i.CustomUserDetailService        : User found with email: manthan@gmail.com
+2025-04-09T02:34:28.780+05:30  INFO 1016 --- [project] [http-nio-8080-exec-9] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:34:28.781+05:30  INFO 1016 --- [project] [http-nio-8080-exec-9] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:34:28.781+05:30  INFO 1016 --- [project] [http-nio-8080-exec-9] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:34:28.786+05:30  INFO 1016 --- [project] [http-nio-8080-exec-9] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:34:28.786+05:30  INFO 1016 --- [project] [http-nio-8080-exec-9] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:34:28.787+05:30  INFO 1016 --- [project] [http-nio-8080-exec-9] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:34:28.787+05:30  INFO 1016 --- [project] [http-nio-8080-exec-9] c.c.project.controller.UserController    : profile running
+2025-04-09T02:35:00.722+05:30  INFO 1016 --- [project] [http-nio-8080-exec-1] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:35:00.723+05:30  INFO 1016 --- [project] [http-nio-8080-exec-1] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:35:00.723+05:30  INFO 1016 --- [project] [http-nio-8080-exec-1] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:35:00.728+05:30  INFO 1016 --- [project] [http-nio-8080-exec-1] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:35:00.728+05:30  INFO 1016 --- [project] [http-nio-8080-exec-1] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:35:00.728+05:30  INFO 1016 --- [project] [http-nio-8080-exec-1] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:35:00.729+05:30  INFO 1016 --- [project] [http-nio-8080-exec-1] c.c.project.controller.UserController    : profile running
+2025-04-09T02:35:04.219+05:30  INFO 1016 --- [project] [http-nio-8080-exec-4] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:35:04.225+05:30  INFO 1016 --- [project] [http-nio-8080-exec-4] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:35:04.227+05:30  INFO 1016 --- [project] [http-nio-8080-exec-4] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:35:04.240+05:30  INFO 1016 --- [project] [http-nio-8080-exec-4] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:35:04.240+05:30  INFO 1016 --- [project] [http-nio-8080-exec-4] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:35:04.241+05:30  INFO 1016 --- [project] [http-nio-8080-exec-4] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:35:04.243+05:30  INFO 1016 --- [project] [http-nio-8080-exec-4] c.c.project.controller.UserController    : profile running
+2025-04-09T02:35:51.172+05:30  INFO 14152 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 14152 (D:\spring boot project vs-code\project\target\classes started by Pratik in D:\spring boot project vs-code\project)
+2025-04-09T02:35:51.175+05:30  INFO 14152 --- [project] [main] com.contact.project.ProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T02:35:51.872+05:30  INFO 14152 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-09T02:35:51.933+05:30  INFO 14152 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 1 JPA repository interface.
+2025-04-09T02:35:52.507+05:30  INFO 14152 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T02:35:52.518+05:30  INFO 14152 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T02:35:52.519+05:30  INFO 14152 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-09T02:35:52.578+05:30  INFO 14152 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T02:35:52.578+05:30  INFO 14152 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1360 ms
+2025-04-09T02:35:52.741+05:30  INFO 14152 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-09T02:35:52.778+05:30  INFO 14152 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-09T02:35:52.813+05:30  INFO 14152 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-09T02:35:53.075+05:30  INFO 14152 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-09T02:35:53.102+05:30  INFO 14152 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-09T02:35:53.428+05:30  INFO 14152 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@62de73eb
+2025-04-09T02:35:53.430+05:30  INFO 14152 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-09T02:35:53.505+05:30  INFO 14152 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-09T02:35:54.443+05:30  INFO 14152 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-09T02:35:54.509+05:30  INFO 14152 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09T02:35:54.801+05:30  INFO 14152 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-09T02:35:54.808+05:30  INFO 14152 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-09T02:35:54.821+05:30  INFO 14152 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-09T02:35:54.821+05:30  INFO 14152 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-09T02:35:54.925+05:30  INFO 14152 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-09T02:35:54.925+05:30  WARN 14152 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-09T02:35:54.978+05:30  WARN 14152 --- [project] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [user/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-04-09T02:35:54.997+05:30  INFO 14152 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-09T02:35:55.171+05:30  INFO 14152 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-09T02:35:55.172+05:30  INFO 14152 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-09T02:35:55.474+05:30  INFO 14152 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T02:35:55.484+05:30  INFO 14152 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 4.789 seconds (process running for 5.201)
+2025-04-09T02:35:58.603+05:30  INFO 14152 --- [project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T02:35:58.604+05:30  INFO 14152 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T02:35:58.605+05:30  INFO 14152 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-09T02:36:01.165+05:30  INFO 14152 --- [project] [http-nio-8080-exec-9] c.c.p.s.i.CustomUserDetailService        : User found with email: manthan@gmail.com
+2025-04-09T02:36:01.225+05:30  INFO 14152 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:36:01.225+05:30  INFO 14152 --- [project] [http-nio-8080-exec-10] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:36:01.225+05:30  INFO 14152 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:36:01.243+05:30  INFO 14152 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:36:01.244+05:30  INFO 14152 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:36:01.244+05:30  INFO 14152 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:36:01.244+05:30  INFO 14152 --- [project] [http-nio-8080-exec-10] c.c.project.controller.UserController    : profile running
+2025-04-09T02:36:14.538+05:30  INFO 14152 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:36:14.539+05:30  INFO 14152 --- [project] [http-nio-8080-exec-3] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:36:14.540+05:30  INFO 14152 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:36:14.544+05:30  INFO 14152 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:36:14.545+05:30  INFO 14152 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:36:14.545+05:30  INFO 14152 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:36:14.545+05:30  INFO 14152 --- [project] [http-nio-8080-exec-3] c.c.project.controller.UserController    : dashboard running
+2025-04-09T02:42:00.476+05:30  INFO 12712 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 12712 (D:\spring boot project vs-code\project\target\classes started by Pratik in d:\spring boot project vs-code\project)
+2025-04-09T02:42:00.476+05:30  INFO 12712 --- [project] [main] com.contact.project.ProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T02:42:01.259+05:30  INFO 12712 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-09T02:42:01.354+05:30  INFO 12712 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 1 JPA repository interface.
+2025-04-09T02:42:01.913+05:30  INFO 12712 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T02:42:01.928+05:30  INFO 12712 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T02:42:01.928+05:30  INFO 12712 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-09T02:42:02.000+05:30  INFO 12712 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T02:42:02.000+05:30  INFO 12712 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1470 ms
+2025-04-09T02:42:02.154+05:30  INFO 12712 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-09T02:42:02.196+05:30  INFO 12712 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-09T02:42:02.228+05:30  INFO 12712 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-09T02:42:02.502+05:30  INFO 12712 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-09T02:42:02.532+05:30  INFO 12712 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-09T02:42:02.845+05:30  INFO 12712 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@68c4db77
+2025-04-09T02:42:02.847+05:30  INFO 12712 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-09T02:42:02.909+05:30  INFO 12712 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-09T02:42:03.817+05:30  INFO 12712 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-09T02:42:03.895+05:30  INFO 12712 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09T02:42:04.186+05:30  INFO 12712 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-09T02:42:04.193+05:30  INFO 12712 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-09T02:42:04.214+05:30  INFO 12712 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-09T02:42:04.216+05:30  INFO 12712 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-09T02:42:04.339+05:30  INFO 12712 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-09T02:42:04.339+05:30  WARN 12712 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-09T02:42:04.384+05:30  WARN 12712 --- [project] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [user/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-04-09T02:42:04.408+05:30  INFO 12712 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-09T02:42:04.578+05:30  INFO 12712 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-09T02:42:04.578+05:30  INFO 12712 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-09T02:42:04.867+05:30  INFO 12712 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T02:42:04.877+05:30  INFO 12712 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 4.841 seconds (process running for 5.47)
+2025-04-09T02:42:24.765+05:30  INFO 12712 --- [project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T02:42:24.766+05:30  INFO 12712 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T02:42:24.768+05:30  INFO 12712 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-04-09T02:42:42.527+05:30  INFO 12712 --- [project] [http-nio-8080-exec-3] c.c.p.s.i.CustomUserDetailService        : User found with email: manthan@gmail.com
+2025-04-09T02:42:42.598+05:30  INFO 12712 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:42:42.599+05:30  INFO 12712 --- [project] [http-nio-8080-exec-5] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:42:42.600+05:30  INFO 12712 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:42:42.605+05:30  INFO 12712 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:42:42.605+05:30  INFO 12712 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:42:42.606+05:30  INFO 12712 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:42:42.606+05:30  INFO 12712 --- [project] [http-nio-8080-exec-5] c.c.project.controller.UserController    : dashboard running
+2025-04-09T02:48:07.098+05:30  INFO 11292 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 11292 (D:\spring boot project vs-code\project\target\classes started by Pratik in d:\spring boot project vs-code\project)
+2025-04-09T02:48:07.100+05:30  INFO 11292 --- [project] [main] com.contact.project.ProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T02:48:07.826+05:30  INFO 11292 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-09T02:48:07.905+05:30  INFO 11292 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 1 JPA repository interface.
+2025-04-09T02:48:08.497+05:30  INFO 11292 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T02:48:08.511+05:30  INFO 11292 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T02:48:08.512+05:30  INFO 11292 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-09T02:48:08.593+05:30  INFO 11292 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T02:48:08.594+05:30  INFO 11292 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1449 ms
+2025-04-09T02:48:08.783+05:30  INFO 11292 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-09T02:48:08.830+05:30  INFO 11292 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-09T02:48:08.868+05:30  INFO 11292 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-09T02:48:09.115+05:30  INFO 11292 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-09T02:48:09.147+05:30  INFO 11292 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-09T02:48:09.459+05:30  INFO 11292 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@68c4db77
+2025-04-09T02:48:09.459+05:30  INFO 11292 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-09T02:48:09.544+05:30  INFO 11292 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-09T02:48:10.560+05:30  INFO 11292 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-09T02:48:10.637+05:30  INFO 11292 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09T02:48:10.897+05:30  INFO 11292 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-09T02:48:10.903+05:30  INFO 11292 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-09T02:48:10.913+05:30  INFO 11292 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-09T02:48:10.913+05:30  INFO 11292 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-09T02:48:11.016+05:30  INFO 11292 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-09T02:48:11.025+05:30  WARN 11292 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-09T02:48:11.060+05:30  WARN 11292 --- [project] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [user/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-04-09T02:48:11.094+05:30  INFO 11292 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-09T02:48:11.279+05:30  INFO 11292 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-09T02:48:11.280+05:30  INFO 11292 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-09T02:48:11.596+05:30  INFO 11292 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T02:48:11.604+05:30  INFO 11292 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 4.989 seconds (process running for 5.603)
+2025-04-09T02:48:24.166+05:30  INFO 11292 --- [project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T02:48:24.168+05:30  INFO 11292 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T02:48:24.169+05:30  INFO 11292 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-09T02:48:28.256+05:30  INFO 11292 --- [project] [http-nio-8080-exec-5] c.c.p.s.i.CustomUserDetailService        : User found with email: manthan@gmail.com
+2025-04-09T02:48:28.328+05:30  INFO 11292 --- [project] [http-nio-8080-exec-4] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:48:28.328+05:30  INFO 11292 --- [project] [http-nio-8080-exec-4] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:48:28.329+05:30  INFO 11292 --- [project] [http-nio-8080-exec-4] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:48:28.332+05:30  INFO 11292 --- [project] [http-nio-8080-exec-4] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:48:28.333+05:30  INFO 11292 --- [project] [http-nio-8080-exec-4] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:48:28.333+05:30  INFO 11292 --- [project] [http-nio-8080-exec-4] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:48:28.334+05:30  INFO 11292 --- [project] [http-nio-8080-exec-4] c.c.project.controller.UserController    : dashboard running
+2025-04-09T02:48:52.656+05:30  INFO 11292 --- [project] [http-nio-8080-exec-8] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:48:52.656+05:30  INFO 11292 --- [project] [http-nio-8080-exec-8] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:48:52.656+05:30  INFO 11292 --- [project] [http-nio-8080-exec-8] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:48:52.665+05:30  INFO 11292 --- [project] [http-nio-8080-exec-8] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:48:52.668+05:30  INFO 11292 --- [project] [http-nio-8080-exec-8] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:48:52.668+05:30  INFO 11292 --- [project] [http-nio-8080-exec-8] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:48:52.668+05:30  INFO 11292 --- [project] [http-nio-8080-exec-8] c.c.project.controller.UserController    : dashboard running
+2025-04-09T02:50:32.095+05:30  INFO 14840 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 14840 (D:\spring boot project vs-code\project\target\classes started by Pratik in d:\spring boot project vs-code\project)
+2025-04-09T02:50:32.098+05:30  INFO 14840 --- [project] [main] com.contact.project.ProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T02:50:32.803+05:30  INFO 14840 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-09T02:50:32.871+05:30  INFO 14840 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 1 JPA repository interface.
+2025-04-09T02:50:33.401+05:30  INFO 14840 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T02:50:33.416+05:30  INFO 14840 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T02:50:33.416+05:30  INFO 14840 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-09T02:50:33.480+05:30  INFO 14840 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T02:50:33.480+05:30  INFO 14840 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1334 ms
+2025-04-09T02:50:33.660+05:30  INFO 14840 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-09T02:50:33.706+05:30  INFO 14840 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-09T02:50:33.730+05:30  INFO 14840 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-09T02:50:33.973+05:30  INFO 14840 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-09T02:50:33.999+05:30  INFO 14840 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-09T02:50:34.322+05:30  INFO 14840 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@185339ed
+2025-04-09T02:50:34.324+05:30  INFO 14840 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-09T02:50:34.402+05:30  INFO 14840 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-09T02:50:35.279+05:30  INFO 14840 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-09T02:50:35.349+05:30  INFO 14840 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09T02:50:35.611+05:30  INFO 14840 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-09T02:50:35.624+05:30  INFO 14840 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-09T02:50:35.638+05:30  INFO 14840 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-09T02:50:35.640+05:30  INFO 14840 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-09T02:50:35.738+05:30  INFO 14840 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-09T02:50:35.739+05:30  WARN 14840 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-09T02:50:35.782+05:30  WARN 14840 --- [project] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [user/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-04-09T02:50:35.802+05:30  INFO 14840 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-09T02:50:35.960+05:30  INFO 14840 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-09T02:50:35.960+05:30  INFO 14840 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-09T02:50:36.326+05:30  INFO 14840 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T02:50:36.335+05:30  INFO 14840 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 4.69 seconds (process running for 5.313)
+2025-04-09T02:50:40.713+05:30  INFO 14840 --- [project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T02:50:40.713+05:30  INFO 14840 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T02:50:40.713+05:30  INFO 14840 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-04-09T02:50:43.176+05:30  INFO 14840 --- [project] [http-nio-8080-exec-9] c.c.p.s.i.CustomUserDetailService        : User found with email: manthan@gmail.com
+2025-04-09T02:50:43.253+05:30  INFO 14840 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:50:43.255+05:30  INFO 14840 --- [project] [http-nio-8080-exec-10] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:50:43.255+05:30  INFO 14840 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:50:43.260+05:30  INFO 14840 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:50:43.260+05:30  INFO 14840 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:50:43.261+05:30  INFO 14840 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:50:43.261+05:30  INFO 14840 --- [project] [http-nio-8080-exec-10] c.c.project.controller.UserController    : dashboard running
+2025-04-09T02:52:22.551+05:30  INFO 1356 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 1356 (D:\spring boot project vs-code\project\target\classes started by Pratik in D:\spring boot project vs-code\project)
+2025-04-09T02:52:22.554+05:30  INFO 1356 --- [project] [main] com.contact.project.ProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T02:52:23.270+05:30  INFO 1356 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-09T02:52:23.336+05:30  INFO 1356 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 1 JPA repository interface.
+2025-04-09T02:52:23.917+05:30  INFO 1356 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T02:52:23.940+05:30  INFO 1356 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T02:52:23.940+05:30  INFO 1356 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-09T02:52:24.004+05:30  INFO 1356 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T02:52:24.004+05:30  INFO 1356 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1407 ms
+2025-04-09T02:52:24.161+05:30  INFO 1356 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-09T02:52:24.203+05:30  INFO 1356 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-09T02:52:24.251+05:30  INFO 1356 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-09T02:52:24.498+05:30  INFO 1356 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-09T02:52:24.520+05:30  INFO 1356 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-09T02:52:24.842+05:30  INFO 1356 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2df71be0
+2025-04-09T02:52:24.852+05:30  INFO 1356 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-09T02:52:24.928+05:30  INFO 1356 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-09T02:52:25.808+05:30  INFO 1356 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-09T02:52:25.877+05:30  INFO 1356 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09T02:52:26.154+05:30  INFO 1356 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-09T02:52:26.160+05:30  INFO 1356 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-09T02:52:26.170+05:30  INFO 1356 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-09T02:52:26.170+05:30  INFO 1356 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-09T02:52:26.272+05:30  INFO 1356 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-09T02:52:26.273+05:30  WARN 1356 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-09T02:52:26.319+05:30  WARN 1356 --- [project] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [user/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-04-09T02:52:26.338+05:30  INFO 1356 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-09T02:52:26.500+05:30  INFO 1356 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-09T02:52:26.500+05:30  INFO 1356 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-09T02:52:26.782+05:30  INFO 1356 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T02:52:26.788+05:30  INFO 1356 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 4.735 seconds (process running for 5.147)
+2025-04-09T02:52:29.305+05:30  INFO 1356 --- [project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T02:52:29.305+05:30  INFO 1356 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T02:52:29.305+05:30  INFO 1356 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-04-09T02:52:31.794+05:30  INFO 1356 --- [project] [http-nio-8080-exec-7] c.c.p.s.i.CustomUserDetailService        : User found with email: manthan@gmail.com
+2025-04-09T02:52:31.867+05:30  INFO 1356 --- [project] [http-nio-8080-exec-8] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:52:31.868+05:30  INFO 1356 --- [project] [http-nio-8080-exec-8] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:52:31.868+05:30  INFO 1356 --- [project] [http-nio-8080-exec-8] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:52:31.873+05:30  INFO 1356 --- [project] [http-nio-8080-exec-8] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:52:31.873+05:30  INFO 1356 --- [project] [http-nio-8080-exec-8] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:52:31.874+05:30  INFO 1356 --- [project] [http-nio-8080-exec-8] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:52:31.874+05:30  INFO 1356 --- [project] [http-nio-8080-exec-8] c.c.project.controller.UserController    : dashboard running
+2025-04-09T02:52:40.396+05:30  INFO 1356 --- [project] [http-nio-8080-exec-10] c.c.p.s.i.CustomUserDetailService        : User found with email: manthan@gmail.com
+2025-04-09T02:52:40.465+05:30  INFO 1356 --- [project] [http-nio-8080-exec-2] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:52:40.465+05:30  INFO 1356 --- [project] [http-nio-8080-exec-2] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:52:40.465+05:30  INFO 1356 --- [project] [http-nio-8080-exec-2] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:52:40.470+05:30  INFO 1356 --- [project] [http-nio-8080-exec-2] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:52:40.470+05:30  INFO 1356 --- [project] [http-nio-8080-exec-2] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:52:40.470+05:30  INFO 1356 --- [project] [http-nio-8080-exec-2] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:52:40.471+05:30  INFO 1356 --- [project] [http-nio-8080-exec-2] c.c.project.controller.UserController    : dashboard running
+2025-04-09T02:58:55.602+05:30  INFO 3164 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 3164 (D:\spring boot project vs-code\project\target\classes started by Pratik in d:\spring boot project vs-code\project)
+2025-04-09T02:58:55.606+05:30  INFO 3164 --- [project] [main] com.contact.project.ProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T02:58:56.331+05:30  INFO 3164 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-09T02:58:56.396+05:30  INFO 3164 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 1 JPA repository interface.
+2025-04-09T02:58:56.944+05:30  INFO 3164 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T02:58:56.952+05:30  INFO 3164 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T02:58:56.952+05:30  INFO 3164 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-09T02:58:57.038+05:30  INFO 3164 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T02:58:57.038+05:30  INFO 3164 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1383 ms
+2025-04-09T02:58:57.218+05:30  INFO 3164 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-09T02:58:57.270+05:30  INFO 3164 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-09T02:58:57.301+05:30  INFO 3164 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-09T02:58:57.551+05:30  INFO 3164 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-09T02:58:57.578+05:30  INFO 3164 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-09T02:58:57.909+05:30  INFO 3164 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3eedd0e3
+2025-04-09T02:58:57.909+05:30  INFO 3164 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-09T02:58:57.990+05:30  INFO 3164 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-09T02:58:58.868+05:30  INFO 3164 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-09T02:58:58.936+05:30  INFO 3164 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09T02:58:59.206+05:30  INFO 3164 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-09T02:58:59.212+05:30  INFO 3164 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-09T02:58:59.218+05:30  INFO 3164 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-09T02:58:59.218+05:30  INFO 3164 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-09T02:58:59.326+05:30  INFO 3164 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-09T02:58:59.326+05:30  WARN 3164 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-09T02:58:59.368+05:30  WARN 3164 --- [project] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [user/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-04-09T02:58:59.387+05:30  INFO 3164 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-09T02:58:59.549+05:30  INFO 3164 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-09T02:58:59.551+05:30  INFO 3164 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-09T02:58:59.838+05:30  INFO 3164 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T02:58:59.848+05:30  INFO 3164 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 4.696 seconds (process running for 5.322)
+2025-04-09T02:59:04.551+05:30  INFO 3164 --- [project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T02:59:04.551+05:30  INFO 3164 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T02:59:04.551+05:30  INFO 3164 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-04-09T02:59:07.202+05:30  INFO 3164 --- [project] [http-nio-8080-exec-9] c.c.p.s.i.CustomUserDetailService        : User found with email: manthan@gmail.com
+2025-04-09T02:59:07.281+05:30  INFO 3164 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-09T02:59:07.281+05:30  INFO 3164 --- [project] [http-nio-8080-exec-10] c.c.project.helpers.LoggedInUserFetcher  : fetching logged in user details from database
+2025-04-09T02:59:07.282+05:30  INFO 3164 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-09T02:59:07.286+05:30  INFO 3164 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : user nameManthan Wanare
+2025-04-09T02:59:07.286+05:30  INFO 3164 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-09T02:59:07.287+05:30  INFO 3164 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-09T02:59:07.287+05:30  INFO 3164 --- [project] [http-nio-8080-exec-10] c.c.project.controller.UserController    : dashboard running
