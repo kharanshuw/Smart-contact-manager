@@ -70,11 +70,13 @@ public class SecurityConfig {
 
         httpSecurity.authorizeHttpRequests(auth -> {
             auth.requestMatchers("user/**").authenticated();
+            auth.requestMatchers("/user/contacts/**").authenticated();
 
             auth.anyRequest().permitAll();
 
         });
 
+        // form login configuration
         httpSecurity.formLogin(
                 formlogin -> {
                     formlogin.loginPage("/login");
@@ -91,6 +93,7 @@ public class SecurityConfig {
 
                 });
 
+        // logout configuration
         httpSecurity.logout(logoutform -> {
             log.info("logging out..... ");
 

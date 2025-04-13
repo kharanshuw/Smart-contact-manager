@@ -38,4 +38,5 @@ public class UserController {
         log.info("profile running");
         return new String("user/profile");
     }
+    
 }

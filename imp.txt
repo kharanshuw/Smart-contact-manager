@@ -1,7 +1,11 @@
 npx @tailwindcss/cli -i ./src/main/resources/static/input.css -o ./src//main/resources/static/output.css --watch
 
+
+
 imporatant end points
 http://localhost:8080/user/dashboard
+
+http://localhost:8080/user/contacts/add
 
 
 steps for oauth
