@@ -46,9 +46,15 @@ public class Contact {
 
     private String websiteLink;
 
+    /**
+     * The user who owns this contact.
+     */
     @ManyToOne
     private User user;
 
+    /**
+     * List of social links associated with this contact.
+     */
     @OneToMany(mappedBy = "contact", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<SocialLink> links = new ArrayList<>();
 
