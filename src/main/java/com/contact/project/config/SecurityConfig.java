@@ -69,7 +69,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 
         httpSecurity.authorizeHttpRequests(auth -> {
-            auth.requestMatchers("user/**").authenticated();
+            auth.requestMatchers("/user/**").authenticated();
             auth.requestMatchers("/user/contacts/**").authenticated();
 
             auth.anyRequest().permitAll();

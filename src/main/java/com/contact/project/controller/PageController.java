@@ -28,9 +28,9 @@ public class PageController {
     }
 
     /**
-     * This request mapping is for about page
+     * Handles GET requests to the "/about" endpoint and returns the "about" view.
      * 
-     * @return
+     * @return the "about" view
      */
     @GetMapping("/about")
     public String aboutPage() {
@@ -39,9 +39,10 @@ public class PageController {
     }
 
     /**
-     * This request mapping is for service page
+     * Handles GET requests to the "/service" endpoint and returns the "service"
+     * view.
      * 
-     * @return
+     * @return the "service" view
      */
     @GetMapping("/service")
     public String servicePage() {
@@ -50,9 +51,9 @@ public class PageController {
     }
 
     /**
-     * This request mapping is for home page
+     * Handles GET requests to the "/" endpoint and returns the "home" view.
      * 
-     * @return
+     * @return the "home" view
      */
     @GetMapping("/")
     public String homePage() {
@@ -60,9 +61,10 @@ public class PageController {
     }
 
     /**
-     * This request mapping is for contact page
+     * Handles GET requests to the "/contact" endpoint and returns the "contact"
+     * view.
      * 
-     * @return
+     * @return the "contact" view
      */
     @GetMapping("/contact")
     public String contactPage() {
@@ -70,17 +72,22 @@ public class PageController {
     }
 
     /**
-     * This request mapping is for login page
+     * Handles GET requests to the "/login" endpoint and returns the "login" view.
+     * 
+     * @return the "login" view
      */
     @GetMapping("/login")
     public String loginPage() {
         return new String("login");
     }
 
-    /*
-     * * Creates a new `UserForm` object
-     * Adds the `UserForm` object to the model with the attribute name "user"
-     * Returns the string "register", which will render the "register" view
+    /**
+     * Handles GET requests to the "/register" endpoint, creates a new UserForm
+     * object, and adds it to the model with the attribute name "user".
+     * Returns the "register" view.
+     * 
+     * @param model the model
+     * @return the "register" view
      */
     @GetMapping("/register")
     public String registerPage(Model model) {
@@ -91,13 +98,17 @@ public class PageController {
         return new String("register");
     }
 
-    /*
-     * this request is used to procress registration form
-     * * Validating the `UserForm` object
-     * Creating a new `User` object based on the validated form data
-     * Saving the `User` object to the database
-     * Setting a success message in the HTTP session
-     * Redirecting the user to the `/register` endpoint
+    /**
+     * Handles POST requests to the "/process-Register" endpoint, validates the
+     * UserForm object, creates a new User object, saves it to the database using
+     * the UserService,
+     * sets a success message in the HTTP session, and redirects the user to the
+     * "/register" endpoint.
+     * 
+     * @param userForm      the UserForm object
+     * @param bindingResult the binding result
+     * @param httpSession   the HTTP session
+     * @return the redirect URL
      */
     @PostMapping("/process-Register")
     public String processRegister(@Valid @ModelAttribute("user") UserForm userForm, BindingResult bindingResult,
@@ -147,7 +158,7 @@ public class PageController {
         httpSession.setAttribute("message", message);
 
         log.info("saving new user....");
-        
+
         userService.saveUser(user);
 
         log.info("user saved successfully");

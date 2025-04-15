@@ -27,11 +27,12 @@
       User Navbar: This section is only displayed if the user is logged in.
       It includes a navigation bar with links to user-specific pages.
     -->
-    <div th:if="${user}" style="z-index: 10;">
-        <div data-th-replace="~{user/user_navbar :: user-navbar}">
-
+    <div th:if="${user}">
+        <div data-th-replace=" ~{user/user_navbar :: user-navbar}">
         </div>
+
     </div>
+
 
 
 
@@ -59,9 +60,9 @@
 
 
     <!--  Content Section: This section contains the main content of the page. -->
-    <div class="sm:pl-66 pt-20  " id="content" style="z-index: 5;">
+    <div class="sm:pl-66 mt-20  " id="content">
 
-        <div class="flex flex-row justify-center items-center w-full " style="z-index: 5;">
+        <div class=" flex flex-row justify-center items-center w-full ">
 
             <!-- 
         Form Container: This section contains a form that is used to add a new contact.
@@ -78,21 +79,22 @@
 
                 <!--  form start. -->
 
-                <form action="" method="post" class="mt-5 " style="z-index: 5;">
+                <form method="post" class="mt-5 " data-th-action="@{'/user/contacts/add_contact'}"
+                    data-th-object="${contactForm}">
 
 
                     <!-- contact name  -->
-                    <label for="contact-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                        style="z-index: 5;">Contact Name</label>
+                    <label for=" contact-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        Contact Name</label>
 
 
-                    <div class="relative mb-6" style="z-index: 5;">
+                    <div class="relative mb-6">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
 
                             <i class="fa-solid w-4 h-4 fa-user"></i>
 
                         </div>
-                        <input type="text" id="contact-name"
+                        <input type="text" data-th-field="*{name}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="contact name" required>
                     </div>
@@ -101,7 +103,8 @@
                     <!-- contact email  -->
 
                     <label for="contact-email"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contact Email</label>
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contact
+                        Email</label>
 
 
                     <div class="relative mb-6">
@@ -110,9 +113,9 @@
                             <i class="fa-solid fa-envelope w-4 h-4"></i>
 
                         </div>
-                        <input type="email" id="contact-email"
+                        <input type="email" data-th-field="*{email}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="example@email.com" required>
+                            placeholder="example@email.com">
                     </div>
 
 
@@ -130,9 +133,9 @@
                             <i class="fa-solid fa-phone w-4 h-4"></i>
 
                         </div>
-                        <input type="email" id="contact-email"
+                        <input type="number" data-th-field="*{phoneNumber}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="1234567890" required>
+                            placeholder="1234567890">
                     </div>
 
 
@@ -145,7 +148,7 @@
                             address</label>
 
 
-                        <textarea id="message" rows="4"
+                        <textarea rows="4" data-th-field="*{address}"
                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Write contact address here..."></textarea>
 
@@ -161,7 +164,7 @@
                             description</label>
 
 
-                        <textarea id="message" rows="4"
+                        <textarea rows="4" data-th-field="*{description}"
                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Write contact description here..."></textarea>
 
@@ -191,7 +194,7 @@
 
 
                                 </div>
-                                <input type="text" id="contact-email"
+                                <input type="text" data-th-field="*{facebookLink}"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="http://facebook.com/" required>
                             </div>
@@ -220,7 +223,7 @@
 
 
                                 </div>
-                                <input type="text" id="contact-email"
+                                <input type="text" data-th-field="*{instagramLink}"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="http://instagram.com/" required>
 
@@ -232,20 +235,20 @@
                     </div>
 
 
-                    <!-- contact image -->
+                    <!-- contact image
                     <div class="mb-3">
 
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize"
                             for="file_input">Upload contact image</label>
                         <input
                             class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                            id="file_input" type="file">
+                            data-th-field="*{profileImage}" type="file">
 
-                    </div>
+                    </div> -->
 
                     <!-- contact favourite -->
                     <div class="flex items-center mb-4">
-                        <input id="default-checkbox" type="checkbox" value=""
+                        <input data-th-field="*{fevorite}" type="checkbox" value=""
                             class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                         <label for="default-checkbox"
                             class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 capitalize">is this your
@@ -254,11 +257,15 @@
 
 
 
+
                     <div class=" text-center">
+
+                        <!-- submit button -->
                         <button type="submit"
                             class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 capitalize">add
                             contact</button>
 
+                        <!-- reset button -->
                         <button type="reset"
                             class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 capitalize">reset</button>
 

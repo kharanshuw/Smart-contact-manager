@@ -44,7 +44,9 @@ public class Contact {
 
     private boolean fevorite = false;
 
-    private String websiteLink;
+    private String facebookLink;
+
+    private String instagramLink;
 
     /**
      * The user who owns this contact.
