@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Profile</title>
+
+    <!-- flowbite cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet"/>
+
+
+    <!-- font awasome -->
+
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          referrerpolicy="no-referrer" rel="stylesheet"/>
+
+    <!--custom css for tailwind output-->
+    <link data-th-href="@{'/output.css'}" rel="stylesheet">
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-black dark:text-white">
+
+<!-- logout form hidden -->
+<form data-th-action="@{/logout}" id="logout-form" method="post" th:hidden="true">
+    <input hidden type="submit" value="log out"/>
+</form>
+
+<!-- user navbar only after login -->
+<div th:if="${user}">
+    <div data-th-replace="~{user/user_navbar :: user-navbar}">
+
+    </div>
+</div>
+
+<!-- user sidebar only if user is logged in  -->
+<div th:if="${user}">
+    <div data-th-replace="~{user/sidebar :: sidebar}">
+
+    </div>
+</div>
+
+<!-- normal navbar for guest who are not logged in  -->
+<div th:unless="${user}">
+    <div data-th-replace="~{navbar :: navbar}">
+
+    </div>
+</div>
+
+
+<!-- content start -->
+<div class="sm:pl-66 pt-20 " id="content">
+
+    <div class="flex justify-center flex-col items-center">
+
+
+        <h1 class="text-5xl" style="height: 1000px;">
+            this is user profile
+        </h1>
+
+
+        <h1 data-th-text="${user.userName}">
+
+        </h1>
+
+        <h1 data-th-text="${user.email}">
+
+        </h1>
+
+    </div>
+
+
+</div>
+<!-- content end -->
+
+
+<!-- custom script for theme switcher -->
+<script data-th-src="@{'/js/script.js'}">
+
+</script>
+
+<!-- custom script for logout functionality -->
+<script>
+    function logout() {
+        document.getElementById("logout-form").submit();
+    }
+</script>
+
+
+<!-- flowbit js  -->
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+
+    <link data-th-href="@{'/custom.css'}" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- user navbar only after login -->
+<div th:if="${user}">
+    <div data-th-replace="~{user/user_navbar :: user-navbar}">
+
+    </div>
+</div>
+
+<!-- normal navbar for guest who are not logged in  -->
+<div th:unless="${user}">
+    <div data-th-replace="~{navbar :: navbar}">
+
+    </div>
+</div>
+
+<!-- custom script -->
+<script data-th-src="@{'/js/script.js'}">
+
+</script>
+
+
+</div>
+</body>
+
+</html>
