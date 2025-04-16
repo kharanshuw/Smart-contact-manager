@@ -1,27 +1,28 @@
 package com.contact.project.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-
 import com.contact.project.dto.UserForm;
 import com.contact.project.entity.User;
 import com.contact.project.helpers.Message;
 import com.contact.project.helpers.MessageType;
 import com.contact.project.services.UserService;
-
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-@Slf4j
 public class PageController {
 
     private UserService userService;
+
+    Logger log = LoggerFactory.getLogger(PageController.class);
 
     public PageController(UserService userService) {
         this.userService = userService;
@@ -29,7 +30,7 @@ public class PageController {
 
     /**
      * Handles GET requests to the "/about" endpoint and returns the "about" view.
-     * 
+     *
      * @return the "about" view
      */
     @GetMapping("/about")
@@ -41,7 +42,7 @@ public class PageController {
     /**
      * Handles GET requests to the "/service" endpoint and returns the "service"
      * view.
-     * 
+     *
      * @return the "service" view
      */
     @GetMapping("/service")
@@ -52,7 +53,7 @@ public class PageController {
 
     /**
      * Handles GET requests to the "/" endpoint and returns the "home" view.
-     * 
+     *
      * @return the "home" view
      */
     @GetMapping("/")
@@ -63,7 +64,7 @@ public class PageController {
     /**
      * Handles GET requests to the "/contact" endpoint and returns the "contact"
      * view.
-     * 
+     *
      * @return the "contact" view
      */
     @GetMapping("/contact")
@@ -73,7 +74,7 @@ public class PageController {
 
     /**
      * Handles GET requests to the "/login" endpoint and returns the "login" view.
-     * 
+     *
      * @return the "login" view
      */
     @GetMapping("/login")
@@ -85,7 +86,7 @@ public class PageController {
      * Handles GET requests to the "/register" endpoint, creates a new UserForm
      * object, and adds it to the model with the attribute name "user".
      * Returns the "register" view.
-     * 
+     *
      * @param model the model
      * @return the "register" view
      */
@@ -104,7 +105,7 @@ public class PageController {
      * the UserService,
      * sets a success message in the HTTP session, and redirects the user to the
      * "/register" endpoint.
-     * 
+     *
      * @param userForm      the UserForm object
      * @param bindingResult the binding result
      * @param httpSession   the HTTP session
@@ -112,7 +113,7 @@ public class PageController {
      */
     @PostMapping("/process-Register")
     public String processRegister(@Valid @ModelAttribute("user") UserForm userForm, BindingResult bindingResult,
-            HttpSession httpSession) {
+                                  HttpSession httpSession) {
 
         log.info("register started");
 
@@ -148,8 +149,12 @@ public class PageController {
 
         /*
          * This line creates a new `Message` object with a success message.
-         */
-        Message message = Message.builder().content("Successfully registerd").type(MessageType.green).build();
+         */        
+        Message message = new Message();
+        
+        message.setContent("Successfully registerd");
+        
+        message.setType(MessageType.green);
 
         /*
          * This line sets the `message` attribute in the HTTP session to the newly

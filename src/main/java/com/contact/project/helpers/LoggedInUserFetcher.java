@@ -1,12 +1,15 @@
 package com.contact.project.helpers;
 
-import java.util.Map;
-
+import com.contact.project.controller.ContactController;
+import com.contact.project.services.implementation.ContactServiceImpl;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
-import lombok.extern.slf4j.Slf4j;
+import java.util.Map;
 
 /**
  * The LoggedInUserFetcher class is a utility class that provides a method for
@@ -14,8 +17,10 @@ import lombok.extern.slf4j.Slf4j;
  * designed to work with OAuth-based authentication systems, specifically Google
  * and GitHub.
  */
-@Slf4j
+
 public class LoggedInUserFetcher {
+
+    private static final Logger log = LoggerFactory.getLogger(ContactServiceImpl.class);
 
     /*
      * The getLoggedInUserEmail method is a static method that takes an
@@ -29,7 +34,7 @@ public class LoggedInUserFetcher {
          * The method first checks if the `Authentication` object is an instance of
          * `OAuth2AuthenticationToken`. If it is, the method extracts the `OAuth2User`
          * object from the `Authentication` object and retrieves the user's attributes.
-         * 
+         *
          */
         if (authentication instanceof OAuth2AuthenticationToken) {
 
@@ -37,7 +42,7 @@ public class LoggedInUserFetcher {
              * The method then checks the `clientId` of the `OAuth2AuthenticationToken` to
              * determine which OAuth provider is being used (Google or GitHub). Based on the
              * provider, the method extracts the email address from the user's attributes.
-             * 
+             *
              */
             OAuth2AuthenticationToken oAuth2AuthenticationToken = (OAuth2AuthenticationToken) authentication;
 
@@ -54,7 +59,7 @@ public class LoggedInUserFetcher {
             /*
              * If the provider is Google, the method simply returns the email address from
              * the user's attributes.
-             * 
+             *
              */
             if (clientId.equalsIgnoreCase("google")) {
 
@@ -65,7 +70,7 @@ public class LoggedInUserFetcher {
              * If the provider is GitHub, the method checks if the email address is null or
              * empty. If it is, the method constructs an email address by concatenating the
              * user's login name with "@github.com".
-             * 
+             *
              */
             else if (clientId.equalsIgnoreCase("github")) {
 
@@ -86,7 +91,7 @@ public class LoggedInUserFetcher {
          * `OAuth2AuthenticationToken`, the method logs a message indicating that it is
          * fetching the logged-in user's details from the database and returns the
          * username from the `Authentication` object.
-         * 
+         *
          */
         else {
             log.info("fetching logged in user details from database");

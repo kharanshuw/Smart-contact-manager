@@ -1,10 +1,16 @@
 package com.contact.project.config;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
+import com.contact.project.domain.Providers;
+import com.contact.project.entity.User;
+import com.contact.project.helpers.AppConstant;
+import com.contact.project.repositories.UserRepository;
+import com.contact.project.services.implementation.ContactServiceImpl;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
@@ -13,15 +19,10 @@ import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
-import com.contact.project.domain.Providers;
-import com.contact.project.entity.User;
-import com.contact.project.helpers.AppConstant;
-import com.contact.project.repositories.UserRepository;
-
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import lombok.extern.slf4j.Slf4j;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /*
  * The OAuthAuthenticationSuccessHandler class is a custom implementation of the AuthenticationSuccessHandler interface in Spring Security.
@@ -30,6 +31,8 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 @Slf4j
 public class OAuthAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
+
+    private static final Logger log = LoggerFactory.getLogger(OAuthAuthenticationSuccessHandler.class);
 
     private UserRepository userRepository;
 
@@ -44,25 +47,25 @@ public class OAuthAuthenticationSuccessHandler implements AuthenticationSuccessH
      * method is called by the Spring Security framework when the user has
      * successfully authenticated using an OAuth 2.0 provider.
      * **Method Parameters:**
-     * 
+     *
      * `HttpServletRequest request`: The HTTP request object that contains
      * information about the user's request.
      * `HttpServletResponse response`: The HTTP response object that will be sent
      * back to the user's browser.
      * `Authentication authentication`: The authentication object that contains
      * information about the user's authentication, including the OAuth 2.0 token.
-     * 
+     *
      * The method throws two types of exceptions:
-     * 
+     *
      * `IOException`: If an I/O error occurs while processing the request or
      * response.
      * `ServletException`: If a servlet error occurs while processing the request or
      * response.
-     * 
+     *
      */
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
-            Authentication authentication) throws IOException, ServletException {
+                                        Authentication authentication) throws IOException, ServletException {
 
         log.info("User logged in successfully");
 
@@ -70,7 +73,7 @@ public class OAuthAuthenticationSuccessHandler implements AuthenticationSuccessH
          * This line extracts the `OAuth2AuthenticationToken` object from the
          * `Authentication` object. The `OAuth2AuthenticationToken` object contains
          * information about the user's authentication, including the OAuth 2.0 token.
-         * 
+         *
          */
         var oauth2AuthenticationToken = (OAuth2AuthenticationToken) authentication;
 

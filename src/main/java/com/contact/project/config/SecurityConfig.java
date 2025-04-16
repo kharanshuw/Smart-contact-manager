@@ -1,19 +1,16 @@
 package com.contact.project.config;
 
+import com.contact.project.services.implementation.CustomUserDetailService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
-
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-
-import com.contact.project.services.implementation.*;
-
-import lombok.extern.slf4j.Slf4j;
 
 @Configuration
 @Slf4j
@@ -25,7 +22,7 @@ public class SecurityConfig {
 
     @Autowired
     public SecurityConfig(CustomUserDetailService customUserDetailService,
-            OAuthAuthenticationSuccessHandler oAuthSuccessHandler) {
+                          OAuthAuthenticationSuccessHandler oAuthSuccessHandler) {
 
         this.customUserDetailService = customUserDetailService;
 

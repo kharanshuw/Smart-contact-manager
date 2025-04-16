@@ -1,8 +1,8 @@
 package com.contact.project.services;
 
-import java.util.List;
-
 import com.contact.project.entity.Contact;
+
+import java.util.List;
 
 public interface ContactService {
     public Contact saveContact(Contact contact);
@@ -14,4 +14,6 @@ public interface ContactService {
     public Contact getContactById(int id);
 
     public void deleteContact(int id);
+
+    public List<Contact> getcContactsByUserId(int id);
 }

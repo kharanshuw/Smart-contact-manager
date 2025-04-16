@@ -1,24 +1,26 @@
 package com.contact.project.services.implementation;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
-
 import com.contact.project.entity.User;
 import com.contact.project.exception.ResouseNotFound;
 import com.contact.project.helpers.AppConstant;
 import com.contact.project.repositories.UserRepository;
 import com.contact.project.services.UserService;
-
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
 public class UserServiceImpl implements UserService {
+
+    private static final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
 
     private UserRepository userRepository;
 
@@ -129,6 +131,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByEmail(String emailString) {
         try {
+            log.info("finding loged in user info using email");
             return userRepository.findByEmail(emailString)
                     .orElseThrow(() -> new RuntimeException("User with this email is not present in database"));
 
@@ -138,7 +141,5 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-
-    
 
 }

@@ -1,9 +1,9 @@
 package com.contact.project.services;
 
+import com.contact.project.entity.User;
+
 import java.util.List;
 import java.util.Optional;
-
-import com.contact.project.entity.User;
 
 public interface UserService {
     public User saveUser(User user);

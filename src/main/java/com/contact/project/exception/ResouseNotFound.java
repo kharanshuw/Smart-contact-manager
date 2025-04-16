@@ -1,14 +1,12 @@
 package com.contact.project.exception;
 
-public class ResouseNotFound  extends RuntimeException {
-    public ResouseNotFound(String message)
-    {
+public class ResouseNotFound extends RuntimeException {
+    public ResouseNotFound(String message) {
         super(message);
     }
 
 
-    public ResouseNotFound()
-    {
+    public ResouseNotFound() {
         super("Resouse not found");
     }
 }

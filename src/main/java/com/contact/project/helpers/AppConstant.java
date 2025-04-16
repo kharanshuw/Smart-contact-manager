@@ -5,5 +5,5 @@ public class AppConstant {
 
     public final static String ROLE_ADMIN = "ROLE_ADMIN";
 
-    
+
 }

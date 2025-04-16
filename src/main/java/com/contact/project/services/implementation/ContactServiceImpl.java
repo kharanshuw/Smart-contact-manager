@@ -1,32 +1,44 @@
 package com.contact.project.services.implementation;
 
-import java.util.List;
-import java.util.Optional;
-
+import com.contact.project.entity.Contact;
+import com.contact.project.exception.ResouseNotFound;
+import com.contact.project.repositories.ContactRepo;
+import com.contact.project.services.ContactService;
+import com.contact.project.services.UserService;
+import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.contact.project.entity.Contact;
-import com.contact.project.exception.ResouseNotFound;
-import com.contact.project.repositories.ContactRepo;
-import com.contact.project.services.ContactService;
+import java.util.List;
+import java.util.Optional;
 
-import jakarta.transaction.Transactional;
-import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Implementation of the ContactService interface.
+ * This class provides methods for managing contacts, including saving, updating, deleting, and retrieving contacts.
+ */
 @Service
-@Slf4j
 public class ContactServiceImpl implements ContactService {
 
+    private static final Logger log = LoggerFactory.getLogger(ContactServiceImpl.class);
+
     private ContactRepo contactRespo;
+    
+    private UserService userService;
 
     @Autowired
     public ContactServiceImpl(ContactRepo contactRespo) {
         this.contactRespo = contactRespo;
     }
 
+    /**
+     * Saves a contact to the database.
+     *
+     * @param contact the contact to save
+     * @return the saved contact
+     */
     @Override
     @Transactional
     public Contact saveContact(Contact contact) {
@@ -42,13 +54,21 @@ public class ContactServiceImpl implements ContactService {
         }
     }
 
+
+    /**
+     * Updates an existing contact.
+     *
+     * @param contact the contact to update
+     * @return the updated contact
+     * @throws ResouseNotFound if no contact is found with the given ID
+     */
     @Override
     @Transactional
     public Contact updateContact(Contact contact) {
 
         try {
             log.info("serching contact by id");
-
+            
             Contact contact2 = contactRespo.findById(contact.getId()).orElseThrow(() -> {
                 return new ResouseNotFound("contact not found with this id" + contact.getId());
             });
@@ -62,6 +82,11 @@ public class ContactServiceImpl implements ContactService {
 
     }
 
+    /**
+     * Retrieves all contacts from the database.
+     *
+     * @return a list of all contacts
+     */
     @Override
     public List<Contact> getAllContacts() {
         try {
@@ -75,6 +100,13 @@ public class ContactServiceImpl implements ContactService {
         }
     }
 
+    /**
+     * Retrieves a contact by its ID.
+     *
+     * @param id the ID of the contact to retrieve
+     * @return the contact with the given ID
+     * @throws RuntimeException if no contact is found with the given ID
+     */
     @Override
     public Contact getContactById(int id) {
         try {
@@ -96,6 +128,13 @@ public class ContactServiceImpl implements ContactService {
         }
     }
 
+
+    /**
+     * Deletes a contact by its ID.
+     *
+     * @param id the ID of the contact to delete
+     * @throws ResouseNotFound if no contact is found with the given ID
+     */
     @Override
     @Transactional
     public void deleteContact(int id) {
@@ -118,6 +157,32 @@ public class ContactServiceImpl implements ContactService {
         } catch (Exception e) {
             log.error("error in deleting contact " + e.toString());
             throw new RuntimeException("error in deleting contact " + e.toString());
+        }
+    }
+
+
+    /**
+     * Retrieves all contacts associated with a given user ID.
+     *
+     * @param id the ID of the user whose contacts are to be retrieved
+     * @return a list of contacts associated with the given user ID
+     */
+    @Override
+    public List<Contact> getcContactsByUserId(int id) {
+        try {
+            log.info("getcContactsByUserId in services");
+
+            List<Contact> contacts = contactRespo.findByUserId(id);
+
+            log.info("list of contact assosiated with given user id found ");
+
+            return contacts;
+        } catch (Exception e) {
+            // TODO: handle exception
+
+            log.error("error in getcContactsByUserId  " + e.toString());
+            throw new RuntimeException("error in getcContactsByUserId " + e.toString());
+
         }
     }
 

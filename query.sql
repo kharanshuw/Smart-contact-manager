@@ -11,3 +11,5 @@ drop database contactmanager;
 select * from contact
 
 select * from social_link
+
+select * from contact 

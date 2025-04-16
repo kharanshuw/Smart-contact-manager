@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" class="dark" xmlns:th="http://www.thymeleaf.org">
+<html class="dark" lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Add contact</title>
 
     <!-- flowbite css -->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 
     <!-- font awasome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        referrerpolicy="no-referrer" rel="stylesheet" />
 
     <!-- custom css -->
-    <link rel="stylesheet" data-th-href="@{'/output.css'}">
+    <link data-th-href="@{'/output.css'}" rel="stylesheet">
 
-    <link rel="stylesheet" data-th-href="@{'/custom.css'}">
+    <link data-th-href="@{'/custom.css'}" rel="stylesheet">
 
 </head>
 
 <body class="bg-white dark:bg-gray-900 text-black dark:text-white">
 
     <!-- 
-      User Navbar: This section is only displayed if the user is logged in.
-      It includes a navigation bar with links to user-specific pages.
-    -->
+  User Navbar: This section is only displayed if the user is logged in.
+  It includes a navigation bar with links to user-specific pages.
+-->
     <div th:if="${user}">
         <div data-th-replace=" ~{user/user_navbar :: user-navbar}">
         </div>
@@ -34,29 +34,15 @@
     </div>
 
 
-
-
-
-
     <!-- 
-      User Sidebar: This section is only displayed if the user is logged in.
-      It includes a sidebar with links to user-specific pages.
-    -->
+  User Sidebar: This section is only displayed if the user is logged in.
+  It includes a sidebar with links to user-specific pages.
+-->
     <div th:if="${user}">
         <div data-th-replace="~{user/sidebar :: sidebar}">
 
         </div>
     </div>
-
-    <!-- 
-      Normal Navbar: This section is only displayed if the user is not logged in.
-      It includes a navigation bar with links to public pages.
-    -->
-    <!-- <div th:unless="${user}">
-        <div data-th-replace="~{navbar :: navbar}">
-
-        </div>
-    </div> -->
 
 
     <!--  Content Section: This section contains the main content of the page. -->
@@ -65,8 +51,8 @@
         <div class=" flex flex-row justify-center items-center w-full ">
 
             <!-- 
-        Form Container: This section contains a form that is used to add a new contact.
-      -->
+    Form Container: This section contains a form that is used to add a new contact.
+  -->
             <div
                 class="  xs:w-full sm:w-full md:w-1/2 p-6 bg-white border border-gray-200 rounded-lg shadow-sm  dark:bg-gray-800 dark:border-gray-700   ">
                 <h1 class="text-2xl font-semibold">
@@ -79,31 +65,37 @@
 
                 <!--  form start. -->
 
-                <form method="post" class="mt-5 " data-th-action="@{'/user/contacts/add_contact'}"
-                    data-th-object="${contactForm}">
+                <form class="mt-5 " data-th-action="@{'/user/contacts/add_contact'}" data-th-object="${contactForm}"
+                    method="post">
 
 
                     <!-- contact name  -->
-                    <label for=" contact-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for=" contact-name">
                         Contact Name</label>
 
 
-                    <div class="relative mb-6">
+                    <div class="relative mb-2">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
 
                             <i class="fa-solid w-4 h-4 fa-user"></i>
 
                         </div>
-                        <input type="text" data-th-field="*{name}"
+                        <input
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="contact name" required>
+                            data-th-field="*{name}" placeholder="contact name" required type="text">
+
+
                     </div>
 
 
+                    <p class="text-red-500" data-th-field="${#fields.hasErrors('name')}" data-th-errors="*{name}">
+                        invalid name
+                    </p>
+
                     <!-- contact email  -->
 
-                    <label for="contact-email"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contact
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        for="contact-email">Contact
                         Email</label>
 
 
@@ -113,17 +105,21 @@
                             <i class="fa-solid fa-envelope w-4 h-4"></i>
 
                         </div>
-                        <input type="email" data-th-field="*{email}"
+                        <input
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="example@email.com">
+                            data-th-field="*{email}" placeholder="example@email.com" type="email">
                     </div>
+
+                    <p class="text-red-500" data-th-field="${#fields.hasErrors('name')}" data-th-errors="*{name}">
+                        invalid name
+                    </p>
 
 
 
                     <!-- contact number  -->
 
-                    <label for="contact-email"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize">Contact phone
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize"
+                        for="contact-email">Contact phone
                         no</label>
 
 
@@ -133,9 +129,9 @@
                             <i class="fa-solid fa-phone w-4 h-4"></i>
 
                         </div>
-                        <input type="number" data-th-field="*{phoneNumber}"
+                        <input
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="1234567890">
+                            data-th-field="*{phoneNumber}" placeholder="1234567890" type="number">
                     </div>
 
 
@@ -143,14 +139,14 @@
 
                     <div class="mb-3">
 
-                        <label for="message"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize">contact
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize"
+                            for="message">contact
                             address</label>
 
 
-                        <textarea rows="4" data-th-field="*{address}"
+                        <textarea
                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Write contact address here..."></textarea>
+                            data-th-field="*{address}" placeholder="Write contact address here..." rows="4"></textarea>
 
                     </div>
 
@@ -159,14 +155,15 @@
 
                     <div class="mb-4">
 
-                        <label for="message"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize">contact
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize"
+                            for="message">contact
                             description</label>
 
 
-                        <textarea rows="4" data-th-field="*{description}"
+                        <textarea
                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Write contact description here..."></textarea>
+                            data-th-field="*{description}" placeholder="Write contact description here..."
+                            rows="4"></textarea>
 
                     </div>
 
@@ -176,27 +173,28 @@
 
                         <!-- facebook link  -->
                         <div class="w-full mb-3">
-                            <label for="contact-email"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize">Contact
+                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize"
+                                for="contact-email">Contact
                                 facebook link</label>
 
                             <div class="relative ">
 
                                 <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
 
-                                    <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path fill-rule="evenodd"
+                                    <svg aria-hidden="true" class="w-4 h-4 text-gray-800 dark:text-white"
+                                        fill="currentColor" height="24" viewBox="0 0 24 24" width="24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path clip-rule="evenodd"
                                             d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
-                                            clip-rule="evenodd" />
+                                            fill-rule="evenodd" />
                                     </svg>
 
 
                                 </div>
-                                <input type="text" data-th-field="*{facebookLink}"
+                                <input
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="http://facebook.com/" required>
+                                    data-th-field="*{facebookLink}" placeholder="http://facebook.com/" required
+                                    type="text">
                             </div>
 
 
@@ -204,8 +202,8 @@
 
                         <!-- instagram link  -->
                         <div class="w-full">
-                            <label for="contact-email"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize">Contact
+                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize"
+                                for="contact-email">Contact
                                 instagram link</label>
 
                             <div class="relative ">
@@ -213,19 +211,20 @@
 
                                 <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
 
-                                    <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                        viewBox="0 0 24 24">
-                                        <path fill="currentColor" fill-rule="evenodd"
+                                    <svg aria-hidden="true" className="w-6 h-6 text-gray-800 dark:text-white"
+                                        fill="none" height="24" viewBox="0 0 24 24" width="24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path clip-rule="evenodd"
                                             d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z"
-                                            clip-rule="evenodd" />
+                                            fill="currentColor" fill-rule="evenodd" />
                                     </svg>
 
 
                                 </div>
-                                <input type="text" data-th-field="*{instagramLink}"
+                                <input
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="http://instagram.com/" required>
+                                    data-th-field="*{instagramLink}" placeholder="http://instagram.com/" required
+                                    type="text">
 
 
                             </div>
@@ -236,38 +235,43 @@
 
 
                     <!-- contact image
-                    <div class="mb-3">
+                <div class="mb-3">
 
-                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize"
-                            for="file_input">Upload contact image</label>
-                        <input
-                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                            data-th-field="*{profileImage}" type="file">
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize"
+                        for="file_input">Upload contact image</label>
+                    <input
+                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                        data-th-field="*{profileImage}" type="file">
 
-                    </div> -->
+                </div> -->
 
                     <!-- contact favourite -->
                     <div class="flex items-center mb-4">
-                        <input data-th-field="*{fevorite}" type="checkbox" value=""
-                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                        <label for="default-checkbox"
-                            class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 capitalize">is this your
+                        <input
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                            data-th-field="*{fevorite}" type="checkbox" value="">
+                        <label class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 capitalize"
+                            for="default-checkbox">is this your
                             favourite contact</label>
                     </div>
-
-
 
 
                     <div class=" text-center">
 
                         <!-- submit button -->
-                        <button type="submit"
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 capitalize">add
-                            contact</button>
+                        <button
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 capitalize"
+                            type="submit">
+                            add
+                            contact
+                        </button>
 
                         <!-- reset button -->
-                        <button type="reset"
-                            class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 capitalize">reset</button>
+                        <button
+                            class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 capitalize"
+                            type="reset">
+                            reset
+                        </button>
 
                     </div>
 
@@ -281,9 +285,9 @@
 
 
         <!-- 
-        Logout Form: This section contains a hidden form that is used to log out the user.
-      -->
-        <form id="logout-form" data-th-action="@{/logout}" method="post" th:hidden="true">
+    Logout Form: This section contains a hidden form that is used to log out the user.
+  -->
+        <form data-th-action="@{/logout}" id="logout-form" method="post" th:hidden="true">
             <input hidden type="submit" value="log out" />
         </form>
         <!-- logout form end -->
@@ -291,9 +295,6 @@
 
     </div>
     <!-- content end -->
-
-
-
 
 
     <!-- js for logout  -->

@@ -1,24 +1,23 @@
 package com.contact.project.services.implementation;
 
-import java.util.*;
-
+import com.contact.project.entity.User;
+import com.contact.project.repositories.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.contact.project.entity.User;
-import com.contact.project.repositories.UserRepository;
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
-import lombok.extern.slf4j.Slf4j;
-
 /*
-* the CustomUserDetailService class provides a custom implementation of the
-* UserDetailsService interface, which is used by Spring Security to load user
-* details from a database.
-*/
+ * the CustomUserDetailService class provides a custom implementation of the
+ * UserDetailsService interface, which is used by Spring Security to load user
+ * details from a database.
+ */
 @Slf4j
 @Service
 public class CustomUserDetailService implements UserDetailsService {

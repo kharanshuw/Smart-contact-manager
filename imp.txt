@@ -17,22 +17,6 @@ link:https://console.cloud.google.com/welcome?invt=Abtkvw&project=psyched-servic
 3.configure oauth2 in sprinboot application.properties
 
 
-@Slf4j
-public class UserService {
-    // ...
 
-    @Transactional
-    public void deleteUser(Long id) {
-        log.info("Deleting user with ID: {}", id);
-        try {
-            userRepository.deleteById(id);
-            log.info("User deleted successfully with ID: {}", id);
-        } catch (EmptyResultDataAccessException e) {
-            log.error("User not found with ID: {}", id);
-            throw new UserNotFoundException("User not found with ID: " + id);
-        } catch (DataAccessException e) {
-            log.error("Error deleting user with ID: {}", id, e);
-            throw new CustomDatabaseException("Error deleting user with ID: " + id, e);
-        }
-    }
-}
+
+

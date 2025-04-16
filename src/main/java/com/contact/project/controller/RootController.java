@@ -1,22 +1,21 @@
 package com.contact.project.controller;
 
+import com.contact.project.entity.User;
+import com.contact.project.helpers.LoggedInUserFetcher;
+import com.contact.project.services.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import com.contact.project.entity.User;
-import com.contact.project.helpers.LoggedInUserFetcher;
-import com.contact.project.services.UserService;
-
-import lombok.extern.slf4j.Slf4j;
-
 @ControllerAdvice
 @Slf4j
 public class RootController {
 
     private UserService userService;
+    
 
     @Autowired
     public RootController(UserService userService) {
@@ -27,7 +26,7 @@ public class RootController {
     public void getLoggedInUserdetails(Model model, Authentication authentication) {
 
         if (authentication == null) {
-            return ;
+            return;
         }
 
         log.info("adding logged in user info to model...");
