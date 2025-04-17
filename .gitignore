@@ -34,3 +34,6 @@ build/
 
 # node folder
 node_modules/
+
+#application properties
+application-dev.properties
