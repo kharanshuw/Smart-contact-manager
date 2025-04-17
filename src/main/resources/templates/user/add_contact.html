@@ -55,6 +55,13 @@
   -->
             <div
                 class="  xs:w-full sm:w-full md:w-1/2 p-6 bg-white border border-gray-200 rounded-lg shadow-sm  dark:bg-gray-800 dark:border-gray-700   ">
+
+                <!-- message box -->
+                <div data-th-replace="~{message :: messagebox}">
+
+                </div>
+                <!-- message box -->
+
                 <h1 class="text-2xl font-semibold">
                     Add New Contact
                 </h1>
@@ -66,7 +73,7 @@
                 <!--  form start. -->
 
                 <form class="mt-5 " data-th-action="@{'/user/contacts/add_contact'}" data-th-object="${contactForm}"
-                    method="post">
+                    method="post" novalidate enctype="multipart/form-data">
 
 
                     <!-- contact name  -->
@@ -74,7 +81,7 @@
                         Contact Name</label>
 
 
-                    <div class="relative mb-2">
+                    <div class="relative mb-1">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
 
                             <i class="fa-solid w-4 h-4 fa-user"></i>
@@ -99,7 +106,7 @@
                         Email</label>
 
 
-                    <div class="relative mb-6">
+                    <div class="relative mb-1">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
 
                             <i class="fa-solid fa-envelope w-4 h-4"></i>
@@ -108,12 +115,14 @@
                         <input
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             data-th-field="*{email}" placeholder="example@email.com" type="email">
+
+
                     </div>
 
-                    <p class="text-red-500" data-th-field="${#fields.hasErrors('name')}" data-th-errors="*{name}">
+
+                    <p class="text-red-500" data-th-field="${#fields.hasErrors('email')}" data-th-errors="*{email}">
                         invalid name
                     </p>
-
 
 
                     <!-- contact number  -->
@@ -123,7 +132,7 @@
                         no</label>
 
 
-                    <div class="relative mb-6">
+                    <div class="relative mb-1">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
 
                             <i class="fa-solid fa-phone w-4 h-4"></i>
@@ -132,12 +141,20 @@
                         <input
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             data-th-field="*{phoneNumber}" placeholder="1234567890" type="number">
+
+
+
                     </div>
+
+                    <p class="text-red-500" data-th-field="${#fields.hasErrors('phoneNumber')}"
+                        data-th-errors="*{phoneNumber}">
+                        invalid name
+                    </p>
 
 
                     <!-- contact address -->
 
-                    <div class="mb-3">
+                    <div class="mb-1">
 
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize"
                             for="message">contact
@@ -148,7 +165,17 @@
                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             data-th-field="*{address}" placeholder="Write contact address here..." rows="4"></textarea>
 
+
+
+
                     </div>
+
+
+                    <p class="text-red-500" data-th-field="${#fields.hasErrors('address')}" data-th-errors="*{address}">
+                        invalid name
+                    </p>
+
+
 
 
                     <!-- contact description -->
@@ -165,8 +192,15 @@
                             data-th-field="*{description}" placeholder="Write contact description here..."
                             rows="4"></textarea>
 
+
+
                     </div>
 
+
+                    <p class="text-red-500" data-th-field="${#fields.hasErrors('description')}"
+                        data-th-errors="*{description}">
+                        invalid name
+                    </p>
 
                     <!-- contact social media website link -->
                     <div class="mb-4 flex flex-row gap-2 flex-wrap">
@@ -200,6 +234,11 @@
 
                         </div>
 
+                        <p class="text-red-500" data-th-field="${#fields.hasErrors('facebookLink')}"
+                            data-th-errors="*{facebookLink}">
+                            invalid name
+                        </p>
+
                         <!-- instagram link  -->
                         <div class="w-full">
                             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize"
@@ -231,19 +270,27 @@
                         </div>
 
 
+                        <p class="text-red-500" data-th-field="${#fields.hasErrors('instagramLink')}"
+                            data-th-errors="*{instagramLink}">
+                            invalid name
+                        </p>
+
+
                     </div>
 
 
-                    <!-- contact image
-                <div class="mb-3">
 
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize"
-                        for="file_input">Upload contact image</label>
-                    <input
-                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                        data-th-field="*{profileImage}" type="file">
 
-                </div> -->
+                    <!-- contact image -->
+                    <div class="mb-3">
+
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize"
+                            for="file_input">Upload contact image</label>
+                        <input
+                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            data-th-field="*{profileImage}" type="file">
+
+                    </div>
 
                     <!-- contact favourite -->
                     <div class="flex items-center mb-4">

@@ -4,9 +4,17 @@ import com.contact.project.dto.ContactForm;
 import com.contact.project.entity.Contact;
 import com.contact.project.entity.User;
 import com.contact.project.helpers.LoggedInUserFetcher;
+import com.contact.project.helpers.Message;
+import com.contact.project.helpers.MessageType;
 import com.contact.project.services.ContactService;
+import com.contact.project.services.ImageService;
 import com.contact.project.services.UserService;
+
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
+
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +22,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,15 +37,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ContactController {
 
     public Logger logger = LoggerFactory.getLogger(ContactController.class);
+
     private UserService userService;
 
     private ContactService contactService;
 
+    private ImageService imageService;
+
     @Autowired
-    public ContactController(UserService userService, ContactService contactService) {
+    public ContactController(UserService userService, ContactService contactService, ImageService imageService) {
         this.userService = userService;
         this.contactService = contactService;
-
+        this.imageService = imageService;
     }
 
     /**
@@ -66,12 +78,37 @@ public class ContactController {
      */
     @PostMapping("/add_contact")
     public String processaddcontact(@Valid @ModelAttribute ContactForm contactForm, BindingResult bindingResult,
-            Authentication authentication) {
+            Authentication authentication, HttpSession httpSession) {
 
+        Message message = new Message();
+
+        /*
+         * The method first checks if there are any validation errors in the form data
+         * using the `bindingResult.hasErrors()` method. If there are errors, it logs an
+         * error message and sets a message in the HTTP session to inform the user to
+         * correct the errors. The method then returns the user to the `/add_contact`
+         * page.
+         */
         if (bindingResult.hasErrors()) {
+
             logger.error("validation error occured in add contact form");
-            return "/user/contacts/add_contact";
+
+            List<ObjectError> errors = bindingResult.getAllErrors();
+
+            for (ObjectError objectError : errors) {
+                logger.error("printing error {}", objectError);
+            }
+
+            message.setContent("Please correct the following errors");
+
+            message.setType(MessageType.red);
+
+            httpSession.setAttribute("message", message);
+
+            return "user/add_contact";
         }
+
+        logger.info("printing file info " + contactForm.getProfileImage().getOriginalFilename());
 
         Contact contact = new Contact();
 
@@ -104,7 +141,18 @@ public class ContactController {
 
         logger.info(contactForm.toString());
 
-        contactService.saveContact(contact);
+        // contactService.saveContact(contact);
+
+        message.setContent("you have successfully added a new contact");
+
+        message.setType(MessageType.green);
+
+        /*
+         * Finally, the method sets a success message in the HTTP session and redirects
+         * the user to the `/user/contacts/add_contact` page.
+         * 
+         */
+        httpSession.setAttribute("message", message);
 
         return "redirect:/user/contacts/add_contact";
     }
