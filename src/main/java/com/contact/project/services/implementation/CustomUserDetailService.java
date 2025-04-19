@@ -3,6 +3,8 @@ package com.contact.project.services.implementation;
 import com.contact.project.entity.User;
 import com.contact.project.repositories.UserRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -18,9 +20,10 @@ import java.util.stream.Collectors;
  * UserDetailsService interface, which is used by Spring Security to load user
  * details from a database.
  */
-@Slf4j
 @Service
 public class CustomUserDetailService implements UserDetailsService {
+
+    private static final Logger log = LoggerFactory.getLogger(ContactServiceImpl.class);
 
     private UserRepository userRepository;
 

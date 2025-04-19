@@ -31,6 +31,8 @@ public class Contact {
 
     private String instagramLink;
 
+    private String cloudinaryImagename;
+
     /**
      * The user who owns this contact.
      */
@@ -139,5 +141,14 @@ public class Contact {
 
     public void setLinks(List<SocialLink> links) {
         this.links = links;
+    }
+
+
+    public String getCloudinaryImagename() {
+        return cloudinaryImagename;
+    }
+
+    public void setCloudinaryImagename(String cloudinaryImagename) {
+        this.cloudinaryImagename = cloudinaryImagename;
     }
 }

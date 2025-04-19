@@ -14,6 +14,7 @@ import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -78,7 +79,7 @@ public class ContactController {
      */
     @PostMapping("/add_contact")
     public String processaddcontact(@Valid @ModelAttribute ContactForm contactForm, BindingResult bindingResult,
-            Authentication authentication, HttpSession httpSession) {
+                                    Authentication authentication, HttpSession httpSession) {
 
         Message message = new Message();
 
@@ -108,7 +109,15 @@ public class ContactController {
             return "user/add_contact";
         }
 
-        logger.info("printing file info " + contactForm.getProfileImage().getOriginalFilename());
+        logger.info("printing file info which we got from form  " + contactForm.getProfileImage().getOriginalFilename());
+
+        String uniquefilename = UUID.randomUUID().toString();
+
+        logger.info("generated unique filename for contactimage " + uniquefilename);
+
+        String fileUrl = imageService.uploadImage(contactForm.getProfileImage(), uniquefilename);
+
+        logger.info("file url of contact image : " + fileUrl);
 
         Contact contact = new Contact();
 
@@ -128,6 +137,10 @@ public class ContactController {
 
         contact.setInstagramLink(contactForm.getInstagramLink());
 
+        contact.setPicture(fileUrl);
+
+        contact.setCloudinaryImagename(uniquefilename);
+
         logger.info("getting logged in user email for adding into contact");
         String email = LoggedInUserFetcher.getLoggedInUserEmail(authentication);
 
@@ -141,7 +154,7 @@ public class ContactController {
 
         logger.info(contactForm.toString());
 
-        // contactService.saveContact(contact);
+        contactService.saveContact(contact);
 
         message.setContent("you have successfully added a new contact");
 
@@ -150,7 +163,7 @@ public class ContactController {
         /*
          * Finally, the method sets a success message in the HTTP session and redirects
          * the user to the `/user/contacts/add_contact` page.
-         * 
+         *
          */
         httpSession.setAttribute("message", message);
 

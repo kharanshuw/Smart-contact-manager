@@ -25,7 +25,7 @@ public class ContactServiceImpl implements ContactService {
     private static final Logger log = LoggerFactory.getLogger(ContactServiceImpl.class);
 
     private ContactRepo contactRespo;
-    
+
     private UserService userService;
 
     @Autowired
@@ -68,7 +68,7 @@ public class ContactServiceImpl implements ContactService {
 
         try {
             log.info("serching contact by id");
-            
+
             Contact contact2 = contactRespo.findById(contact.getId()).orElseThrow(() -> {
                 return new ResouseNotFound("contact not found with this id" + contact.getId());
             });
