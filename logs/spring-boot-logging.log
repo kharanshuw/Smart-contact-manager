@@ -1189,3 +1189,350 @@ java.lang.RuntimeException: error in saving contact org.springframework.dao.Data
 2025-04-16T14:48:27.909+05:30  INFO 3744 --- [project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-04-16T14:48:27.909+05:30  INFO 3744 --- [project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-04-16T14:48:27.925+05:30  INFO 3744 --- [project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-16T15:39:08.326+05:30  INFO 11516 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 11516 (D:\spring boot project vs-code\project\target\classes started by Pratik in D:\spring boot project vs-code\project)
+2025-04-16T15:39:08.328+05:30  INFO 11516 --- [project] [main] com.contact.project.ProjectApplication   : The following 1 profile is active: "dev"
+2025-04-16T15:39:09.339+05:30  INFO 11516 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-16T15:39:09.407+05:30  INFO 11516 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 2 JPA repository interfaces.
+2025-04-16T15:39:10.210+05:30  INFO 11516 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-16T15:39:10.223+05:30  INFO 11516 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-16T15:39:10.223+05:30  INFO 11516 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-16T15:39:10.283+05:30  INFO 11516 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-16T15:39:10.284+05:30  INFO 11516 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1907 ms
+2025-04-16T15:39:10.687+05:30  INFO 11516 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-16T15:39:10.738+05:30  INFO 11516 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-16T15:39:10.772+05:30  INFO 11516 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-16T15:39:11.066+05:30  INFO 11516 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-16T15:39:11.095+05:30  INFO 11516 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-16T15:39:11.445+05:30  INFO 11516 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@29ee8174
+2025-04-16T15:39:11.448+05:30  INFO 11516 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-16T15:39:11.532+05:30  INFO 11516 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-16T15:39:12.496+05:30  INFO 11516 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-16T15:39:12.585+05:30  INFO 11516 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-16T15:39:12.955+05:30  INFO 11516 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-16T15:39:12.979+05:30  INFO 11516 --- [project] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-16T15:39:13.464+05:30  INFO 11516 --- [project] [main] c.c.p.controller.ContactController       : printing cloud name df2iaeqjm
+2025-04-16T15:39:13.464+05:30  INFO 11516 --- [project] [main] c.c.p.controller.ContactController       : submiting cloud name cloud api key and secreat
+2025-04-16T15:39:13.472+05:30  INFO 11516 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-16T15:39:13.485+05:30  INFO 11516 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-16T15:39:13.485+05:30  INFO 11516 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-16T15:39:13.639+05:30  INFO 11516 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-16T15:39:13.640+05:30  WARN 11516 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-16T15:39:13.725+05:30  INFO 11516 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-16T15:39:14.106+05:30  INFO 11516 --- [project] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-04-16T15:39:14.138+05:30  INFO 11516 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-16T15:39:14.138+05:30  INFO 11516 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-16T15:39:14.738+05:30  INFO 11516 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-16T15:39:14.751+05:30  INFO 11516 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 6.862 seconds (process running for 7.591)
+2025-04-16T15:39:17.146+05:30  INFO 11516 --- [project] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-16T15:39:17.147+05:30  INFO 11516 --- [project] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-16T15:39:17.149+05:30  INFO 11516 --- [project] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-04-16T15:39:42.870+05:30  INFO 11516 --- [project] [http-nio-8080-exec-3] c.c.p.s.i.ContactServiceImpl             : User found with email: manthan@gmail.com
+2025-04-16T15:39:42.947+05:30  INFO 11516 --- [project] [http-nio-8080-exec-4] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-16T15:39:42.947+05:30  INFO 11516 --- [project] [http-nio-8080-exec-4] c.c.p.s.i.ContactServiceImpl             : fetching logged in user details from database
+2025-04-16T15:39:42.947+05:30  INFO 11516 --- [project] [http-nio-8080-exec-4] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-16T15:39:42.947+05:30  INFO 11516 --- [project] [http-nio-8080-exec-4] c.c.p.s.implementation.UserServiceImpl   : finding loged in user info using email
+2025-04-16T15:39:42.955+05:30  INFO 11516 --- [project] [http-nio-8080-exec-4] c.c.project.controller.RootController    : user namemanthan@gmail.com
+2025-04-16T15:39:42.955+05:30  INFO 11516 --- [project] [http-nio-8080-exec-4] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-16T15:39:42.955+05:30  INFO 11516 --- [project] [http-nio-8080-exec-4] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-16T15:39:42.956+05:30  INFO 11516 --- [project] [http-nio-8080-exec-4] c.c.project.controller.UserController    : dashboard running
+2025-04-16T15:39:44.043+05:30  INFO 11516 --- [project] [http-nio-8080-exec-8] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-16T15:39:44.053+05:30  INFO 11516 --- [project] [http-nio-8080-exec-8] c.c.p.s.i.ContactServiceImpl             : fetching logged in user details from database
+2025-04-16T15:39:44.054+05:30  INFO 11516 --- [project] [http-nio-8080-exec-8] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-16T15:39:44.054+05:30  INFO 11516 --- [project] [http-nio-8080-exec-8] c.c.p.s.implementation.UserServiceImpl   : finding loged in user info using email
+2025-04-16T15:39:44.059+05:30  INFO 11516 --- [project] [http-nio-8080-exec-8] c.c.project.controller.RootController    : user namemanthan@gmail.com
+2025-04-16T15:39:44.059+05:30  INFO 11516 --- [project] [http-nio-8080-exec-8] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-16T15:39:44.059+05:30  INFO 11516 --- [project] [http-nio-8080-exec-8] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-16T15:39:44.061+05:30  INFO 11516 --- [project] [http-nio-8080-exec-8] c.c.p.controller.ContactController       : add contact view
+2025-04-16T15:39:44.061+05:30  INFO 11516 --- [project] [http-nio-8080-exec-8] c.c.p.controller.ContactController       : contact form added to model
+2025-04-16T15:39:44.129+05:30  INFO 11516 --- [project] [http-nio-8080-exec-7] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-16T15:39:44.129+05:30  INFO 11516 --- [project] [http-nio-8080-exec-7] c.c.p.s.i.ContactServiceImpl             : fetching logged in user details from database
+2025-04-16T15:39:44.129+05:30  INFO 11516 --- [project] [http-nio-8080-exec-7] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-16T15:39:44.129+05:30  INFO 11516 --- [project] [http-nio-8080-exec-7] c.c.p.s.implementation.UserServiceImpl   : finding loged in user info using email
+2025-04-16T15:39:44.129+05:30  INFO 11516 --- [project] [http-nio-8080-exec-7] c.c.project.controller.RootController    : user namemanthan@gmail.com
+2025-04-16T15:39:44.129+05:30  INFO 11516 --- [project] [http-nio-8080-exec-7] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-16T15:39:44.129+05:30  INFO 11516 --- [project] [http-nio-8080-exec-7] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-16T15:41:07.759+05:30  INFO 7428 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 7428 (D:\spring boot project vs-code\project\target\classes started by Pratik in d:\spring boot project vs-code\project)
+2025-04-16T15:41:07.761+05:30  INFO 7428 --- [project] [main] com.contact.project.ProjectApplication   : The following 1 profile is active: "dev"
+2025-04-16T15:41:08.733+05:30  INFO 7428 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-16T15:41:08.792+05:30  INFO 7428 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 2 JPA repository interfaces.
+2025-04-16T15:41:09.511+05:30  INFO 7428 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-16T15:41:09.522+05:30  INFO 7428 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-16T15:41:09.523+05:30  INFO 7428 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-16T15:41:09.578+05:30  INFO 7428 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-16T15:41:09.578+05:30  INFO 7428 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1770 ms
+2025-04-16T15:41:09.879+05:30  INFO 7428 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-16T15:41:09.925+05:30  INFO 7428 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-16T15:41:09.956+05:30  INFO 7428 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-16T15:41:10.192+05:30  INFO 7428 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-16T15:41:10.220+05:30  INFO 7428 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-16T15:41:10.575+05:30  INFO 7428 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@23365142
+2025-04-16T15:41:10.578+05:30  INFO 7428 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-16T15:41:10.650+05:30  INFO 7428 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-16T15:41:11.528+05:30  INFO 7428 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-16T15:41:11.597+05:30  INFO 7428 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-16T15:41:11.921+05:30  INFO 7428 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-16T15:41:11.943+05:30  INFO 7428 --- [project] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-16T15:41:12.449+05:30  INFO 7428 --- [project] [main] c.c.p.controller.ContactController       : printing cloud name df2iaeqjm
+2025-04-16T15:41:12.450+05:30  INFO 7428 --- [project] [main] c.c.p.controller.ContactController       : submiting cloud name cloud api key and secreat
+2025-04-16T15:41:12.457+05:30  INFO 7428 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-16T15:41:12.470+05:30  INFO 7428 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-16T15:41:12.471+05:30  INFO 7428 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-16T15:41:12.602+05:30  INFO 7428 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-16T15:41:12.602+05:30  WARN 7428 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-16T15:41:12.678+05:30  INFO 7428 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-16T15:41:13.046+05:30  INFO 7428 --- [project] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-04-16T15:41:13.075+05:30  INFO 7428 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-16T15:41:13.076+05:30  INFO 7428 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-16T15:41:13.621+05:30  INFO 7428 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-16T15:41:13.635+05:30  INFO 7428 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 6.345 seconds (process running for 6.963)
+2025-04-16T15:41:15.083+05:30  INFO 7428 --- [project] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-16T15:41:15.084+05:30  INFO 7428 --- [project] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-16T15:41:15.085+05:30  INFO 7428 --- [project] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-16T15:41:17.609+05:30  INFO 7428 --- [project] [http-nio-8080-exec-9] c.c.p.s.i.ContactServiceImpl             : User found with email: manthan@gmail.com
+2025-04-16T15:41:17.692+05:30  INFO 7428 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-16T15:41:17.694+05:30  INFO 7428 --- [project] [http-nio-8080-exec-10] c.c.p.s.i.ContactServiceImpl             : fetching logged in user details from database
+2025-04-16T15:41:17.694+05:30  INFO 7428 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-16T15:41:17.694+05:30  INFO 7428 --- [project] [http-nio-8080-exec-10] c.c.p.s.implementation.UserServiceImpl   : finding loged in user info using email
+2025-04-16T15:41:17.698+05:30  INFO 7428 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : user namemanthan@gmail.com
+2025-04-16T15:41:17.699+05:30  INFO 7428 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-16T15:41:17.699+05:30  INFO 7428 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-16T15:41:17.700+05:30  INFO 7428 --- [project] [http-nio-8080-exec-10] c.c.p.controller.ContactController       : add contact view
+2025-04-16T15:41:17.700+05:30  INFO 7428 --- [project] [http-nio-8080-exec-10] c.c.p.controller.ContactController       : contact form added to model
+2025-04-16T15:45:36.185+05:30  INFO 8156 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 8156 (D:\spring boot project vs-code\project\target\classes started by Pratik in D:\spring boot project vs-code\project)
+2025-04-16T15:45:36.188+05:30  INFO 8156 --- [project] [main] com.contact.project.ProjectApplication   : The following 1 profile is active: "dev"
+2025-04-16T15:45:37.171+05:30  INFO 8156 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-16T15:45:37.233+05:30  INFO 8156 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 2 JPA repository interfaces.
+2025-04-16T15:45:37.994+05:30  INFO 8156 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-16T15:45:38.007+05:30  INFO 8156 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-16T15:45:38.007+05:30  INFO 8156 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-16T15:45:38.064+05:30  INFO 8156 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-16T15:45:38.065+05:30  INFO 8156 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1827 ms
+2025-04-16T15:45:38.366+05:30  INFO 8156 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-16T15:45:38.412+05:30  INFO 8156 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-16T15:45:38.448+05:30  INFO 8156 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-16T15:45:38.688+05:30  INFO 8156 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-16T15:45:38.713+05:30  INFO 8156 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-16T15:45:39.046+05:30  INFO 8156 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@29ee8174
+2025-04-16T15:45:39.047+05:30  INFO 8156 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-16T15:45:39.124+05:30  INFO 8156 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-16T15:45:40.000+05:30  INFO 8156 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-16T15:45:40.072+05:30  INFO 8156 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-16T15:45:40.423+05:30  INFO 8156 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-16T15:45:40.464+05:30  INFO 8156 --- [project] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-16T15:45:40.953+05:30  INFO 8156 --- [project] [main] c.c.p.controller.ContactController       : printing cloud name df2iaeqjm
+2025-04-16T15:45:40.954+05:30  INFO 8156 --- [project] [main] c.c.p.controller.ContactController       : submiting cloud name cloud api key and secreat
+2025-04-16T15:45:40.960+05:30  INFO 8156 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-16T15:45:40.974+05:30  INFO 8156 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-16T15:45:40.975+05:30  INFO 8156 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-16T15:45:41.117+05:30  INFO 8156 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-16T15:45:41.118+05:30  WARN 8156 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-16T15:45:41.239+05:30  INFO 8156 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-16T15:45:41.592+05:30  INFO 8156 --- [project] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-04-16T15:45:41.643+05:30  INFO 8156 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-16T15:45:41.643+05:30  INFO 8156 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-16T15:45:42.222+05:30  INFO 8156 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-16T15:45:42.236+05:30  INFO 8156 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 6.519 seconds (process running for 7.117)
+2025-04-16T15:45:44.578+05:30  INFO 8156 --- [project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-16T15:45:44.579+05:30  INFO 8156 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-16T15:45:44.581+05:30  INFO 8156 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-04-16T15:45:48.817+05:30  INFO 8156 --- [project] [http-nio-8080-exec-2] c.c.p.s.i.ContactServiceImpl             : User found with email: manthan@gmail.com
+2025-04-16T15:45:48.892+05:30  INFO 8156 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-16T15:45:48.894+05:30  INFO 8156 --- [project] [http-nio-8080-exec-3] c.c.p.s.i.ContactServiceImpl             : fetching logged in user details from database
+2025-04-16T15:45:48.894+05:30  INFO 8156 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-16T15:45:48.894+05:30  INFO 8156 --- [project] [http-nio-8080-exec-3] c.c.p.s.implementation.UserServiceImpl   : finding loged in user info using email
+2025-04-16T15:45:48.899+05:30  INFO 8156 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : user namemanthan@gmail.com
+2025-04-16T15:45:48.899+05:30  INFO 8156 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-16T15:45:48.900+05:30  INFO 8156 --- [project] [http-nio-8080-exec-3] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-16T15:45:48.900+05:30  INFO 8156 --- [project] [http-nio-8080-exec-3] c.c.project.controller.UserController    : dashboard running
+2025-04-16T15:45:50.211+05:30  INFO 8156 --- [project] [http-nio-8080-exec-1] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-16T15:45:50.212+05:30  INFO 8156 --- [project] [http-nio-8080-exec-1] c.c.p.s.i.ContactServiceImpl             : fetching logged in user details from database
+2025-04-16T15:45:50.213+05:30  INFO 8156 --- [project] [http-nio-8080-exec-1] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-16T15:45:50.213+05:30  INFO 8156 --- [project] [http-nio-8080-exec-1] c.c.p.s.implementation.UserServiceImpl   : finding loged in user info using email
+2025-04-16T15:45:50.220+05:30  INFO 8156 --- [project] [http-nio-8080-exec-1] c.c.project.controller.RootController    : user namemanthan@gmail.com
+2025-04-16T15:45:50.220+05:30  INFO 8156 --- [project] [http-nio-8080-exec-1] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-16T15:45:50.221+05:30  INFO 8156 --- [project] [http-nio-8080-exec-1] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-16T15:45:50.221+05:30  INFO 8156 --- [project] [http-nio-8080-exec-1] c.c.p.controller.ContactController       : add contact view
+2025-04-16T15:45:50.222+05:30  INFO 8156 --- [project] [http-nio-8080-exec-1] c.c.p.controller.ContactController       : contact form added to model
+2025-04-16T15:46:24.415+05:30  INFO 10660 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 10660 (D:\spring boot project vs-code\project\target\classes started by Pratik in D:\spring boot project vs-code\project)
+2025-04-16T15:46:24.419+05:30  INFO 10660 --- [project] [main] com.contact.project.ProjectApplication   : The following 1 profile is active: "dev"
+2025-04-16T15:46:25.412+05:30  INFO 10660 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-16T15:46:25.480+05:30  INFO 10660 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 2 JPA repository interfaces.
+2025-04-16T15:46:26.243+05:30  INFO 10660 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-16T15:46:26.255+05:30  INFO 10660 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-16T15:46:26.256+05:30  INFO 10660 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-16T15:46:26.313+05:30  INFO 10660 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-16T15:46:26.314+05:30  INFO 10660 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1851 ms
+2025-04-16T15:46:26.628+05:30  INFO 10660 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-16T15:46:26.683+05:30  INFO 10660 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-16T15:46:26.710+05:30  INFO 10660 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-16T15:46:26.950+05:30  INFO 10660 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-16T15:46:26.979+05:30  INFO 10660 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-16T15:46:27.311+05:30  INFO 10660 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@152035eb
+2025-04-16T15:46:27.312+05:30  INFO 10660 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-16T15:46:27.385+05:30  INFO 10660 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-16T15:46:28.314+05:30  INFO 10660 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-16T15:46:28.388+05:30  INFO 10660 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-16T15:46:28.709+05:30  INFO 10660 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-16T15:46:28.730+05:30  INFO 10660 --- [project] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-16T15:46:29.210+05:30  INFO 10660 --- [project] [main] c.c.p.controller.ContactController       : printing cloud name df2iaeqjm
+2025-04-16T15:46:29.210+05:30  INFO 10660 --- [project] [main] c.c.p.controller.ContactController       : submiting cloud name cloud api key and secreat
+2025-04-16T15:46:29.216+05:30  INFO 10660 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-16T15:46:29.227+05:30  INFO 10660 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-16T15:46:29.227+05:30  INFO 10660 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-16T15:46:29.353+05:30  INFO 10660 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-16T15:46:29.354+05:30  WARN 10660 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-16T15:46:29.425+05:30  INFO 10660 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-16T15:46:29.761+05:30  INFO 10660 --- [project] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-04-16T15:46:29.816+05:30  INFO 10660 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-16T15:46:29.818+05:30  INFO 10660 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-16T15:46:30.380+05:30  INFO 10660 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-16T15:46:30.395+05:30  INFO 10660 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 6.445 seconds (process running for 7.017)
+2025-04-16T15:46:32.035+05:30  INFO 10660 --- [project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-16T15:46:32.035+05:30  INFO 10660 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-16T15:46:32.036+05:30  INFO 10660 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-16T15:46:34.003+05:30  INFO 10660 --- [project] [http-nio-8080-exec-9] c.c.p.s.i.ContactServiceImpl             : User found with email: manthan@gmail.com
+2025-04-16T15:46:34.085+05:30  INFO 10660 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-16T15:46:34.085+05:30  INFO 10660 --- [project] [http-nio-8080-exec-10] c.c.p.s.i.ContactServiceImpl             : fetching logged in user details from database
+2025-04-16T15:46:34.086+05:30  INFO 10660 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-16T15:46:34.086+05:30  INFO 10660 --- [project] [http-nio-8080-exec-10] c.c.p.s.implementation.UserServiceImpl   : finding loged in user info using email
+2025-04-16T15:46:34.090+05:30  INFO 10660 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : user namemanthan@gmail.com
+2025-04-16T15:46:34.091+05:30  INFO 10660 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-16T15:46:34.091+05:30  INFO 10660 --- [project] [http-nio-8080-exec-10] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-16T15:46:34.092+05:30  INFO 10660 --- [project] [http-nio-8080-exec-10] c.c.p.controller.ContactController       : add contact view
+2025-04-16T15:46:34.092+05:30  INFO 10660 --- [project] [http-nio-8080-exec-10] c.c.p.controller.ContactController       : contact form added to model
+2025-04-16T15:46:57.371+05:30  INFO 8992 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 8992 (D:\spring boot project vs-code\project\target\classes started by Pratik in D:\spring boot project vs-code\project)
+2025-04-16T15:46:57.374+05:30  INFO 8992 --- [project] [main] com.contact.project.ProjectApplication   : The following 1 profile is active: "dev"
+2025-04-16T15:46:58.402+05:30  INFO 8992 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-16T15:46:58.461+05:30  INFO 8992 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 2 JPA repository interfaces.
+2025-04-16T15:46:59.223+05:30  INFO 8992 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-16T15:46:59.236+05:30  INFO 8992 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-16T15:46:59.237+05:30  INFO 8992 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-16T15:46:59.302+05:30  INFO 8992 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-16T15:46:59.303+05:30  INFO 8992 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1882 ms
+2025-04-16T15:46:59.621+05:30  INFO 8992 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-16T15:46:59.671+05:30  INFO 8992 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-16T15:46:59.700+05:30  INFO 8992 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-16T15:46:59.935+05:30  INFO 8992 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-16T15:46:59.959+05:30  INFO 8992 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-16T15:47:00.298+05:30  INFO 8992 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@511bfbb0
+2025-04-16T15:47:00.299+05:30  INFO 8992 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-16T15:47:00.369+05:30  INFO 8992 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-16T15:47:01.242+05:30  INFO 8992 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-16T15:47:01.309+05:30  INFO 8992 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-16T15:47:01.637+05:30  INFO 8992 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-16T15:47:01.661+05:30  INFO 8992 --- [project] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-16T15:47:02.191+05:30  INFO 8992 --- [project] [main] c.c.p.controller.ContactController       : printing cloud name df2iaeqjm
+2025-04-16T15:47:02.192+05:30  INFO 8992 --- [project] [main] c.c.p.controller.ContactController       : submiting cloud name cloud api key and secreat
+2025-04-16T15:47:02.199+05:30  INFO 8992 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-16T15:47:02.210+05:30  INFO 8992 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-16T15:47:02.211+05:30  INFO 8992 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-16T15:47:02.344+05:30  INFO 8992 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-16T15:47:02.345+05:30  WARN 8992 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-16T15:47:02.426+05:30  INFO 8992 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-16T15:47:02.849+05:30  INFO 8992 --- [project] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-04-16T15:47:02.877+05:30  INFO 8992 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-16T15:47:02.879+05:30  INFO 8992 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-16T15:47:03.469+05:30  INFO 8992 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-16T15:47:03.482+05:30  INFO 8992 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 6.582 seconds (process running for 7.161)
+2025-04-16T15:47:04.119+05:30  INFO 8992 --- [project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-16T15:47:04.120+05:30  INFO 8992 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-16T15:47:04.123+05:30  INFO 8992 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-04-16T15:47:05.782+05:30  INFO 8992 --- [project] [http-nio-8080-exec-10] c.c.p.s.i.ContactServiceImpl             : User found with email: manthan@gmail.com
+2025-04-16T15:47:05.857+05:30  INFO 8992 --- [project] [http-nio-8080-exec-7] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-16T15:47:05.858+05:30  INFO 8992 --- [project] [http-nio-8080-exec-7] c.c.p.s.i.ContactServiceImpl             : fetching logged in user details from database
+2025-04-16T15:47:05.858+05:30  INFO 8992 --- [project] [http-nio-8080-exec-7] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-16T15:47:05.858+05:30  INFO 8992 --- [project] [http-nio-8080-exec-7] c.c.p.s.implementation.UserServiceImpl   : finding loged in user info using email
+2025-04-16T15:47:05.863+05:30  INFO 8992 --- [project] [http-nio-8080-exec-7] c.c.project.controller.RootController    : user namemanthan@gmail.com
+2025-04-16T15:47:05.863+05:30  INFO 8992 --- [project] [http-nio-8080-exec-7] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-16T15:47:05.864+05:30  INFO 8992 --- [project] [http-nio-8080-exec-7] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-16T15:47:05.865+05:30  INFO 8992 --- [project] [http-nio-8080-exec-7] c.c.p.controller.ContactController       : add contact view
+2025-04-16T15:47:05.865+05:30  INFO 8992 --- [project] [http-nio-8080-exec-7] c.c.p.controller.ContactController       : contact form added to model
+2025-04-16T15:47:22.773+05:30  INFO 6184 --- [project] [main] com.contact.project.ProjectApplication   : Starting ProjectApplication using Java 21.0.4 with PID 6184 (D:\spring boot project vs-code\project\target\classes started by Pratik in D:\spring boot project vs-code\project)
+2025-04-16T15:47:22.776+05:30  INFO 6184 --- [project] [main] com.contact.project.ProjectApplication   : The following 1 profile is active: "dev"
+2025-04-16T15:47:23.767+05:30  INFO 6184 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-16T15:47:23.829+05:30  INFO 6184 --- [project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 2 JPA repository interfaces.
+2025-04-16T15:47:24.593+05:30  INFO 6184 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-16T15:47:24.606+05:30  INFO 6184 --- [project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-16T15:47:24.607+05:30  INFO 6184 --- [project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-16T15:47:24.698+05:30  INFO 6184 --- [project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-16T15:47:24.699+05:30  INFO 6184 --- [project] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1872 ms
+2025-04-16T15:47:25.005+05:30  INFO 6184 --- [project] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-16T15:47:25.057+05:30  INFO 6184 --- [project] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-16T15:47:25.087+05:30  INFO 6184 --- [project] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-16T15:47:25.327+05:30  INFO 6184 --- [project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-16T15:47:25.354+05:30  INFO 6184 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-16T15:47:25.680+05:30  INFO 6184 --- [project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@76105ac0
+2025-04-16T15:47:25.682+05:30  INFO 6184 --- [project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-16T15:47:25.754+05:30  INFO 6184 --- [project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-16T15:47:26.714+05:30  INFO 6184 --- [project] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-16T15:47:26.795+05:30  INFO 6184 --- [project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-16T15:47:27.138+05:30  INFO 6184 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating BCryptPasswordEncoder bean
+2025-04-16T15:47:27.162+05:30  INFO 6184 --- [project] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-16T15:47:27.699+05:30  INFO 6184 --- [project] [main] c.c.p.controller.ContactController       : printing cloud name df2iaeqjm
+2025-04-16T15:47:27.699+05:30  INFO 6184 --- [project] [main] c.c.p.controller.ContactController       : submiting cloud name cloud api key and secreat
+2025-04-16T15:47:27.706+05:30  INFO 6184 --- [project] [main] c.contact.project.config.SecurityConfig  : Creating DaoAuthenticationProvider bean
+2025-04-16T15:47:27.724+05:30  INFO 6184 --- [project] [main] c.contact.project.config.SecurityConfig  : Set UserDetailsService to CustomUserDetailService
+2025-04-16T15:47:27.724+05:30  INFO 6184 --- [project] [main] c.contact.project.config.SecurityConfig  : Set PasswordEncoder to BCryptPasswordEncoder
+2025-04-16T15:47:27.877+05:30  INFO 6184 --- [project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-16T15:47:27.878+05:30  WARN 6184 --- [project] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-16T15:47:27.949+05:30  INFO 6184 --- [project] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-16T15:47:28.326+05:30  INFO 6184 --- [project] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-04-16T15:47:28.357+05:30  INFO 6184 --- [project] [main] c.contact.project.config.SecurityConfig  : logging out..... 
+2025-04-16T15:47:28.357+05:30  INFO 6184 --- [project] [main] c.contact.project.config.SecurityConfig  : logged out successfully
+2025-04-16T15:47:28.941+05:30  INFO 6184 --- [project] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-16T15:47:28.954+05:30  INFO 6184 --- [project] [main] com.contact.project.ProjectApplication   : Started ProjectApplication in 6.643 seconds (process running for 7.202)
+2025-04-16T15:47:29.066+05:30  INFO 6184 --- [project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-16T15:47:29.066+05:30  INFO 6184 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-16T15:47:29.069+05:30  INFO 6184 --- [project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-16T15:47:31.098+05:30  INFO 6184 --- [project] [http-nio-8080-exec-8] c.c.p.s.i.ContactServiceImpl             : User found with email: manthan@gmail.com
+2025-04-16T15:47:31.173+05:30  INFO 6184 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : adding logged in user info to model...
+2025-04-16T15:47:31.175+05:30  INFO 6184 --- [project] [http-nio-8080-exec-5] c.c.p.s.i.ContactServiceImpl             : fetching logged in user details from database
+2025-04-16T15:47:31.175+05:30  INFO 6184 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : name of loged in user is manthan@gmail.com
+2025-04-16T15:47:31.176+05:30  INFO 6184 --- [project] [http-nio-8080-exec-5] c.c.p.s.implementation.UserServiceImpl   : finding loged in user info using email
+2025-04-16T15:47:31.181+05:30  INFO 6184 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : user namemanthan@gmail.com
+2025-04-16T15:47:31.181+05:30  INFO 6184 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : user email manthan@gmail.com
+2025-04-16T15:47:31.181+05:30  INFO 6184 --- [project] [http-nio-8080-exec-5] c.c.project.controller.RootController    : added successfully logged in user details in model
+2025-04-16T15:47:31.183+05:30  INFO 6184 --- [project] [http-nio-8080-exec-5] c.c.p.controller.ContactController       : add contact view
+2025-04-16T15:47:31.183+05:30  INFO 6184 --- [project] [http-nio-8080-exec-5] c.c.p.controller.ContactController       : contact form added to model

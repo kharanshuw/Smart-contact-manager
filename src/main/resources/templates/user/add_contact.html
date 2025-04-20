@@ -286,11 +286,12 @@
 
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize"
                             for="file_input">Upload contact image</label>
-                        <input
+                        <input id="profileImage"
                             class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                             data-th-field="*{profileImage}" type="file">
-                        
-                        <img src="" id="upload_image_preview" alt="" >
+
+                        <img src="" class="h-auto max-w-xl rounded-lg shadow-xl dark:shadow-gray-800 mx-auto mt-2"
+                            id="upload_image_preview" alt="">
 
                     </div>
 
@@ -355,8 +356,11 @@
 
 
     <!-- custom script for theme switcher -->
-    <script data-th-src="@{'/js/script.js'}">
+    <script data-th-src="@{'/js/script.js'}"></script>
 
+
+    <!-- script for image preview -->
+    <script data-th-src="@{'/js/image-preview.js'}">
     </script>
 
 
