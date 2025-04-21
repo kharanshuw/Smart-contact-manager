@@ -151,4 +151,23 @@ public class Contact {
     public void setCloudinaryImagename(String cloudinaryImagename) {
         this.cloudinaryImagename = cloudinaryImagename;
     }
+
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", address='" + address + '\'' +
+                ", picture='" + picture + '\'' +
+                ", description='" + description + '\'' +
+                ", fevorite=" + fevorite +
+                ", facebookLink='" + facebookLink + '\'' +
+                ", instagramLink='" + instagramLink + '\'' +
+                ", cloudinaryImagename='" + cloudinaryImagename + '\'' +
+                ", user=" + user +
+                ", links=" + links +
+                '}';
+    }
 }

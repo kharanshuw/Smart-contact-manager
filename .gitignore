@@ -35,4 +35,5 @@ build/
 # node folder
 node_modules/
 
+#properties file
 application-dev.properties

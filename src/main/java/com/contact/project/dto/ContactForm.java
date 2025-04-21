@@ -26,7 +26,6 @@ public class ContactForm {
 
 
     @Pattern(regexp = "^\\d{10}$", message = "Invalid phone number")
-    @NotEmpty(message = "phone no is required")
     private String phoneNumber;
 
     

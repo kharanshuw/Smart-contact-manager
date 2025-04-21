@@ -3,7 +3,7 @@ package com.contact.project.services;
 import com.contact.project.entity.Contact;
 import com.contact.project.entity.User;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+
 
 import java.util.List;
 
@@ -22,6 +22,9 @@ public interface ContactService {
 
     public Page<Contact> getByUserId(User user, int page, int size, String sortBy, String direction);
 
+    public Page<Contact> searchContacts(String searchField, String searchValue, int page, int size, String sortBy, String direction);
+
+    public Page<Contact> serchContactsWithUser(String searchField, String searchValue, int page,int size, String sortBy, String direction, User user) ;
 
 }
  
