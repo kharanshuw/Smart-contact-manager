@@ -7,16 +7,4 @@ http://localhost:8080/user/dashboard
 
 http://localhost:8080/user/contacts/add
 
-
-steps for oauth
-1.add dependency of oauth cliend
-
-2.generate outh consent screen and credential of that respective service like google
-link:https://console.cloud.google.com/welcome?invt=Abtkvw&project=psyched-service-455420-a2
-
-3.configure oauth2 in sprinboot application.properties
-
-
-
-
-
+http://localhost:8080/user/contacts/view

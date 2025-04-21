@@ -18,20 +18,20 @@ import java.util.UUID;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.data.domain.Page;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
 
 /**
- * Controller for managing user contacts.
- * This class handles requests related to adding and processing contacts.
+ * Controller for managing user contacts. This class handles requests related to adding and
+ * processing contacts.
  */
 @Controller
 @RequestMapping("/user/contacts")
@@ -45,8 +45,9 @@ public class ContactController {
 
     private ImageService imageService;
 
-    @Autowired
-    public ContactController(UserService userService, ContactService contactService, ImageService imageService) {
+
+    public ContactController(UserService userService, ContactService contactService,
+            ImageService imageService) {
         this.userService = userService;
         this.contactService = contactService;
         this.imageService = imageService;
@@ -73,22 +74,21 @@ public class ContactController {
     /**
      * Processes the addition of a new contact.
      *
-     * @param contactForm    the contact form containing contact details
+     * @param contactForm the contact form containing contact details
      * @param authentication the authentication object for the logged-in user
      * @return a redirect to the add contact view
      */
     @PostMapping("/add_contact")
-    public String processaddcontact(@Valid @ModelAttribute ContactForm contactForm, BindingResult bindingResult,
-                                    Authentication authentication, HttpSession httpSession) {
+    public String processaddcontact(@Valid @ModelAttribute ContactForm contactForm,
+            BindingResult bindingResult, Authentication authentication, HttpSession httpSession) {
 
         Message message = new Message();
 
         /*
-         * The method first checks if there are any validation errors in the form data
-         * using the `bindingResult.hasErrors()` method. If there are errors, it logs an
-         * error message and sets a message in the HTTP session to inform the user to
-         * correct the errors. The method then returns the user to the `/add_contact`
-         * page.
+         * The method first checks if there are any validation errors in the form data using the
+         * `bindingResult.hasErrors()` method. If there are errors, it logs an error message and
+         * sets a message in the HTTP session to inform the user to correct the errors. The method
+         * then returns the user to the `/add_contact` page.
          */
         if (bindingResult.hasErrors()) {
 
@@ -109,13 +109,28 @@ public class ContactController {
             return "user/add_contact";
         }
 
-        logger.info("printing file info which we got from form  " + contactForm.getProfileImage().getOriginalFilename());
+        logger.info("printing file info which we got from form  "
+                + contactForm.getProfileImage().getOriginalFilename());
 
-        String uniquefilename = UUID.randomUUID().toString();
+        String uniquefilename = null;
 
-        logger.info("generated unique filename for contactimage " + uniquefilename);
+        String fileUrl = null;
 
-        String fileUrl = imageService.uploadImage(contactForm.getProfileImage(), uniquefilename);
+
+        if (contactForm.getProfileImage() != null && !contactForm.getProfileImage().isEmpty()) {
+
+
+            uniquefilename = UUID.randomUUID().toString();
+
+            logger.info("generated unique filename for contactimage " + uniquefilename);
+
+
+            fileUrl = imageService.uploadImage(contactForm.getProfileImage(), uniquefilename);
+
+            logger.info("generated file url for ProfileImage " + fileUrl);
+
+        }
+
 
         logger.info("file url of contact image : " + fileUrl);
 
@@ -161,13 +176,47 @@ public class ContactController {
         message.setType(MessageType.green);
 
         /*
-         * Finally, the method sets a success message in the HTTP session and redirects
-         * the user to the `/user/contacts/add_contact` page.
+         * Finally, the method sets a success message in the HTTP session and redirects the user to
+         * the `/user/contacts/add_contact` page.
          *
          */
         httpSession.setAttribute("message", message);
 
         return "redirect:/user/contacts/add_contact";
+    }
+
+
+    @GetMapping("/view")
+    public String viewContact(@RequestParam(value = "page", defaultValue = "0") int page,
+            @RequestParam(value = "size", defaultValue = "5") int size,
+            @RequestParam(value = "softBy", defaultValue = "name") String sortBy,
+            @RequestParam(value = "direction", defaultValue = "asc") String direction, Model model,
+            Authentication authentication) {
+
+        String useremail = LoggedInUserFetcher.getLoggedInUserEmail(authentication);
+
+        logger.info("logged in user is : " + useremail);
+
+        User user = userService.findByEmail(useremail);
+
+        logger.info("found user using email " + user.toString());
+
+        Page<Contact> contacts = null;
+
+        logger.info("fetching contact list from database for logged in user");
+
+        contacts = contactService.getByUserId(user, page, size, sortBy, direction);
+
+        logger.info("successfully fetched contact list with size " + contacts.getSize());
+
+
+
+        model.addAttribute("contact", contacts);
+
+        logger.info("printing totalpages" + contacts.getTotalPages());
+
+        model.addAttribute("totalpages", contacts.getTotalPages());
+        return new String("user/contacts");
     }
 
 }

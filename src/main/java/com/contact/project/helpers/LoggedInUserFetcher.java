@@ -10,7 +10,7 @@ import org.springframework.security.oauth2.client.authentication.OAuth2Authentic
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import java.util.Map;
-
+ 
 /**
  * The LoggedInUserFetcher class is a utility class that provides a method for
  * fetching the email address of the currently logged-in user. The class is

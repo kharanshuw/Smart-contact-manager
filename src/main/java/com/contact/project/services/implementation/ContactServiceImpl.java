@@ -1,6 +1,7 @@
 package com.contact.project.services.implementation;
 
 import com.contact.project.entity.Contact;
+import com.contact.project.entity.User;
 import com.contact.project.exception.ResouseNotFound;
 import com.contact.project.repositories.ContactRepo;
 import com.contact.project.services.ContactService;
@@ -9,6 +10,10 @@ import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -168,7 +173,7 @@ public class ContactServiceImpl implements ContactService {
      * @return a list of contacts associated with the given user ID
      */
     @Override
-    public List<Contact> getcContactsByUserId(int id) {
+    public List<Contact> getContactsByUserId(int id) {
         try {
             log.info("getcContactsByUserId in services");
 
@@ -184,6 +189,31 @@ public class ContactServiceImpl implements ContactService {
             throw new RuntimeException("error in getcContactsByUserId " + e.toString());
 
         }
+    }
+
+
+    public Page<Contact> getByUserId(User user, int page, int size, String sortBy, String direction) {
+
+        log.info("page no is " + page);
+
+        log.info("page size is " + size);
+
+        log.info("page sort by " + sortBy);
+
+        log.info("direction " + direction);
+
+
+        Sort sort = direction.equals("desc") ? Sort.by(sortBy).descending() : Sort.by(sortBy).ascending();
+
+        Pageable pageable = PageRequest.of(page, size, sort);
+
+        log.info("fetching list of contact assosiated with user " + user.getId());
+
+        Page<Contact> page1 = contactRespo.findByUserId(user.getId(), pageable);
+
+        log.info("successfully fetched list of contact assosiated with user " + user.getId());
+
+        return page1;
     }
 
 }
