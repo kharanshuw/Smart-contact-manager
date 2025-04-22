@@ -13,6 +13,3 @@ select * from contact
 select * from social_link
 
 select * from contact 
-
-
-select * from contact where user_id = 1 and name like '% manthan %'

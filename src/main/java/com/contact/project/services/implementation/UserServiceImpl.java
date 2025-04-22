@@ -151,7 +151,7 @@ public class UserServiceImpl implements UserService {
 
         return user != null ? true : false;
     }
- 
+
     /**
      * Retrieves all User entities from the database.
      * 

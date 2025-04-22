@@ -14,6 +14,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,9 +35,8 @@ public class ContactServiceImpl implements ContactService {
     private UserService userService;
 
     @Autowired
-    public ContactServiceImpl(ContactRepo contactRespo, UserService userService) {
+    public ContactServiceImpl(ContactRepo contactRespo) {
         this.contactRespo = contactRespo;
-        this.userService = userService;
     }
 
     /**
@@ -296,141 +296,6 @@ public class ContactServiceImpl implements ContactService {
                 return page1;
             } else {
 
-                return page1;
-            }
-
-        } catch (IllegalArgumentException e) {
-            log.error("illegal argument error {}", e);
-            throw new RuntimeException(e);
-        } catch (Exception e) {
-            log.error("exception occured {}", e);
-            throw new RuntimeException(e);
-        }
-
-    }
-
-    /**
-     * Searches for contacts associated with a specific user based on a given search field and
-     * value, with pagination and sorting capabilities.
-     *
-     * @param searchField The field to search within. Supported values are "name", "email", and
-     *        "phoneNumber". Must not be null or empty.
-     * @param searchValue The substring to search for within the specified {@code searchField}.
-     * @param page The page number to retrieve (0-based index). Must be greater than or equal to 0.
-     * @param size The number of contacts to retrieve per page. Must be greater than 0.
-     * @param sortBy The field to sort the results by (e.g., "name", "email", "phoneNumber"). Ensure
-     *        this field corresponds to a property in the {@link Contact} entity.
-     * @param direction The sort direction. Must be either "asc" (ascending) or "desc" (descending),
-     *        case-insensitive.
-     * @param user The {@link User} object whose contacts are being searched. Must not be null.
-     * @return A Page of Contact objects that match the search criteria for the given user, ordered
-     *         and paginated according to the provided parameters. Returns an empty page if no
-     *         matching contacts are found.
-     * @throws IllegalArgumentException If the {@code searchField} is null or empty, or if the
-     *         {@code page} is less than 0, or if the {@code size} is less than or equal to 0, or if
-     *         the {@code direction} is not "asc" or "desc", or if an invalid {@code searchField} is
-     *         provided.
-     * @throws RuntimeException If any other unexpected error occurs during the search operation.
-     *
-     * @see Contact
-     * @see User
-     * @see Page
-     * @see Pageable
-     * @see Sort
-     */
-    public Page<Contact> serchContactsWithUser(String searchField, String searchValue, int page,
-            int size, String sortBy, String direction, User user) {
-        try {
-            log.info(
-                    "Page: {}, Size: {}, SortBy: {}, Direction: {}, SearchField: {}, SearchValue: {}",
-                    page, size, sortBy, direction, searchField, searchValue);
-
-            // Validate that the search field is not null or empty.
-
-            if (searchField == null || searchField.isEmpty()) {
-                log.error("Search field must not be null or empty.");
-                throw new IllegalArgumentException("Search field must not be null or empty.");
-            }
-
-
-            // Validate that the page number is not negative and the page size is positive.
-
-            if (page < 0 || size <= 0) {
-                log.error("Page number must be >= 0 and size must be > 0.");
-                throw new IllegalArgumentException(
-                        "Page number must be >= 0 and size must be > 0.");
-            }
-
-            // Validate that the sort direction is either "asc" or "desc" (case-insensitive).
-
-            if (!direction.equalsIgnoreCase("asc") && !direction.equalsIgnoreCase("desc")) {
-                log.error("Sort direction must be 'asc' or 'desc'.");
-                throw new IllegalArgumentException("Sort direction must be 'asc' or 'desc'.");
-            }
-
-            // Determine the sort order based on the provided direction.
-
-            Sort sort = direction.equalsIgnoreCase("desc") ? Sort.by(sortBy).descending()
-                    : Sort.by(sortBy).ascending();
-
-
-            // Create a Pageable object to handle pagination and sorting.
-
-            Pageable pageable = PageRequest.of(page, size, sort);
-
-
-            // Declare a variable to hold the Page of Contact objects.
-
-            Page<Contact> page1 = null;
-
-            // Perform the search based on the specified search field.
-
-            switch (searchField) {
-
-                // Search contacts by name containing the search value for the given user.
-
-                case "name":
-                    log.info("serching contact by user");
-
-                    page1 = contactRespo.searchByNameLike(user.getId(), searchValue, pageable);
-                    break;
-
-                // Search contacts by email containing the search value for the given user.
-                case "email":
-
-
-                    log.info("serching contact by user");
-                    page1 = contactRespo.findByUserAndEmailContaining(user, searchValue, pageable);
-                    break;
-
-
-                // Search contacts by phone number containing the search value for the given user.
-
-                case "phoneNumber":
-
-                    log.info("serching contact by user");
-                    page1 = contactRespo.findByUserAndPhoneNumberContaining(user, searchValue,
-                            pageable);
-                    break;
-
-
-                default:
-
-                    // If an invalid search field is provided, throw an IllegalArgumentException.
-
-                    throw new IllegalArgumentException("Invalid search field: " + searchField);
-            }
-
-            // Check if any contacts were found for the given search criteria.
-            if (page1.isEmpty()) {
-
-
-                log.warn("No contacts found for search field: {} and value: {}", searchField,
-                        searchValue);
-                // Return the empty page.
-                return page1;
-            } else {
-                // Return the page of found contacts.
                 return page1;
             }
 
