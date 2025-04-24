@@ -54,7 +54,7 @@ public class User {
 
     private String providerUserId;
     
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Contact> contacts = new ArrayList<>();
 
     @ElementCollection(fetch = FetchType.EAGER)
@@ -171,5 +171,24 @@ public class User {
 
     public void setRoleList(List<String> roleList) {
         this.roleList = roleList;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", about='" + about + '\'' +
+                ", profilePic='" + profilePic + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", enabled=" + enabled +
+                ", emailVerified=" + emailVerified +
+                ", phoneVerified=" + phoneVerified +
+                ", provider=" + provider +
+                ", providerUserId='" + providerUserId + '\'' +
+                ", roleList=" + roleList +
+                '}';
     }
 }

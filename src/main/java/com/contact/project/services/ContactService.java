@@ -24,6 +24,7 @@ public interface ContactService {
 
     public Page<Contact> searchContacts(String searchField, String searchValue, int page, int size, String sortBy, String direction);
 
+    public Page<Contact> serchContactsWithUser(String searchField, String searchValue, int page,int size, String sortBy, String direction, User user) ;
 
 }
  

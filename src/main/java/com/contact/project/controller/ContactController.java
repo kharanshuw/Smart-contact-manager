@@ -16,7 +16,6 @@ import jakarta.validation.Valid;
 
 import java.util.List;
 import java.util.UUID;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -188,6 +187,24 @@ public class ContactController {
     }
 
 
+    /**
+     * Retrieves the list of contacts associated with the logged-in user. Supports pagination and
+     * sorting preferences. Adds the contact list and pagination metadata to the model for rendering
+     * in the view.
+     *
+     * @param page The page number to retrieve (0-based index). Defaults to 0 if not provided.
+     * @param size The number of contacts per page. Defaults to 5 if not provided.
+     * @param sortBy The field to sort the results by (e.g., "name"). Defaults to "name" if not
+     *        provided.
+     * @param direction The sort direction, either "asc" for ascending or "desc" for descending.
+     *        Defaults to "asc".
+     * @param model The {@link Model} object to which the contacts and pagination metadata will be
+     *        added.
+     * @param authentication The authentication object used to fetch the logged-in user's details.
+     * @return The view name "user/contacts" for rendering the contact list.
+     * @throws IllegalArgumentException If the user is not found or the input parameters are
+     *         invalid.
+     */
     @GetMapping("/view")
     public String viewContact(@RequestParam(value = "page", defaultValue = "0") int page,
             @RequestParam(value = "size", defaultValue = "5") int size,
@@ -195,45 +212,79 @@ public class ContactController {
             @RequestParam(value = "direction", defaultValue = "asc") String direction, Model model,
             Authentication authentication) {
 
+        // Validate input parameters to ensure they meet the requirements for pagination
+        if (page < 0 || size <= 0) {
+            logger.error("Page must be >= 0 and size must be > 0.");
+            throw new IllegalArgumentException("Page must be >= 0 and size must be > 0.");
+        }
+
+
+        // Fetch the email of the currently logged-in user using the Authentication object
         String useremail = LoggedInUserFetcher.getLoggedInUserEmail(authentication);
 
         logger.info("logged in user is : " + useremail);
 
+        // Retrieve the user associated with the logged-in email from the database
+
         User user = userService.findByEmail(useremail);
+
+
+        if (user == null) {
+
+            // Log an error and throw an exception if the user is not found
+
+            logger.error("User not found for email: {}", useremail);
+            throw new IllegalArgumentException("User not found.");
+        }
+
 
         logger.info("found user using email " + user.toString());
 
-        Page<Contact> contacts = null;
+        // Fetch the paginated list of contacts associated with the user from the database
 
         logger.info("fetching contact list from database for logged in user");
 
-        contacts = contactService.getByUserId(user, page, size, sortBy, direction);
+        Page<Contact> contacts = contactService.getByUserId(user, page, size, sortBy, direction);
+
+        // Handle the case where no contacts are found and add a message to the model
+
+        if (contacts.isEmpty()) {
+            logger.warn("No contacts found for user {}", user.getEmail());
+            model.addAttribute("message", "No contacts found for the current search criteria.");
+        }
+
+
 
         logger.info("successfully fetched contact list with size " + contacts.getSize());
+
+        logger.info(
+                "User {} fetched contacts: page={}, size={}, totalPages={}, hasPrevious={}, hasNext={}",
+                user.getEmail(), page, size, contacts.getTotalPages(), contacts.hasPrevious(),
+                contacts.hasNext());
+
 
 
         model.addAttribute("contact", contacts);
 
-        logger.info("printing totalpages" + contacts.getTotalPages());
+
 
         model.addAttribute("totalpages", contacts.getTotalPages());
 
-        logger.info("printing hasprevious" + contacts.hasPrevious());
+
 
         model.addAttribute("hasPrevious", contacts.hasPrevious());
 
-        logger.info("printing hasnext" + contacts.hasNext());
+
 
         model.addAttribute("hasnext", contacts.hasNext());
 
-        int pageno = contacts.getNumber();
+        int currentPageno = contacts.getNumber();
 
-        logger.info("current page no" + pageno);
-
-        model.addAttribute("pageno", pageno);
+        model.addAttribute("pageno", currentPageno);
 
 
-        return new String("user/contacts");
+        return "user/contacts";
+
     }
 
 
@@ -268,9 +319,28 @@ public class ContactController {
             @RequestParam(value = "sortBy", defaultValue = "name") String sortBy,
             @RequestParam(value = "direction",
                     defaultValue = AppConstant.DEFAULT_SORT_DIRECTION) String direction,
-            Model model
+            Model model, Authentication authentication
 
     ) {
+
+        String username = LoggedInUserFetcher.getLoggedInUserEmail(authentication);
+
+        logger.info("logged in user email is {}", username);
+
+        User user = null;
+
+        if (userService.isUserExistByEmail(username)) {
+            logger.info("user exist by this email {}", username);
+            logger.info("fetching user data ");
+            user = userService.findByEmail(username);
+
+            logger.info("successfully fetched user {}", user.toString());
+
+        } else {
+            logger.error("user does not exist with this email ");
+            throw new RuntimeException("user does not exist with given username " + username);
+        }
+
 
 
         logger.info(
@@ -280,8 +350,8 @@ public class ContactController {
 
         // Perform the search using the specified criteria and retrieve the results as a paginated
         // list
-        Page<Contact> contacts = contactService.searchContacts(searchField, searchKeyword, page,
-                size, sortBy, direction);
+        Page<Contact> contacts = contactService.serchContactsWithUser(searchField, searchKeyword,
+                page, size, sortBy, direction, user);
 
 
         logger.info("Contacts found: {}", contacts.getTotalElements());
