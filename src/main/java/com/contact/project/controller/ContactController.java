@@ -1,6 +1,7 @@
 package com.contact.project.controller;
 
 import com.contact.project.dto.ContactForm;
+import com.contact.project.dto.ContactSearchForm;
 import com.contact.project.entity.Contact;
 import com.contact.project.entity.User;
 import com.contact.project.helpers.AppConstant;
@@ -16,6 +17,7 @@ import jakarta.validation.Valid;
 
 import java.util.List;
 import java.util.UUID;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,7 +29,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
-
 
 
 /**
@@ -48,7 +49,7 @@ public class ContactController {
 
 
     public ContactController(UserService userService, ContactService contactService,
-            ImageService imageService) {
+                             ImageService imageService) {
         this.userService = userService;
         this.contactService = contactService;
         this.imageService = imageService;
@@ -75,13 +76,13 @@ public class ContactController {
     /**
      * Processes the addition of a new contact.
      *
-     * @param contactForm the contact form containing contact details
+     * @param contactForm    the contact form containing contact details
      * @param authentication the authentication object for the logged-in user
      * @return a redirect to the add contact view
      */
     @PostMapping("/add_contact")
     public String processaddcontact(@Valid @ModelAttribute ContactForm contactForm,
-            BindingResult bindingResult, Authentication authentication, HttpSession httpSession) {
+                                    BindingResult bindingResult, Authentication authentication, HttpSession httpSession) {
 
         Message message = new Message();
 
@@ -192,25 +193,25 @@ public class ContactController {
      * sorting preferences. Adds the contact list and pagination metadata to the model for rendering
      * in the view.
      *
-     * @param page The page number to retrieve (0-based index). Defaults to 0 if not provided.
-     * @param size The number of contacts per page. Defaults to 5 if not provided.
-     * @param sortBy The field to sort the results by (e.g., "name"). Defaults to "name" if not
-     *        provided.
-     * @param direction The sort direction, either "asc" for ascending or "desc" for descending.
-     *        Defaults to "asc".
-     * @param model The {@link Model} object to which the contacts and pagination metadata will be
-     *        added.
+     * @param page           The page number to retrieve (0-based index). Defaults to 0 if not provided.
+     * @param size           The number of contacts per page. Defaults to 5 if not provided.
+     * @param sortBy         The field to sort the results by (e.g., "name"). Defaults to "name" if not
+     *                       provided.
+     * @param direction      The sort direction, either "asc" for ascending or "desc" for descending.
+     *                       Defaults to "asc".
+     * @param model          The {@link Model} object to which the contacts and pagination metadata will be
+     *                       added.
      * @param authentication The authentication object used to fetch the logged-in user's details.
      * @return The view name "user/contacts" for rendering the contact list.
      * @throws IllegalArgumentException If the user is not found or the input parameters are
-     *         invalid.
+     *                                  invalid.
      */
     @GetMapping("/view")
     public String viewContact(@RequestParam(value = "page", defaultValue = "0") int page,
-            @RequestParam(value = "size", defaultValue = "5") int size,
-            @RequestParam(value = "sortBy", defaultValue = "name") String sortBy,
-            @RequestParam(value = "direction", defaultValue = "asc") String direction, Model model,
-            Authentication authentication) {
+                              @RequestParam(value = "size", defaultValue = "5") int size,
+                              @RequestParam(value = "sortBy", defaultValue = "name") String sortBy,
+                              @RequestParam(value = "direction", defaultValue = "asc") String direction, Model model,
+                              Authentication authentication) {
 
         // Validate input parameters to ensure they meet the requirements for pagination
         if (page < 0 || size <= 0) {
@@ -254,7 +255,6 @@ public class ContactController {
         }
 
 
-
         logger.info("successfully fetched contact list with size " + contacts.getSize());
 
         logger.info(
@@ -263,17 +263,13 @@ public class ContactController {
                 contacts.hasNext());
 
 
-
         model.addAttribute("contact", contacts);
-
 
 
         model.addAttribute("totalpages", contacts.getTotalPages());
 
 
-
         model.addAttribute("hasPrevious", contacts.hasPrevious());
-
 
 
         model.addAttribute("hasnext", contacts.hasNext());
@@ -282,6 +278,7 @@ public class ContactController {
 
         model.addAttribute("pageno", currentPageno);
 
+        model.addAttribute("contactSearchForm", new ContactSearchForm());
 
         return "user/contacts";
 
@@ -293,35 +290,48 @@ public class ContactController {
      * field to search by, search keyword, pagination, and sorting preferences. Adds the search
      * results and pagination metadata to the model.
      *
-     * @param searchField The field to search by (e.g., "name", "email", "phone"). Defaults to
-     *        {@link AppConstant#DEFAULT_SEARCH_FIELD} if not provided.
+     * @param searchField   The field to search by (e.g., "name", "email", "phone"). Defaults to
+     *                      {@link AppConstant#DEFAULT_SEARCH_FIELD} if not provided.
      * @param searchKeyword The keyword to search for within the specified field. Must not be null.
-     * @param page The page number to retrieve. Defaults to {@link AppConstant#DEFAULT_PAGE}. Must
-     *        be greater than or equal to 0.
-     * @param size The number of records per page. Defaults to {@link AppConstant#DEFAULT_SIZE}.
-     *        Must be greater than 0.
-     * @param sortBy The field to sort the results by. Defaults to "name".
-     * @param direction The sort direction, either "asc" for ascending or "desc" for descending.
-     *        Defaults to {@link AppConstant#DEFAULT_SORT_DIRECTION}.
-     * @param model The {@link Model} object to which the search results and pagination metadata
-     *        will be added.
+     * @param page          The page number to retrieve. Defaults to {@link AppConstant#DEFAULT_PAGE}. Must
+     *                      be greater than or equal to 0.
+     * @param size          The number of records per page. Defaults to {@link AppConstant#DEFAULT_SIZE}.
+     *                      Must be greater than 0.
+     * @param sortBy        The field to sort the results by. Defaults to "name".
+     * @param direction     The sort direction, either "asc" for ascending or "desc" for descending.
+     *                      Defaults to {@link AppConstant#DEFAULT_SORT_DIRECTION}.
+     * @param model         The {@link Model} object to which the search results and pagination metadata
+     *                      will be added.
      * @return The view name "user/search" to render the search results page.
      * @throws IllegalArgumentException If the search field is invalid, page or size values are out
-     *         of range, or the sort direction is neither "asc" nor "desc".
+     *                                  of range, or the sort direction is neither "asc" nor "desc".
      */
     @GetMapping("/search")
-    public String searchHandler(
-            @RequestParam(value = "field",
-                    defaultValue = AppConstant.DEFAULT_SEARCH_FIELD) String searchField,
-            @RequestParam(value = "keyword") String searchKeyword,
-            @RequestParam(value = "page", defaultValue = AppConstant.DEFAULT_PAGE + "") int page,
-            @RequestParam(value = "size", defaultValue = AppConstant.DEFAULT_SIZE + "") int size,
-            @RequestParam(value = "sortBy", defaultValue = "name") String sortBy,
-            @RequestParam(value = "direction",
-                    defaultValue = AppConstant.DEFAULT_SORT_DIRECTION) String direction,
-            Model model, Authentication authentication
+    public String searchHandler(@RequestParam(value = "searchField", defaultValue = "name") String searchField,
+                                @RequestParam(value = "searchKeyword", defaultValue = "") String searchKeyword,
+                                @RequestParam(value = "page", defaultValue = AppConstant.DEFAULT_PAGE + "") int page,
+                                @RequestParam(value = "size", defaultValue = AppConstant.DEFAULT_SIZE + "") int size,
+                                @RequestParam(value = "sortBy", defaultValue = "name") String sortBy,
+                                @RequestParam(value = "direction",
+                                        defaultValue = AppConstant.DEFAULT_SORT_DIRECTION) String direction,
+                                Model model, Authentication authentication
 
     ) {
+
+
+        // Validate searchField
+        if (searchField == null
+                || searchField.isEmpty()) {
+            logger.error("Search field must not be null or empty.");
+            throw new IllegalArgumentException("Search field must not be null or empty.");
+        }
+
+        // Validate searchKeyword
+        if (searchKeyword == null
+                || searchKeyword.isEmpty()) {
+            logger.error("Search keyword must not be null or empty.");
+            throw new IllegalArgumentException("Search keyword must not be null or empty.");
+        }
 
         String username = LoggedInUserFetcher.getLoggedInUserEmail(authentication);
 
@@ -342,23 +352,20 @@ public class ContactController {
         }
 
 
-
-        logger.info(
-                "Search request: field={}, keyword={}, page={}, size={}, sortBy={}, direction={}",
-                searchField, searchKeyword, page, size, sortBy, direction);
+        logger.info("Search request: field={}, keyword={}, page={}, size={}, sortBy={}, direction={}", searchField, searchKeyword, page, size, sortBy, direction);
 
 
         // Perform the search using the specified criteria and retrieve the results as a paginated
         // list
-        Page<Contact> contacts = contactService.serchContactsWithUser(searchField, searchKeyword,
-                page, size, sortBy, direction, user);
+        Page<Contact> contacts =
+                contactService.serchContactsWithUser(searchField, searchKeyword, page, size, sortBy, direction, user);
 
 
         logger.info("Contacts found: {}", contacts.getTotalElements());
 
         // If no contacts are found, add a message to the model and log a warning
         if (contacts.isEmpty()) {
-            logger.warn("No contacts found for keyword '{}'", searchKeyword);
+            logger.error("No contacts found for keyword '{}'", searchKeyword);
 
             model.addAttribute("message", "No contacts found matching your search criteria.");
         }
@@ -382,6 +389,14 @@ public class ContactController {
         int currentPageno = contacts.getNumber();
 
         model.addAttribute("pageno", currentPageno);
+
+        model.addAttribute("pagesize", AppConstant.DEFAULT_SIZE);
+        
+        model.addAttribute("searchField",searchField);
+        
+        model.addAttribute("searchKeyword",searchKeyword);
+        
+        logger.info("hasprevious {} hasnext {} totalpages {} pageno {} pagesize {} contactsearchform {} ", hasprevious, hasNext, totalpages, currentPageno, AppConstant.DEFAULT_SIZE);
 
         return "user/search";
     }
