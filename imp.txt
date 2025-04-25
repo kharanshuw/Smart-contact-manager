@@ -8,3 +8,5 @@ http://localhost:8080/user/dashboard
 http://localhost:8080/user/contacts/add
 
 http://localhost:8080/user/contacts/view
+
+ http://localhost:8080/api/contact/8

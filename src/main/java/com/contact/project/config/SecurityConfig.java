@@ -22,7 +22,7 @@ public class SecurityConfig {
 
     @Autowired
     public SecurityConfig(CustomUserDetailService customUserDetailService,
-                          OAuthAuthenticationSuccessHandler oAuthSuccessHandler) {
+            OAuthAuthenticationSuccessHandler oAuthSuccessHandler) {
 
         this.customUserDetailService = customUserDetailService;
 
@@ -30,9 +30,8 @@ public class SecurityConfig {
     }
 
     /*
-     * This method creates a `DaoAuthenticationProvider` bean, which is a type of
-     * authentication provider that uses a `UserDetailsService` to load user
-     * details from database .
+     * This method creates a `DaoAuthenticationProvider` bean, which is a type of authentication
+     * provider that uses a `UserDetailsService` to load user details from database .
      */
     @Bean
     public AuthenticationProvider authenticationProvider() {
@@ -53,8 +52,8 @@ public class SecurityConfig {
     }
 
     /*
-     * This method creates a `BCryptPasswordEncoder` bean, which is a password
-     * encoder that uses the BCrypt algorithm to hash and verify passwords.
+     * This method creates a `BCryptPasswordEncoder` bean, which is a password encoder that uses the
+     * BCrypt algorithm to hash and verify passwords.
      */
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -74,21 +73,20 @@ public class SecurityConfig {
         });
 
         // form login configuration
-        httpSecurity.formLogin(
-                formlogin -> {
-                    formlogin.loginPage("/login");
+        httpSecurity.formLogin(formlogin -> {
+            formlogin.loginPage("/login");
 
-                    formlogin.loginProcessingUrl("/authenticate");
+            formlogin.loginProcessingUrl("/authenticate");
 
-                    formlogin.defaultSuccessUrl("/user/dashboard");
+            formlogin.defaultSuccessUrl("/user/dashboard");
 
-                    // formlogin.failureForwardUrl("/login?error=true");
+            // formlogin.failureForwardUrl("/login?error=true");
 
-                    formlogin.usernameParameter("email");
+            formlogin.usernameParameter("email");
 
-                    formlogin.passwordParameter("password");
+            formlogin.passwordParameter("password");
 
-                });
+        });
 
         // logout configuration
         httpSecurity.logout(logoutform -> {
@@ -102,12 +100,11 @@ public class SecurityConfig {
         });
 
         // oauth2 configuration
-        httpSecurity.oauth2Login(
-                oauth2 -> {
-                    oauth2.loginPage("/login");
+        httpSecurity.oauth2Login(oauth2 -> {
+            oauth2.loginPage("/login");
 
-                    oauth2.successHandler(oAuthSuccessHandler);
-                });
+            oauth2.successHandler(oAuthSuccessHandler);
+        });
 
         return httpSecurity.build();
     }
