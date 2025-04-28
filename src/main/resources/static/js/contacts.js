@@ -67,50 +67,175 @@ async function loadcontactdetails(id) {
         let response = await fetch(`http://localhost:8080/api/contact/${id}`);
 
         if (!response.ok) {
+            console.error(`HTTP error! in loadcontactdetails Status: ${response.status}`)
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
+
         let data = await response.json();
 
         console.log("printing data of contact ", data);
 
         let contact_name = document.querySelector('#contact_name');
 
+        if (!contact_name) {
+            console.error("contact_name not found ");
+        }
+
         let contact_email = document.querySelector('#contact_email');
+
+        if (!contact_email) {
+            console.error("email not found ");
+        }
+
 
         let contact_address = document.querySelector('#contact_address');
 
+        if (!contact_address) {
+            console.error("email not found ");
+        }
+
         let description = document.querySelector('#description');
 
-        let cloudinaryImagename = document.querySelector('#cloudinaryImagename');
+        if (!description) {
+            console.error("description not found ");
+        }
+
+
+
+        //let cloudinaryImagename = document.querySelector('#cloudinaryImagename');
 
         let phoneNumber = document.querySelector("#phoneNumber");
 
+        if (!phoneNumber) {
+            console.error("phoneNumber not found ");
+        }
+
         let picture = document.querySelector("#picture");
+
 
         let fevorite = document.querySelector("#fevorite");
 
-        contact_name.innerHTML = data.name;
 
-        contact_email.innerHTML = data.email;
 
-        contact_address.innerHTML = data.address;
+        let facebookLink = document.querySelector("#facebookLink");
 
-        description.innerHTML = data.description;
 
-        cloudinaryImagename.innerHTML = data.cloudinaryImagename;
+        if (!facebookLink) {
+            console.error("facebookLink not found ");
+        }
 
-        phoneNumber.innerHTML = data.phoneNumber;
+        let instagramLink = document.querySelector("#instagramLink");
 
-        picture.setAttribute("href",data.picture);
+        if (!instagramLink) {
+            console.error("instagramLink not found ");
+        }
 
-        fevorite.innerHTML = data.fevorite;
 
+        instagramLink.setAttribute("href", data.instagramLink);
+
+        instagramLink.innerHTML = data.instagramLink || "N/A";
+
+        facebookLink.innerHTML = data.facebookLink || "N/A";
+
+        facebookLink.setAttribute("href", data.facebookLink);
+
+        if (data.fevorite) {
+            fevorite.innerHTML = "<i class='fas fa-star text-yellow-400'></i><i class='fas fa-star text-yellow-400'></i><i class='fas fa-star text-yellow-400'></i><i class='fas fa-star text-yellow-400'></i><i class='fas fa-star text-yellow-400'></i>";
+        }
+        else {
+            fevorite.innerHTML = "Not Favorite Contact";
+        }
+
+
+        contact_name.innerHTML = data.name || "N/A";
+
+        contact_email.innerHTML = data.email || "N/A";
+
+        contact_address.innerHTML = data.address || "N/A";
+
+        description.innerHTML = data.description || "N/A";
+
+        //  cloudinaryImagename.innerHTML = data.cloudinaryImagename;
+
+        phoneNumber.innerHTML = data.phoneNumber || "N/A";
+
+        picture.setAttribute("src", data.picture);
 
         showContactModel();
 
         return data;
     } catch (error) {
-        console.log("printing error " + error)
+        console.log("printing error " + error);
     }
 
+}
+
+
+
+async function deletecontact(id) {
+    console.log("deletecontact called");
+
+    console.log("id recived : " + id);
+
+    try {
+
+        let csrfToken  = await getcsrftoken();
+
+        if(!csrfToken || !csrfToken.token)
+        {
+            console.error("CSRF token is invalid or not found");
+            throw new Error("CSRF token is invalid or not found");
+        }
+
+        let token = csrfToken.token;
+
+        console.log("token recived in deletecontact "+token);
+
+        let response = await fetch(`http://localhost:8080/api/contact/delete/${id}`, {
+            method: 'DELETE',
+            headers : {
+                'Content-Type':'application/json',
+                'X-CSRF-TOKEN':token,
+            },
+        });
+
+        if (!response.ok) {
+            console.error(`HTTP error! Status: ${response.status}`)
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        // Log success message
+        console.log("Contact deleted successfully");
+
+
+        // Redirect to another page
+        window.location.href = "/user/contacts/view";
+    } catch (error) {
+        console.error("error occured in deletecontact" + error);
+    }
+
+}
+
+
+async function getcsrftoken() {
+    console.log("getcsrftoken function called");
+
+    try {
+        let response = await fetch("http://localhost:8080/api/csrf-token");
+
+        if (!response.ok) {
+            console.error(`HTTP error! Status: ${response.status}`)
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        let data = await response.json();
+
+        console.log("printing data of csrf token ", data);
+
+        return data;
+
+    } catch (error) {
+        console.error("error occured in getcsrftoken")
+        return null;
+    }
 }

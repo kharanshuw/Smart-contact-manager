@@ -8,7 +8,7 @@ import lombok.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Table(name = "users")
+@Table(name = "users") 
 @Entity
 public class User {
 
@@ -40,13 +40,12 @@ public class User {
     @Pattern(regexp = "^\\d{10}$", message = "Invalid phone number")
     private String phoneNumber;
 
-    @Builder.Default
     private boolean enabled = false;
 
-    @Builder.Default
+   
     private boolean emailVerified = false;
 
-    @Builder.Default
+   
     private boolean phoneVerified = false;
 
     @Enumerated(value = EnumType.STRING)
@@ -54,7 +53,7 @@ public class User {
 
     private String providerUserId;
     
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER,orphanRemoval = true)
     private List<Contact> contacts = new ArrayList<>();
 
     @ElementCollection(fetch = FetchType.EAGER)

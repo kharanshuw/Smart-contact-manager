@@ -153,13 +153,13 @@ public class ContactServiceImpl implements ContactService {
                 return new ResouseNotFound("contact not found with this id" + id);
             });
 
-            log.info("contact found can be deleted withoud problem");
+            log.info("contact found can be deleted without problem");
 
-            log.info("deleting contact by id in services");
+            log.info("deleting contact by id {} in services", id);
 
-            contactRespo.deleteById(id);
+            contactRespo.deleteContactById(id);
 
-            log.info("successfully deleted contact by id");
+            log.info("successfully deleted contact by id:{}", id);
         } catch (Exception e) {
             log.error("error in deleting contact " + e.toString());
             throw new RuntimeException("error in deleting contact " + e.toString());

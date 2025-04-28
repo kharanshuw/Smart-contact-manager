@@ -5,10 +5,11 @@ import com.contact.project.entity.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
+import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
@@ -134,4 +135,10 @@ public interface ContactRepo extends JpaRepository<Contact, Integer> {
         Page<Contact> searchByNameLike(@Param("userId") int userId,
                         @Param("nameString") String nameString, Pageable pageable);
 
+
+
+        @Modifying
+        @Transactional
+        @Query("DELETE FROM Contact c WHERE c.id = :id")
+        void deleteContactById(@Param("id") int id);
 }

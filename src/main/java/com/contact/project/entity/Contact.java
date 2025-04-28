@@ -38,10 +38,10 @@ public class Contact {
     /**
      * The user who owns this contact.
      */
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     @JsonIgnore
-    private User user;
+    private User user; 
 
     /**
      * List of social links associated with this contact.

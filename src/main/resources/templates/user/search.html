@@ -7,12 +7,12 @@
     <title>Search</title>
 
     <!-- flowbite css -->
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 
     <!-- font awasome -->
     <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-          referrerpolicy="no-referrer" rel="stylesheet"/>
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        referrerpolicy="no-referrer" rel="stylesheet" />
 
     <!-- custom css -->
     <link data-th-href="@{'/output.css'}" rel="stylesheet">
@@ -23,349 +23,360 @@
 
 <body class="bg-white dark:bg-gray-900 text-black dark:text-white">
 
-<!-- user navbar only after login -->
-<div th:if="${user}">
-    <div data-th-replace="~{user/user_navbar :: user-navbar}">
+    <!-- user navbar only after login -->
+    <div th:if="${user}">
+        <div data-th-replace="~{user/user_navbar :: user-navbar}">
 
+        </div>
     </div>
-</div>
 
 
-<!-- user sidebar only if user is logged in  -->
-<div th:if="${user}">
-    <div data-th-replace="~{user/sidebar :: sidebar}">
+    <!-- user sidebar only if user is logged in  -->
+    <div th:if="${user}">
+        <div data-th-replace="~{user/sidebar :: sidebar}">
 
+        </div>
     </div>
-</div>
 
-<!-- normal navbar for guest who are not logged in  -->
-<div th:unless="${user}">
-    <div data-th-replace="~{navbar :: navbar}">
+    <!-- normal navbar for guest who are not logged in  -->
+    <div th:unless="${user}">
+        <div data-th-replace="~{navbar :: navbar}">
 
+        </div>
     </div>
-</div>
 
 
-<!-- content start -->
-<div class="sm:pl-66 pt-20 bg-white dark:bg-gray-900" id="content">
+    <!-- content start -->
+    <div class="sm:pl-66 pt-20 bg-white dark:bg-gray-900" id="content">
 
-    <div>
-
-
-        <h1 class="text-5xl capitalize text-center">
-            this is view contact page
-        </h1>
-
-        <p class="capitalize text-lg text-center">
-            List of all contacts....
-        </p>
+        <div>
 
 
-        <!-- table div start -->
+            <h1 class="text-5xl capitalize text-center">
+                this is view contact page
+            </h1>
 
-        <div class="contact-table">
-
-
-            <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-5">
-
-
-                <div>
-
-                    <!-- search form start -->
-                    <form class="max-w-lg mb-2 mx-auto" data-th-action="@{'/user/contacts/search'}"
-                           method="get">
+            <p class="capitalize text-lg text-center">
+                List of all contacts....
+            </p>
 
 
-                        <div class="flex">
-                            <!-- input select  start-->
-                            <select
+            <!-- table div start -->
+
+            <div class="contact-table">
+
+
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-5">
+
+
+                    <div>
+
+                        <!-- search form start -->
+                        <form class="max-w-lg mb-2 mx-auto" data-th-action="@{'/user/contacts/search'}" method="get">
+
+
+                            <div class="flex">
+                                <!-- input select  start-->
+                                <select
                                     class="capitalize rounded-l-lg py-2 text-sm text-gray-700 dark:text-gray-200 dark:bg-gray-700 bg-white border-blue-500"
-                                   name="searchField" th:value="${searchField}">
+                                    name="searchField" th:value="${searchField}">
 
-                                <option value="" type="button"
+                                    <option value="" type="button"
                                         class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white border-blue-500 capitalize">
-                                    select field
-                                </option>
+                                        select field
+                                    </option>
 
-                                <option value="name" type="button"
+                                    <option value="name" type="button"
                                         class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white border-blue-500 capitalize">
-                                    name
-                                </option>
+                                        name
+                                    </option>
 
 
-                                <option value="email" type="button"
+                                    <option value="email" type="button"
                                         class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                    email
-                                </option>
+                                        email
+                                    </option>
 
 
-                                <option value="phoneNumber" type="button"
+                                    <option value="phoneNumber" type="button"
                                         class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                    phoneNumber
-                                </option>
+                                        phoneNumber
+                                    </option>
 
 
-                            </select>
-                            <!-- input select  start-->
+                                </select>
+                                <!-- input select  start-->
 
 
-                            <!-- input search  start-->
-                            <div class="relative w-full ">
+                                <!-- input search  start-->
+                                <div class="relative w-full ">
 
 
-                                <input type="text" name="searchKeyword"  th:value = ${searchKeyword}
-                                       class="block p-2.5 w-full z-20  text-gray-900 bg-white rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500 text-sm"
-                                       placeholder="Search "/>
+                                    <input type="text" name="searchKeyword" th:value=${searchKeyword}
+                                        class="block p-2.5 w-full z-20  text-gray-900 bg-white rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500 text-sm"
+                                        placeholder="Search " />
 
-                                <!-- submit button start -->
-                                <button type="submit"
+                                    <!-- submit button start -->
+                                    <button type="submit"
                                         class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-blue-700 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                         fill="none" viewBox="0 0 20 20">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                              stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                                    </svg>
-                                    <span class="sr-only">Search</span>
-                                </button>
+                                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 20 20">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                        </svg>
+                                        <span class="sr-only">Search</span>
+                                    </button>
 
-                                <!-- submit  start -->
+                                    <!-- submit  start -->
+                                </div>
+                                <!-- input search end -->
                             </div>
-                            <!-- input search end -->
-                        </div>
 
 
-                    </form>
-                    <!-- search form  start -->
-                </div>
-
-
-                <!-- no contact message -->
-                <div data-th-if="${message}">
-                    <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
-                         role="alert">
-                        <span class="font-medium capitalize" data-th-text="${message}"></span>
+                        </form>
+                        <!-- search form  start -->
                     </div>
 
-                </div>
 
-                <!-- table start -->
+                    <!-- no contact message -->
+                    <div data-th-if="${message}">
+                        <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+                            role="alert">
+                            <span class="font-medium capitalize" data-th-text="${message}"></span>
+                        </div>
 
-                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    </div>
 
+                    <!-- table start -->
 
-                    <!-- table head start -->
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-
-
-                    <tr>
-
-
-                        <th scope="col" class="px-6 py-3">
-                            Name
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Position
-                        </th>
-                        <th scope="col" class="px-6 py-3 capitalize">
-                            links
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Action
-                        </th>
-                    </tr>
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
 
 
-                    </thead>
+                        <!-- table head start -->
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
 
 
-                    <!-- table body start -->
-                    <tbody>
-
-                    <!-- table row start -->
-                    <tr data-th-each="c : ${contact.getContent()}" data-th-object="${c}"
-                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <tr>
 
 
-                        <th scope="row"
-                            class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                                <th scope="col" class="px-6 py-3">
+                                    Name
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Position
+                                </th>
+                                <th scope="col" class="px-6 py-3 capitalize">
+                                    links
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Action
+                                </th>
+                            </tr>
 
 
-                            <img class="w-10 h-10 rounded-full" onerror="this.src='/images/default_image.jpg'"
-                                 data-th-src="@{*{picture}}" alt="image">
-
-                            <div class="ps-3">
-                                <div class="text-base font-semibold" data-th-text=*{name}>Neil Sims</div>
-                                <div class="font-normal text-gray-500" data-th-text=*{email}>
-                                    email@gmail.com
-                                </div>
-                            </div>
+                        </thead>
 
 
-                        </th>
+                        <!-- table body start -->
+                        <tbody>
+
+                            <!-- table row start -->
+                            <tr data-th-each="c : ${contact.getContent()}" data-th-object="${c}"
+                                class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
 
 
-                        <td class="px-6 py-4">
-                            <i class="fa-solid fa-phone h-4 w-4"></i>
-                            <span data-th-text="*{phoneNumber}"></span>
-                        </td>
+                                <th scope="row"
+                                    class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
 
 
-                        <td class="px-6 py-4 flex flex-row flex-wrap">
+                                    <img class="w-10 h-10 rounded-full" onerror="this.src='/images/default_image.jpg'"
+                                        data-th-src="@{*{picture}}" alt="image">
 
-                            <div class="flex items-center ">
-
-                                <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"
-                                     data-th-if="*{fevorite}"></div>
-                            </div>
-
-                            <!-- facebook link -->
-
-                            <a href="" target="_blank" data-th-href="@{*{facebookLink}}">
-
-                                <!-- facebook logo -->
-
-                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                     fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd"
-                                          d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
-                                          clip-rule="evenodd"/>
-                                </svg>
-
-                            </a>
+                                    <div class="ps-3">
+                                        <div class="text-base font-semibold" data-th-text=*{name}>Neil Sims</div>
+                                        <div class="font-normal text-gray-500" data-th-text=*{email}>
+                                            email@gmail.com
+                                        </div>
+                                    </div>
 
 
-                            <!-- instagram link -->
-
-                            <a href="" target="_blank" data-th-href="@{*{instagramLink}}">
+                                </th>
 
 
-                                <!-- instagram logo -->
-
-                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                     viewBox="0 0 24 24">
-                                    <path fill="currentColor" fill-rule="evenodd"
-                                          d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z"
-                                          clip-rule="evenodd"/>
-                                </svg>
-
-                            </a>
-                        </td>
+                                <td class="px-6 py-4">
+                                    <i class="fa-solid fa-phone h-4 w-4"></i>
+                                    <span data-th-text="*{phoneNumber}"></span>
+                                </td>
 
 
-                        <td class="px-6 py-4">
+                                <td class="px-6 py-4 flex flex-row flex-wrap">
 
-                            <a data-th-href="@{'*{/user/contacts/delete}'}">
-                                <i class="fa-solid fa-trash-can h-6 w-6"></i>
+                                    <div class="flex items-center ">
 
-                            </a>
+                                        <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"
+                                            data-th-if="*{fevorite}"></div>
+                                    </div>
 
-                            <a data-th-href="@{'*{/user/contacts/delete}'}">
-                                <i class="fa-solid fa-pen h-6 w-6"></i>
+                                    <!-- facebook link -->
 
-                            </a>
+                                    <a href="" target="_blank" data-th-href="@{*{facebookLink}}">
 
-                            <a data-th-href="@{'*{/user/contacts/delete}'}">
-                                <i class="fa-solid fa-eye h-6 w-6"></i>
-                            </a>
-                        </td>
+                                        <!-- facebook logo -->
 
+                                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="currentColor" viewBox="0 0 24 24">
+                                            <path fill-rule="evenodd"
+                                                d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
+                                                clip-rule="evenodd" />
+                                        </svg>
 
-                    </tr>
-
-
-                    </tbody>
-
-
-                </table>
-                <!-- table end -->
+                                    </a>
 
 
-                <!-- pagination start -->
-                <div class="p-5 text-center">
-                    <ul class="inline-flex -space-x-px text-base h-10">
+                                    <!-- instagram link -->
 
-                        <!-- previous button -->
-                        <li data-th-unless="${contact.first}">
-
-                            <a data-th-href="@{/user/contacts/search(size=${pagesize}, page=${pageno-1},searchField=${searchField}, searchKeyword=${searchKeyword} ) }"
-                               class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
-
-                        </li>
-
-                        <!-- current button -->
-                        <li data-th-each="index : ${#numbers.sequence(0,totalpages-1)}">
+                                    <a href="" target="_blank" data-th-href="@{*{instagramLink}}">
 
 
-                            <a data-th-href="@{/user/contacts/search(size=${pagesize}, page=${index}, searchField=${searchField}, searchKeyword=${searchKeyword})}"
-                               th:classappend="${index==pageno ? 'dark:bg-gray-700 dark:hover:bg-gray-700 bg-blue-500 text-gray-700' : 'bg-white dark:bg-gray-900 text-gray-500' } "
-                               class="flex items-center justify-center px-4 h-10 leading-tight   border border-gray-300 hover:bg-gray-100 hover:text-gray-700  dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                               onclick="goToPage()">
-                                
-                                <span data-th-text="${index+1}">
+                                        <!-- instagram logo -->
+
+                                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                            viewBox="0 0 24 24">
+                                            <path fill="currentColor" fill-rule="evenodd"
+                                                d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+
+                                    </a>
+                                </td>
+
+
+                                <td class="px-6 py-4">
+
+                                    <a data-th-href="@{'*{/user/contacts/delete}'}">
+                                        <i class="fa-solid fa-trash-can h-6 w-6"></i>
+
+                                    </a>
+
+                                    <a data-th-href="@{'*{/user/contacts/delete}'}">
+                                        <i class="fa-solid fa-pen h-6 w-6"></i>
+
+                                    </a>
+
+                                    <button th:onclick=" loadcontactdetails([[${c.id}]])" class="btn">
+                                        <i class="fa-solid fa-eye h-6 w-6"></i>
+                                    </button>
+                                </td>
+
+
+                            </tr>
+
+
+                        </tbody>
+
+
+                    </table>
+                    <!-- table end -->
+
+
+                    <!-- pagination start -->
+                    <div class="p-5 text-center">
+                        <ul class="inline-flex -space-x-px text-base h-10">
+
+                            <!-- previous button -->
+                            <li data-th-unless="${contact.first}">
+
+                                <a data-th-href="@{/user/contacts/search(size=${pagesize}, page=${pageno-1},searchField=${searchField}, searchKeyword=${searchKeyword} ) }"
+                                    class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
+
+                            </li>
+
+                            <!-- current button -->
+                            <li data-th-each="index : ${#numbers.sequence(0,totalpages-1)}">
+
+
+                                <a data-th-href="@{/user/contacts/search(size=${pagesize}, page=${index}, searchField=${searchField}, searchKeyword=${searchKeyword})}"
+                                    th:classappend="${index==pageno ? 'dark:bg-gray-700 dark:hover:bg-gray-700 bg-blue-500 text-gray-700' : 'bg-white dark:bg-gray-900 text-gray-500' } "
+                                    class="flex items-center justify-center px-4 h-10 leading-tight   border border-gray-300 hover:bg-gray-100 hover:text-gray-700  dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                                    onclick="goToPage()">
+
+                                    <span data-th-text="${index+1}">
                                         1
                                     </span>
-                            </a>
+                                </a>
 
 
-                        </li>
+                            </li>
 
 
-                        <!-- next button -->
-                        <li data-th-unless="${contact.last}">
-                            <a data-th-href="@{/user/contacts/search(size=${pagesize}, page=${pageno+1},searchField=${searchField}, searchKeyword=${searchKeyword} )}"
-                               class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
-                        </li>
-                    </ul>
+                            <!-- next button -->
+                            <li data-th-unless="${contact.last}">
+                                <a data-th-href="@{/user/contacts/search(size=${pagesize}, page=${pageno+1},searchField=${searchField}, searchKeyword=${searchKeyword} )}"
+                                    class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- pagination end -->
+
                 </div>
 
-                <!-- pagination end -->
-
             </div>
+
+
+            <!-- table div end -->
+
 
         </div>
 
 
-        <!-- table div end -->
+
+        <!-- contact details module -->
+        <div th:insert="~{user/contact_modal.html :: contact_details} ">
+        </div>
+
 
 
     </div>
+    <!-- content end -->
 
 
-</div>
-<!-- content end -->
+    <!-- logout form start  -->
+    <form data-th-action="@{/logout}" id="logout-form" method="post" th:hidden="true">
+        <input hidden type="submit" value="log out" />
+    </form>
+    <!-- logout form end  -->
 
 
-<!-- logout form start  -->
-<form data-th-action="@{/logout}" id="logout-form" method="post" th:hidden="true">
-    <input hidden type="submit" value="log out"/>
-</form>
-<!-- logout form end  -->
+    <!-- js for logout  -->
+    <script>
+        function logout() {
+            document.getElementById("logout-form").submit();
+        }
+    </script>
 
 
-<!-- js for logout  -->
-<script>
-    function logout() {
-        document.getElementById("logout-form").submit();
-    }
-</script>
+    <!-- custom script for theme switcher -->
+    <script data-th-src="@{'/js/script.js'}">
+
+    </script>
+
+    <script>
+        function goToPage() {
+            document.getElementById("goto_page_form").submit();
+        }
+    </script>
 
 
-<!-- custom script for theme switcher -->
-<script data-th-src="@{'/js/script.js'}">
-
-</script>
-
-<script>
-    function goToPage(){
-    document.getElementById("goto_page_form").submit();
-    }
-</script>
+    <!-- flowbit js  -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 
 
-<!-- flowbit js  -->
-<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <!-- contact js  -->
+    <script data-th-src="@{'/js/contacts.js'}"></script>
+
 
 </body>
 
