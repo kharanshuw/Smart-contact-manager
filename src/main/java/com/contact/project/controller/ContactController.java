@@ -391,11 +391,11 @@ public class ContactController {
         model.addAttribute("pageno", currentPageno);
 
         model.addAttribute("pagesize", AppConstant.DEFAULT_SIZE);
-        
-        model.addAttribute("searchField",searchField);
-        
-        model.addAttribute("searchKeyword",searchKeyword);
-        
+
+        model.addAttribute("searchField", searchField);
+
+        model.addAttribute("searchKeyword", searchKeyword);
+
         logger.info("hasprevious {} hasnext {} totalpages {} pageno {} pagesize {} contactsearchform {} ", hasprevious, hasNext, totalpages, currentPageno, AppConstant.DEFAULT_SIZE);
 
         return "user/search";

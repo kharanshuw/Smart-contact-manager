@@ -39,8 +39,7 @@ const contactModal = new Modal(viewContactModel, options, instanceOptions);
  * Function to show the modal
  * Calls the `show()` method on the `contactModal` instance to display the modal
  */
-function showContactModel()
-{
+function showContactModel() {
     contactModal.show();
 }
 
@@ -48,10 +47,10 @@ function showContactModel()
  * Function to hide the modal
  * Calls the `hide()` method on the `contactModal` instance to hide the modal
  */
-function hideContactModel()
-{
+function hideContactModel() {
     contactModal.hide();
 }
+
 
 
 /**
@@ -61,24 +60,57 @@ function hideContactModel()
  * @param {number} id - The ID of the contact to retrieve
  * @returns {Object} - The contact details as a JSON object, if successfully retrieved
  */
-async function  loadcontactdetails(id)
-{
-    console.log("loading data of contact id : "+id);
+async function loadcontactdetails(id) {
+    console.log("loading data of contact id : " + id);
 
     try {
-      let response =  await fetch(`http://localhost:8080/api/contact/${id}`);
-      
-      if(!response.ok)
-      {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      let data = await response.json();
-      
-      console.log("printing data of contact ",data);
-      
-      return data;
+        let response = await fetch(`http://localhost:8080/api/contact/${id}`);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        let data = await response.json();
+
+        console.log("printing data of contact ", data);
+
+        let contact_name = document.querySelector('#contact_name');
+
+        let contact_email = document.querySelector('#contact_email');
+
+        let contact_address = document.querySelector('#contact_address');
+
+        let description = document.querySelector('#description');
+
+        let cloudinaryImagename = document.querySelector('#cloudinaryImagename');
+
+        let phoneNumber = document.querySelector("#phoneNumber");
+
+        let picture = document.querySelector("#picture");
+
+        let fevorite = document.querySelector("#fevorite");
+
+        contact_name.innerHTML = data.name;
+
+        contact_email.innerHTML = data.email;
+
+        contact_address.innerHTML = data.address;
+
+        description.innerHTML = data.description;
+
+        cloudinaryImagename.innerHTML = data.cloudinaryImagename;
+
+        phoneNumber.innerHTML = data.phoneNumber;
+
+        picture.setAttribute("href",data.picture);
+
+        fevorite.innerHTML = data.fevorite;
+
+
+        showContactModel();
+
+        return data;
     } catch (error) {
-        console.log("printing error "+error)
+        console.log("printing error " + error)
     }
 
 }

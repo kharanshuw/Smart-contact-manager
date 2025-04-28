@@ -3,6 +3,10 @@
     
 }
 
+.btn:hover{
+cursor:pointer;
+}
+
 .dark-background{
     background-color: #121212;
 }
