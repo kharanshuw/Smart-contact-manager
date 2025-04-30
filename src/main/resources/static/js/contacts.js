@@ -1,6 +1,7 @@
 console.log("contacts js loaded");
 
 
+let baseURL = "http://localhost:8080";
 
 // Set the modal menu element
 // Fetches the modal element from the DOM with the ID "view_contact_model"
@@ -64,7 +65,7 @@ async function loadcontactdetails(id) {
     console.log("loading data of contact id : " + id);
 
     try {
-        let response = await fetch(`http://localhost:8080/api/contact/${id}`);
+        let response = await fetch(`${baseURL}/api/contact/${id}`);
 
         if (!response.ok) {
             console.error(`HTTP error! in loadcontactdetails Status: ${response.status}`)
@@ -179,23 +180,22 @@ async function deletecontact(id) {
 
     try {
 
-        let csrfToken  = await getcsrftoken();
+        let csrfToken = await getcsrftoken();
 
-        if(!csrfToken || !csrfToken.token)
-        {
+        if (!csrfToken || !csrfToken.token) {
             console.error("CSRF token is invalid or not found");
             throw new Error("CSRF token is invalid or not found");
         }
 
         let token = csrfToken.token;
 
-        console.log("token recived in deletecontact "+token);
+        console.log("token recived in deletecontact " + token);
 
-        let response = await fetch(`http://localhost:8080/api/contact/delete/${id}`, {
+        let response = await fetch(`${baseURL}/api/contact/delete/${id}`, {
             method: 'DELETE',
-            headers : {
-                'Content-Type':'application/json',
-                'X-CSRF-TOKEN':token,
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': token,
             },
         });
 
@@ -212,6 +212,7 @@ async function deletecontact(id) {
         window.location.href = "/user/contacts/view";
     } catch (error) {
         console.error("error occured in deletecontact" + error);
+        throw new error("error occured in deletecontact" + error);
     }
 
 }
@@ -221,7 +222,7 @@ async function getcsrftoken() {
     console.log("getcsrftoken function called");
 
     try {
-        let response = await fetch("http://localhost:8080/api/csrf-token");
+        let response = await fetch(`${baseURL}/api/csrf-token`);
 
         if (!response.ok) {
             console.error(`HTTP error! Status: ${response.status}`)
@@ -238,4 +239,35 @@ async function getcsrftoken() {
         console.error("error occured in getcsrftoken")
         return null;
     }
+}
+
+
+async function deletecontactalert(id) {
+    try {
+        console.log("id recived " + id);
+
+
+        Swal.fire({
+            title: "Do you want to delete the contact?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Delete",
+
+        }).then(async (result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                console.log("calling async function deletecontact ");
+                await deletecontact(id);
+                console.log("executed successfully deletecontact async function")
+            } else if (result.isDenied) {
+                Swal.fire("Changes are not saved", "", "info");
+            }
+        });
+
+
+    } catch (error) {
+        console.error("error occured in deletecontactalert" + error);
+    }
+
+
 }

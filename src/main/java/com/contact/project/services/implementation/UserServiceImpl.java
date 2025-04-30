@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
     /**
      * Saves a User entity in the database. Encrypts the user's password and assigns a default role
      * before saving.
-     * 
+     *
      * @param user The User entity to be saved.
      * @return The saved User entity.
      */
@@ -60,7 +60,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * Retrieves a User entity from the database by its ID.
-     * 
+     *
      * @param id The ID of the user to retrieve.
      * @return Optional containing the User entity, if found.
      */
@@ -74,7 +74,7 @@ public class UserServiceImpl implements UserService {
     /**
      * Updates an existing User entity in the database. Validates the user's existence before
      * updating.
-     * 
+     *
      * @param user The User entity with updated data.
      * @return The updated User entity.
      */
@@ -113,7 +113,7 @@ public class UserServiceImpl implements UserService {
     /**
      * Deletes a User entity from the database by its ID. Throws an exception if the user does not
      * exist.
-     * 
+     *
      * @param id The ID of the user to delete.
      */
     @Override
@@ -126,7 +126,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * Checks if a User entity exists in the database by its ID.
-     * 
+     *
      * @param id The ID of the user to check.
      * @return true if the user exists, false otherwise.
      */
@@ -139,7 +139,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * Checks if a User entity exists in the database by its email.
-     * 
+     *
      * @param email The email to check.
      * @return true if the user exists, false otherwise.
      */
@@ -151,10 +151,10 @@ public class UserServiceImpl implements UserService {
 
         return user != null ? true : false;
     }
- 
+
     /**
      * Retrieves all User entities from the database.
-     * 
+     *
      * @return List of all users.
      */
     @Override
@@ -165,7 +165,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * Finds a User entity in the database by email.
-     * 
+     *
      * @param emailString The email to find the user by.
      * @return The User entity, if found.
      * @throws RuntimeException if the user is not found.

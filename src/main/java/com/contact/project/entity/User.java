@@ -3,12 +3,11 @@ package com.contact.project.entity;
 import com.contact.project.domain.Providers;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Table(name = "users") 
+@Table(name = "users")
 @Entity
 public class User {
 
@@ -42,18 +41,19 @@ public class User {
 
     private boolean enabled = false;
 
-   
+
     private boolean emailVerified = false;
 
-   
+
     private boolean phoneVerified = false;
 
     @Enumerated(value = EnumType.STRING)
     private Providers provider = Providers.SELF;
 
     private String providerUserId;
-    
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER,orphanRemoval = true)
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY, orphanRemoval = true)
     private List<Contact> contacts = new ArrayList<>();
 
     @ElementCollection(fetch = FetchType.EAGER)
@@ -172,22 +172,38 @@ public class User {
         this.roleList = roleList;
     }
 
+    /**
+     * this method is used to add new contact in existing list of contact for this user
+     *
+     * @param contact
+     * @return
+     */
+    public User addContact(Contact contact) {
+        contacts.add(contact);
+        contact.setUser(this);
+        return this;
+    }
+
+
+    /**
+     * this method is used to remove existing contact from list of contact for this user
+     *
+     * @param contact
+     * @return
+     */
+    public User removeContact(Contact contact) {
+        contacts.remove(contact);
+        contact.setUser(this);
+        return this;
+    }
+
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", userName='" + userName + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", about='" + about + '\'' +
-                ", profilePic='" + profilePic + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", enabled=" + enabled +
-                ", emailVerified=" + emailVerified +
-                ", phoneVerified=" + phoneVerified +
-                ", provider=" + provider +
-                ", providerUserId='" + providerUserId + '\'' +
-                ", roleList=" + roleList +
-                '}';
+        return "User{" + "id=" + id + ", userName='" + userName + '\'' + ", email='" + email + '\''
+                + ", password='" + password + '\'' + ", about='" + about + '\'' + ", profilePic='"
+                + profilePic + '\'' + ", phoneNumber='" + phoneNumber + '\'' + ", enabled="
+                + enabled + ", emailVerified=" + emailVerified + ", phoneVerified=" + phoneVerified
+                + ", provider=" + provider + ", providerUserId='" + providerUserId + '\''
+                + ", roleList=" + roleList + '}';
     }
 }

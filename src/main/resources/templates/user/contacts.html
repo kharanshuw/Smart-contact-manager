@@ -14,6 +14,9 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         referrerpolicy="no-referrer" rel="stylesheet" />
 
+
+
+
     <!-- custom css -->
     <link data-th-href="@{'/output.css'}" rel="stylesheet">
 
@@ -68,7 +71,10 @@
 
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-5">
 
+                    <div data-th-replace="~{message :: messagebox}">
+                    </div>
 
+                    
                     <div>
 
                         <!-- search form start -->
@@ -255,11 +261,15 @@
 
                                 <td class="px-6 py-4">
 
-                                    <btn th:onclick="deletecontact([[${c.id}]])" class="btn">
-                                        
+                                    <!-- <button th:onclick="deletecontact([[${c.id}]])" class="btn">
+
                                         <i class="fa-solid fa-trash-can h-6 w-6"></i>
 
-                                    </btn>
+                                    </button> -->
+
+                                    <button th:onclick="deletecontactalert([[${c.id}]])" class="btn">
+                                        <i class="fa-solid fa-trash-can h-6 w-6"></i>
+                                    </button>
 
                                     <a data-th-href="@{'*{/user/contacts/delete}'}">
                                         <i class="fa-solid fa-pen h-6 w-6"></i>
@@ -366,6 +376,10 @@
     <!-- contact js  -->
     <script data-th-src="@{'/js/contacts.js'}"></script>
 
+
+
+    <!-- sweetalert js cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

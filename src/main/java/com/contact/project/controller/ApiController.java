@@ -2,8 +2,11 @@ package com.contact.project.controller;
 
 import com.contact.project.entity.Contact;
 import com.contact.project.exception.InvalidContactIdException;
+import com.contact.project.helpers.Message;
+import com.contact.project.helpers.MessageType;
 import com.contact.project.services.ContactService;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,7 +72,7 @@ public class ApiController {
     }
 
     @DeleteMapping("/contact/delete/{id}")
-    public ResponseEntity<String> deleteContact(@PathVariable int id) {
+    public ResponseEntity<String> deleteContact(@PathVariable int id, HttpSession httpSession) {
 
         logger.info("Processing deleteContact GET request for contact ID: {}", id);
 
@@ -84,6 +87,14 @@ public class ApiController {
         contactService.deleteContact(id);
 
         logger.info("deleted successfully");
+
+        Message message = new Message();
+
+        message.setContent("contact is deleted successfully !!");
+
+        message.setType(MessageType.green);
+
+        httpSession.setAttribute("message", message);
 
         // Return a success response
         return ResponseEntity.ok("Contact deleted successfully");

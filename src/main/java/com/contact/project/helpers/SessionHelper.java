@@ -1,6 +1,6 @@
 package com.contact.project.helpers;
 
-import com.contact.project.services.implementation.ContactServiceImpl;
+
 import jakarta.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +11,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 @Component
 public class SessionHelper {
 
-    private static final Logger log = LoggerFactory.getLogger(ContactServiceImpl.class);
+    private static final Logger log = LoggerFactory.getLogger(SessionHelper.class);
 
     /**
      * Removes the "message" attribute from the current HTTP session.

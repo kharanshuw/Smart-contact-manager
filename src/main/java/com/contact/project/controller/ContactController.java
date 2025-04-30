@@ -8,6 +8,7 @@ import com.contact.project.helpers.AppConstant;
 import com.contact.project.helpers.LoggedInUserFetcher;
 import com.contact.project.helpers.Message;
 import com.contact.project.helpers.MessageType;
+import com.contact.project.repositories.UserRepository;
 import com.contact.project.services.ContactService;
 import com.contact.project.services.ImageService;
 import com.contact.project.services.UserService;
@@ -20,7 +21,7 @@ import java.util.UUID;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 
 import org.springframework.security.core.Authentication;
@@ -47,12 +48,15 @@ public class ContactController {
 
     private ImageService imageService;
 
+    private UserRepository userRepository;
 
+    @Autowired
     public ContactController(UserService userService, ContactService contactService,
-                             ImageService imageService) {
+            UserRepository userRepository, ImageService imageService) {
         this.userService = userService;
         this.contactService = contactService;
         this.imageService = imageService;
+        this.userRepository = userRepository;
     }
 
     /**
@@ -76,21 +80,20 @@ public class ContactController {
     /**
      * Processes the addition of a new contact.
      *
-     * @param contactForm    the contact form containing contact details
+     * @param contactForm the contact form containing contact details
      * @param authentication the authentication object for the logged-in user
      * @return a redirect to the add contact view
      */
     @PostMapping("/add_contact")
     public String processaddcontact(@Valid @ModelAttribute ContactForm contactForm,
-                                    BindingResult bindingResult, Authentication authentication, HttpSession httpSession) {
+            BindingResult bindingResult, Authentication authentication, HttpSession httpSession) {
 
         Message message = new Message();
 
+
         /*
-         * The method first checks if there are any validation errors in the form data using the
-         * `bindingResult.hasErrors()` method. If there are errors, it logs an error message and
-         * sets a message in the HTTP session to inform the user to correct the errors. The method
-         * then returns the user to the `/add_contact` page.
+         * Step 1: Validate form input. If there are errors, log them, set an error message in the
+         * session, and redirect back to the form view.
          */
         if (bindingResult.hasErrors()) {
 
@@ -111,78 +114,88 @@ public class ContactController {
             return "user/add_contact";
         }
 
-        logger.info("printing file info which we got from form  "
-                + contactForm.getProfileImage().getOriginalFilename());
 
-        String uniquefilename = null;
+        // Step 2: Retrieve the currently logged-in user's email and log it
+        logger.info("Fetching logged-in user email.");
 
-        String fileUrl = null;
+        String username = LoggedInUserFetcher.getLoggedInUserEmail(authentication);
 
+        logger.info("Logged-in user email: {}", username);
 
-        if (contactForm.getProfileImage() != null && !contactForm.getProfileImage().isEmpty()) {
+        User user = userService.findByEmail(username);
 
+        logger.info("User fetched from the database: {}", user.toString());
 
-            uniquefilename = UUID.randomUUID().toString();
+        // Step 3: Create a new Contact entity and populate it with form data
 
-            logger.info("generated unique filename for contactimage " + uniquefilename);
-
-
-            fileUrl = imageService.uploadImage(contactForm.getProfileImage(), uniquefilename);
-
-            logger.info("generated file url for ProfileImage " + fileUrl);
-
-        }
-
-
-        logger.info("file url of contact image : " + fileUrl);
+        logger.info("Populating the Contact entity with form data.");
 
         Contact contact = new Contact();
 
-        contact.setAddress(contactForm.getAddress());
-
-        contact.setEmail(contactForm.getEmail());
-
-        contact.setDescription(contactForm.getDescription());
+        contact.setName(contactForm.getName());
 
         contact.setFevorite(contactForm.isFevorite());
 
-        contact.setName(contactForm.getName());
+        contact.setEmail(contactForm.getEmail());
 
         contact.setPhoneNumber(contactForm.getPhoneNumber());
 
-        contact.setFacebookLink(contactForm.getFacebookLink());
+        contact.setAddress(contactForm.getAddress());
 
-        contact.setInstagramLink(contactForm.getInstagramLink());
-
-        contact.setPicture(fileUrl);
-
-        contact.setCloudinaryImagename(uniquefilename);
-
-        logger.info("getting logged in user email for adding into contact");
-        String email = LoggedInUserFetcher.getLoggedInUserEmail(authentication);
-
-        logger.info("logged in user email fetched from LoggedInUserFetcher");
-
-        User user = userService.findByEmail(email);
+        contact.setDescription(contactForm.getDescription());
 
         contact.setUser(user);
 
-        logger.info("printing contactForm");
+        contact.setInstagramLink(contactForm.getInstagramLink());
 
-        logger.info(contactForm.toString());
+        contact.setFacebookLink(contactForm.getFacebookLink());
+
+        // Step 4: Handle profile image upload (if provided in the form)
+
+        if (contactForm.getProfileImage() != null && !contactForm.getProfileImage().isEmpty()) {
+
+            logger.info("Profile image provided. Starting upload process.");
+
+
+            String filename = UUID.randomUUID().toString();
+
+            logger.info("Generated unique filename for profile image: {}", filename);
+
+
+            String fileurl = imageService.uploadImage(contactForm.getProfileImage(), filename);
+
+            logger.info("Profile image uploaded successfully. File URL: {}", fileurl);
+
+
+            contact.setPicture(fileurl);
+
+            contact.setCloudinaryImagename(filename);
+        }
+
+        else {
+            logger.error("No profile image provided.");
+        }
+
+        // Step 5: Save the contact entity to the database
+
+        logger.info("Contact entity populated: {}", contact);
+
+        logger.info("Saving contact entity to the database.");
+
 
         contactService.saveContact(contact);
 
-        message.setContent("you have successfully added a new contact");
+        logger.info("contact saved :" + contact.toString());
+
+        // Step 6: Set a success message in the session and log it
+
+        message.setContent("You have successfully added a new contact");
 
         message.setType(MessageType.green);
 
-        /*
-         * Finally, the method sets a success message in the HTTP session and redirects the user to
-         * the `/user/contacts/add_contact` page.
-         *
-         */
         httpSession.setAttribute("message", message);
+
+        logger.info("Success message set in session. Redirecting to the add contact page.");
 
         return "redirect:/user/contacts/add_contact";
     }
@@ -193,25 +206,25 @@ public class ContactController {
      * sorting preferences. Adds the contact list and pagination metadata to the model for rendering
      * in the view.
      *
-     * @param page           The page number to retrieve (0-based index). Defaults to 0 if not provided.
-     * @param size           The number of contacts per page. Defaults to 5 if not provided.
-     * @param sortBy         The field to sort the results by (e.g., "name"). Defaults to "name" if not
-     *                       provided.
-     * @param direction      The sort direction, either "asc" for ascending or "desc" for descending.
-     *                       Defaults to "asc".
-     * @param model          The {@link Model} object to which the contacts and pagination metadata will be
-     *                       added.
+     * @param page The page number to retrieve (0-based index). Defaults to 0 if not provided.
+     * @param size The number of contacts per page. Defaults to 5 if not provided.
+     * @param sortBy The field to sort the results by (e.g., "name"). Defaults to "name" if not
+     *        provided.
+     * @param direction The sort direction, either "asc" for ascending or "desc" for descending.
+     *        Defaults to "asc".
+     * @param model The {@link Model} object to which the contacts and pagination metadata will be
+     *        added.
      * @param authentication The authentication object used to fetch the logged-in user's details.
      * @return The view name "user/contacts" for rendering the contact list.
      * @throws IllegalArgumentException If the user is not found or the input parameters are
-     *                                  invalid.
+     *         invalid.
      */
     @GetMapping("/view")
     public String viewContact(@RequestParam(value = "page", defaultValue = "0") int page,
-                              @RequestParam(value = "size", defaultValue = "5") int size,
-                              @RequestParam(value = "sortBy", defaultValue = "name") String sortBy,
-                              @RequestParam(value = "direction", defaultValue = "asc") String direction, Model model,
-                              Authentication authentication) {
+            @RequestParam(value = "size", defaultValue = "5") int size,
+            @RequestParam(value = "sortBy", defaultValue = "name") String sortBy,
+            @RequestParam(value = "direction", defaultValue = "asc") String direction, Model model,
+            Authentication authentication) {
 
         // Validate input parameters to ensure they meet the requirements for pagination
         if (page < 0 || size <= 0) {
@@ -290,45 +303,44 @@ public class ContactController {
      * field to search by, search keyword, pagination, and sorting preferences. Adds the search
      * results and pagination metadata to the model.
      *
-     * @param searchField   The field to search by (e.g., "name", "email", "phone"). Defaults to
-     *                      {@link AppConstant#DEFAULT_SEARCH_FIELD} if not provided.
+     * @param searchField The field to search by (e.g., "name", "email", "phone"). Defaults to
+     *        {@link AppConstant#DEFAULT_SEARCH_FIELD} if not provided.
      * @param searchKeyword The keyword to search for within the specified field. Must not be null.
-     * @param page          The page number to retrieve. Defaults to {@link AppConstant#DEFAULT_PAGE}. Must
-     *                      be greater than or equal to 0.
-     * @param size          The number of records per page. Defaults to {@link AppConstant#DEFAULT_SIZE}.
-     *                      Must be greater than 0.
-     * @param sortBy        The field to sort the results by. Defaults to "name".
-     * @param direction     The sort direction, either "asc" for ascending or "desc" for descending.
-     *                      Defaults to {@link AppConstant#DEFAULT_SORT_DIRECTION}.
-     * @param model         The {@link Model} object to which the search results and pagination metadata
-     *                      will be added.
+     * @param page The page number to retrieve. Defaults to {@link AppConstant#DEFAULT_PAGE}. Must
+     *        be greater than or equal to 0.
+     * @param size The number of records per page. Defaults to {@link AppConstant#DEFAULT_SIZE}.
+     *        Must be greater than 0.
+     * @param sortBy The field to sort the results by. Defaults to "name".
+     * @param direction The sort direction, either "asc" for ascending or "desc" for descending.
+     *        Defaults to {@link AppConstant#DEFAULT_SORT_DIRECTION}.
+     * @param model The {@link Model} object to which the search results and pagination metadata
+     *        will be added.
      * @return The view name "user/search" to render the search results page.
      * @throws IllegalArgumentException If the search field is invalid, page or size values are out
-     *                                  of range, or the sort direction is neither "asc" nor "desc".
+     *         of range, or the sort direction is neither "asc" nor "desc".
      */
     @GetMapping("/search")
-    public String searchHandler(@RequestParam(value = "searchField", defaultValue = "name") String searchField,
-                                @RequestParam(value = "searchKeyword", defaultValue = "") String searchKeyword,
-                                @RequestParam(value = "page", defaultValue = AppConstant.DEFAULT_PAGE + "") int page,
-                                @RequestParam(value = "size", defaultValue = AppConstant.DEFAULT_SIZE + "") int size,
-                                @RequestParam(value = "sortBy", defaultValue = "name") String sortBy,
-                                @RequestParam(value = "direction",
-                                        defaultValue = AppConstant.DEFAULT_SORT_DIRECTION) String direction,
-                                Model model, Authentication authentication
+    public String searchHandler(
+            @RequestParam(value = "searchField", defaultValue = "name") String searchField,
+            @RequestParam(value = "searchKeyword", defaultValue = "") String searchKeyword,
+            @RequestParam(value = "page", defaultValue = AppConstant.DEFAULT_PAGE + "") int page,
+            @RequestParam(value = "size", defaultValue = AppConstant.DEFAULT_SIZE + "") int size,
+            @RequestParam(value = "sortBy", defaultValue = "name") String sortBy,
+            @RequestParam(value = "direction",
+                    defaultValue = AppConstant.DEFAULT_SORT_DIRECTION) String direction,
+            Model model, Authentication authentication
 
     ) {
 
 
         // Validate searchField
-        if (searchField == null
-                || searchField.isEmpty()) {
+        if (searchField == null || searchField.isEmpty()) {
             logger.error("Search field must not be null or empty.");
             throw new IllegalArgumentException("Search field must not be null or empty.");
         }
 
         // Validate searchKeyword
-        if (searchKeyword == null
-                || searchKeyword.isEmpty()) {
+        if (searchKeyword == null || searchKeyword.isEmpty()) {
             logger.error("Search keyword must not be null or empty.");
             throw new IllegalArgumentException("Search keyword must not be null or empty.");
         }
@@ -352,13 +364,15 @@ public class ContactController {
         }
 
 
-        logger.info("Search request: field={}, keyword={}, page={}, size={}, sortBy={}, direction={}", searchField, searchKeyword, page, size, sortBy, direction);
+        logger.info(
+                "Search request: field={}, keyword={}, page={}, size={}, sortBy={}, direction={}",
+                searchField, searchKeyword, page, size, sortBy, direction);
 
 
         // Perform the search using the specified criteria and retrieve the results as a paginated
         // list
-        Page<Contact> contacts =
-                contactService.serchContactsWithUser(searchField, searchKeyword, page, size, sortBy, direction, user);
+        Page<Contact> contacts = contactService.serchContactsWithUser(searchField, searchKeyword,
+                page, size, sortBy, direction, user);
 
 
         logger.info("Contacts found: {}", contacts.getTotalElements());
@@ -396,7 +410,9 @@ public class ContactController {
 
         model.addAttribute("searchKeyword", searchKeyword);
 
-        logger.info("hasprevious {} hasnext {} totalpages {} pageno {} pagesize {} contactsearchform {} ", hasprevious, hasNext, totalpages, currentPageno, AppConstant.DEFAULT_SIZE);
+        logger.info(
+                "hasprevious {} hasnext {} totalpages {} pageno {} pagesize {} contactsearchform {} ",
+                hasprevious, hasNext, totalpages, currentPageno, AppConstant.DEFAULT_SIZE);
 
         return "user/search";
     }

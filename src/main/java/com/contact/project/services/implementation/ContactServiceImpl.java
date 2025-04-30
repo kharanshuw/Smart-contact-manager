@@ -54,7 +54,6 @@ public class ContactServiceImpl implements ContactService {
             log.info("successfully saved contact");
             return contact2;
         } catch (Exception e) {
-            // TODO: handle exception
             log.error("error in saving contact " + e.toString());
             throw new RuntimeException("error in saving contact " + e.toString());
         }
@@ -157,7 +156,7 @@ public class ContactServiceImpl implements ContactService {
 
             log.info("deleting contact by id {} in services", id);
 
-            contactRespo.deleteContactById(id);
+            contactRespo.delete(contact);
 
             log.info("successfully deleted contact by id:{}", id);
         } catch (Exception e) {

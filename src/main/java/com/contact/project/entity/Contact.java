@@ -38,7 +38,7 @@ public class Contact {
     /**
      * The user who owns this contact.
      */
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     @JsonIgnore
     private User user; 
@@ -46,7 +46,7 @@ public class Contact {
     /**
      * List of social links associated with this contact.
      */
-    @OneToMany(mappedBy = "contact", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "contact", cascade = {CascadeType.PERSIST,CascadeType.MERGE}, fetch = FetchType.EAGER)
     private List<SocialLink> links = new ArrayList<>();
 
 

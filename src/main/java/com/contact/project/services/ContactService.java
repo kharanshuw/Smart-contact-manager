@@ -3,10 +3,10 @@ package com.contact.project.services;
 import com.contact.project.entity.Contact;
 import com.contact.project.entity.User;
 import org.springframework.data.domain.Page;
-
-
+import org.springframework.stereotype.Service;
 import java.util.List;
 
+@Service
 public interface ContactService {
     public Contact saveContact(Contact contact);
 
