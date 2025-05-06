@@ -5,11 +5,16 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Table(name = "users")
 @Entity
-public class User {
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,7 +44,7 @@ public class User {
     @Pattern(regexp = "^\\d{10}$", message = "Invalid phone number")
     private String phoneNumber;
 
-    private boolean enabled = false;
+    private boolean enabled = true;
 
 
     private boolean emailVerified = false;
@@ -52,8 +57,8 @@ public class User {
 
     private String providerUserId;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY,
+            orphanRemoval = true)
     private List<Contact> contacts = new ArrayList<>();
 
     @ElementCollection(fetch = FetchType.EAGER)
@@ -68,8 +73,9 @@ public class User {
         this.id = id;
     }
 
+
     public String getUserName() {
-        return userName;
+        return this.userName;
     }
 
     public void setUserName(String userName) {
@@ -117,7 +123,7 @@ public class User {
     }
 
     public boolean isEnabled() {
-        return enabled;
+        return this.enabled;
     }
 
     public void setEnabled(boolean enabled) {
@@ -205,5 +211,22 @@ public class User {
                 + enabled + ", emailVerified=" + emailVerified + ", phoneVerified=" + phoneVerified
                 + ", provider=" + provider + ", providerUserId='" + providerUserId + '\''
                 + ", roleList=" + roleList + '}';
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        // list of roles[USER,ADMIN]
+        // Collection of SimpGrantedAuthority[roles{ADMIN,USER}]
+
+        Collection<SimpleGrantedAuthority> roles = roleList.stream()
+                .map(role -> new SimpleGrantedAuthority(role)).collect(Collectors.toList());
+
+        return roles;
+    }
+
+    @Override
+    public String getUsername() {
+        return this.email;
+
     }
 }

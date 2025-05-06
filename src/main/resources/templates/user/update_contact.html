@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html class="dark" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Update contact</title>
+
+    <!-- flowbite css -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+
+    <!-- font awasome -->
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        referrerpolicy="no-referrer" rel="stylesheet" />
+
+    <!-- custom css -->
+    <link data-th-href="@{'/output.css'}" rel="stylesheet">
+
+    <link data-th-href="@{'/custom.css'}" rel="stylesheet">
+
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-black dark:text-white">
+
+    <!-- 
+  User Navbar: This section is only displayed if the user is logged in.
+  It includes a navigation bar with links to user-specific pages.
+-->
+    <div th:if="${user}">
+        <div data-th-replace=" ~{user/user_navbar :: user-navbar}">
+        </div>
+
+    </div>
+
+
+    <!-- 
+  User Sidebar: This section is only displayed if the user is logged in.
+  It includes a sidebar with links to user-specific pages.
+-->
+    <div th:if="${user}">
+        <div data-th-replace="~{user/sidebar :: sidebar}">
+
+        </div>
+    </div>
+
+
+    <!--  Content Section: This section contains the main content of the page. -->
+    <div class="sm:pl-66 mt-20  " id="content">
+
+        <div class=" flex flex-row justify-center items-center w-full ">
+
+            <!-- 
+    Form Container: This section contains a form that is used to add a new contact.
+  -->
+            <div
+                class="  xs:w-full sm:w-full md:w-1/2 p-6 bg-white border border-gray-200 rounded-lg shadow-sm  dark:bg-gray-800 dark:border-gray-700   ">
+
+                <!-- message box -->
+                <div data-th-replace="~{message :: messagebox}">
+
+                </div>
+                <!-- message box -->
+
+                <h1 class="text-2xl font-semibold uppercase text-center">
+                    update Contact
+                </h1>
+
+
+                <!--  form start. -->
+
+                <form class="mt-5 " data-th-action="@{/user/contacts/update_contact(id=${contactid})}" data-th-object="${contactForm}"
+                    method="post" novalidate enctype="multipart/form-data">
+
+
+                    <!-- contact name  -->
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for=" contact-name">
+                        Contact Name</label>
+
+
+                    <div class="relative mb-1">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+
+                            <i class="fa-solid w-4 h-4 fa-user"></i>
+
+                        </div>
+                        <input
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            data-th-field="*{name}" placeholder="contact name" required type="text">
+
+
+                    </div>
+
+
+                    <p class="text-red-500" data-th-field="${#fields.hasErrors('name')}" data-th-errors="*{name}">
+                        invalid name
+                    </p>
+
+                    <!-- contact email  -->
+
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        for="contact-email">Contact
+                        Email</label>
+
+
+                    <div class="relative mb-1">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+
+                            <i class="fa-solid fa-envelope w-4 h-4"></i>
+
+                        </div>
+                        <input
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            data-th-field="*{email}" placeholder="example@email.com" type="email">
+
+
+                    </div>
+
+
+                    <p class="text-red-500" data-th-field="${#fields.hasErrors('email')}" data-th-errors="*{email}">
+                        invalid name
+                    </p>
+
+
+                    <!-- contact number  -->
+
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize"
+                        for="contact-email">Contact phone
+                        no</label>
+
+
+                    <div class="relative mb-1">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+
+                            <i class="fa-solid fa-phone w-4 h-4"></i>
+
+                        </div>
+                        <input
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            data-th-field="*{phoneNumber}" placeholder="1234567890" type="number">
+
+
+
+                    </div>
+
+                    <p class="text-red-500" data-th-field="${#fields.hasErrors('phoneNumber')}"
+                        data-th-errors="*{phoneNumber}">
+                        invalid name
+                    </p>
+
+
+                    <!-- contact address -->
+
+                    <div class="mb-1">
+
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize"
+                            for="message">contact
+                            address</label>
+
+
+                        <textarea
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            data-th-field="*{address}" placeholder="Write contact address here..." rows="4"></textarea>
+
+
+
+
+                    </div>
+
+
+                    <p class="text-red-500" data-th-field="${#fields.hasErrors('address')}" data-th-errors="*{address}">
+                        invalid name
+                    </p>
+
+
+
+
+                    <!-- contact description -->
+
+                    <div class="mb-4">
+
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize"
+                            for="message">contact
+                            description</label>
+
+
+                        <textarea
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            data-th-field="*{description}" placeholder="Write contact description here..."
+                            rows="4"></textarea>
+
+
+
+                    </div>
+
+
+                    <p class="text-red-500" data-th-field="${#fields.hasErrors('description')}"
+                        data-th-errors="*{description}">
+                        invalid name
+                    </p>
+
+                    <!-- contact social media website link -->
+                    <div class="mb-4 flex flex-row gap-2 flex-wrap">
+
+                        <!-- facebook link  -->
+                        <div class="w-full mb-3">
+                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize"
+                                for="contact-email">Contact
+                                facebook link</label>
+
+                            <div class="relative ">
+
+                                <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+
+                                    <svg aria-hidden="true" class="w-4 h-4 text-gray-800 dark:text-white"
+                                        fill="currentColor" height="24" viewBox="0 0 24 24" width="24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path clip-rule="evenodd"
+                                            d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
+                                            fill-rule="evenodd" />
+                                    </svg>
+
+
+                                </div>
+                                <input
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    data-th-field="*{facebookLink}" placeholder="http://facebook.com/" required
+                                    type="text">
+                            </div>
+
+
+                        </div>
+
+                        <p class="text-red-500" data-th-field="${#fields.hasErrors('facebookLink')}"
+                            data-th-errors="*{facebookLink}">
+                            invalid name
+                        </p>
+
+                        <!-- instagram link  -->
+                        <div class="w-full">
+                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize"
+                                for="contact-email">Contact
+                                instagram link</label>
+
+                            <div class="relative ">
+
+
+                                <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+
+                                    <svg aria-hidden="true" className="w-6 h-6 text-gray-800 dark:text-white"
+                                        fill="none" height="24" viewBox="0 0 24 24" width="24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path clip-rule="evenodd"
+                                            d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z"
+                                            fill="currentColor" fill-rule="evenodd" />
+                                    </svg>
+
+
+                                </div>
+                                <input
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    data-th-field="*{instagramLink}" placeholder="http://instagram.com/" required
+                                    type="text">
+
+
+                            </div>
+                        </div>
+
+
+                        <p class="text-red-500" data-th-field="${#fields.hasErrors('instagramLink')}"
+                            data-th-errors="*{instagramLink}">
+                            invalid name
+                        </p>
+
+
+                    </div>
+
+
+
+
+                    <!-- contact image -->
+                    <div class="mb-3">
+
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white capitalize"
+                            for="file_input">Upload contact image</label>
+
+
+                        <input id="profileImage"
+                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            data-th-field="*{profileImage}" type="file">
+
+                        <img data-th-src="*{picture}" class="h-auto max-w-xl rounded-lg shadow-xl dark:shadow-gray-800 mx-auto mt-2"
+                            id="upload_image_preview" alt="">
+
+                    </div>
+
+
+
+
+                    <!-- contact favourite -->
+                    <div class="flex items-center mb-4">
+                        <input
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                            data-th-field="*{fevorite}" type="checkbox" value="">
+                        <label class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 capitalize"
+                            for="default-checkbox">is this your
+                            favourite contact</label>
+                    </div>
+
+
+                    <div class=" text-center">
+
+                        <!-- submit button -->
+                        <button
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 capitalize"
+                            type="submit">
+                            update
+                            contact
+                        </button>
+
+                        <!-- reset button -->
+                        <button
+                            class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 capitalize"
+                            type="reset">
+                            reset
+                        </button>
+
+                    </div>
+
+                </form>
+
+                <!--  form end. -->
+            </div>
+
+
+        </div>
+
+
+        <!-- 
+    Logout Form: This section contains a hidden form that is used to log out the user.
+  -->
+        <form data-th-action="@{/logout}" id="logout-form" method="post" th:hidden="true">
+            <input hidden type="submit" value="log out" />
+        </form>
+        <!-- logout form end -->
+
+
+    </div>
+    <!-- content end -->
+
+
+    <!-- js for logout  -->
+    <script>
+        function logout() {
+            document.getElementById("logout-form").submit();
+        }
+    </script>
+
+
+    <!-- custom script for theme switcher -->
+    <script data-th-src="@{'/js/script.js'}"></script>
+
+
+    <!-- script for image preview -->
+    <script data-th-src="@{'/js/image-preview.js'}">
+    </script>
+
+
+    <!-- flowbit js  -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+</body>
+
+</html>

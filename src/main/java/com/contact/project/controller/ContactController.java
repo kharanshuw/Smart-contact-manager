@@ -12,13 +12,11 @@ import com.contact.project.repositories.UserRepository;
 import com.contact.project.services.ContactService;
 import com.contact.project.services.ImageService;
 import com.contact.project.services.UserService;
-
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 
 import java.util.List;
 import java.util.UUID;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +28,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 
 
 /**
@@ -415,6 +415,209 @@ public class ContactController {
                 hasprevious, hasNext, totalpages, currentPageno, AppConstant.DEFAULT_SIZE);
 
         return "user/search";
+    }
+
+
+    /**
+     * Handles the retrieval of contact details for updating.
+     * 
+     * This method fetches a contact by its ID, populates a `ContactForm` object with its details,
+     * adds the form to the model, and returns the view for updating the contact.
+     * 
+     * @param id The unique identifier of the contact to be updated, retrieved via `@RequestParam`.
+     * @param model The `Model` object used to pass data to the view.
+     * @return The view name `"user/update_contact"` where the user can edit the contact details.
+     */
+    @GetMapping("/update")
+    public String getMethodName(@RequestParam(value = "id") int id, Model model) {
+
+        // Log the incoming request with the contact ID
+        logger.info("Received request to update contact with ID: {}", id);
+
+        // Step 1: Fetch contact from the service
+        Contact contact = contactService.getContactById(id);
+
+        if (contact == null) {
+            logger.error("No contact found with ID: {}", id);
+            throw new RuntimeException("no contact found for given id " + id);
+        }
+
+
+        // Step 2: Populate ContactForm with fetched contact details
+        ContactForm contactForm = new ContactForm();
+
+        contactForm.setAddress(contact.getAddress());
+
+        contactForm.setDescription(contact.getDescription());
+
+        contactForm.setEmail(contact.getEmail());
+
+        contactForm.setFacebookLink(contact.getEmail());
+
+        contactForm.setFevorite(contact.isFevorite());
+
+        contactForm.setName(contact.getName());
+
+        contactForm.setPhoneNumber(contact.getPhoneNumber());
+
+        contactForm.setInstagramLink(contact.getInstagramLink());
+
+        contactForm.setPicture(contact.getPicture());
+
+        logger.info("Populated ContactForm with contact details: {}", contactForm);
+
+        // Step 3: Add attributes to the model for rendering in the view
+        model.addAttribute("contactForm", contactForm);
+
+
+        model.addAttribute("contactid", contact.getId());
+
+        logger.info("Added contact details to model and returning update contact view.");
+
+        return "user/update_contact";
+    }
+
+
+    /**
+     * Handles the update process of an existing contact.
+     * 
+     * This method receives a contact update form, validates the input data, retrieves the
+     * corresponding contact from the database, applies the updates, handles image uploads (if
+     * provided), and persists the changes. If validation errors occur, the user is redirected back
+     * to the update form with messages.
+     *
+     * @param contactForm The form object containing the updated contact details. Validated using
+     *        `@Valid`.
+     * @param bindingResult Holds validation errors, if any, encountered while processing the form.
+     * @param id The unique identifier of the contact to be updated, passed via request parameter.
+     * @param redirectAttributes Used to pass request parameters and messages during redirection.
+     * @param model The `Model` object used to pass data to the view.
+     * @param httpSession The HTTP session used for storing user messages.
+     * @return A redirect string to the contact update page (`/user/contacts/update`). If validation
+     *         fails, the user is redirected back to the form.
+     */
+    @PostMapping("/update_contact")
+    public String postMethodName(@Valid @ModelAttribute ContactForm contactForm,
+            BindingResult bindingResult, @RequestParam int id,
+            RedirectAttributes redirectAttributes, Model model, HttpSession httpSession) {
+
+        logger.info("Received request to update contact. Contact ID: {}", id);
+
+        Message message = new Message();
+
+        /*
+         * Step 1: Validate form input. If there are errors, log them, set an error message in the
+         * session, and redirect back to the form view.
+         */
+        if (bindingResult.hasErrors()) {
+
+            logger.error("validation error occured in add contact form");
+
+            List<ObjectError> errors = bindingResult.getAllErrors();
+
+            for (ObjectError objectError : errors) {
+                logger.error("printing error {}", objectError);
+            }
+
+            message.setContent("Please correct the following errors");
+
+            message.setType(MessageType.red);
+
+            httpSession.setAttribute("message", message);
+
+            return "user/update_contact";
+        }
+
+
+        logger.info("Fetching contact details for ID: {}", id);
+
+        // Step 2: Retrieve the contact by ID and handle missing contact
+
+        Contact contact = contactService.getContactById(id);
+
+        if (contact == null) {
+            logger.error("No contact found with ID: {}", id);
+            message.setContent("Contact not found!");
+            message.setType(MessageType.red);
+            httpSession.setAttribute("message", message);
+            return "user/update_contact";
+        }
+
+        logger.info("Successfully fetched contact: {}", contact);
+
+        logger.info("Updating contact details for ID: {}", id);
+
+        // Step 3: Update contact details
+
+        contact.setName(contactForm.getName());
+
+        contact.setEmail(contactForm.getEmail());
+
+        contact.setPhoneNumber(contactForm.getPhoneNumber());
+
+        contact.setAddress(contactForm.getAddress());
+
+        contact.setDescription(contactForm.getDescription());
+
+        contact.setFevorite(contactForm.isFevorite());
+
+        contact.setFacebookLink(contactForm.getFacebookLink());
+
+        contact.setInstagramLink(contactForm.getInstagramLink());
+
+        // Step 4: Handle profile image upload (if present)
+
+        if (contactForm.getProfileImage() != null && !contactForm.getProfileImage().isEmpty()) {
+
+            logger.info("Profile image provided for Contact ID: {}. Starting upload process.", id);
+
+            String filename = UUID.randomUUID().toString();
+
+            logger.info("Generated unique filename for profile image: {}", filename);
+
+            String fileurl = imageService.uploadImage(contactForm.getProfileImage(), filename);
+
+            logger.info("Profile image uploaded successfully. File URL: {}", fileurl);
+
+
+            contact.setPicture(fileurl);
+
+            contact.setCloudinaryImagename(filename);
+
+            contactForm.setPicture(fileurl);
+
+        } else {
+            logger.warn("No profile image provided for Contact ID: {}", id);
+
+        }
+        // Step 5: Save updated contact
+
+        logger.info("Saving updated contact for ID: {}", id);
+
+        Contact updatedContact = contactService.updateContact(contact);
+
+        logger.info("Successfully updated contact: {}", updatedContact);
+
+        // Step 6: Redirect with success message
+
+        redirectAttributes.addAttribute("id", id);
+
+
+        message.setContent("Contact Updated !!");
+
+        message.setType(MessageType.green);
+
+        httpSession.setAttribute("message", message);
+
+
+
+        logger.info(
+                "Contact update completed successfully for ID: {}. Redirecting user to update page.",
+                id);
+
+
+
+        return "redirect:/user/contacts/update";
     }
 
 }

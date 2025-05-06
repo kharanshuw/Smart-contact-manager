@@ -12,7 +12,6 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 @Configuration
 @Slf4j
@@ -22,18 +21,24 @@ public class SecurityConfig {
 
     private OAuthAuthenticationSuccessHandler oAuthSuccessHandler;
 
+    private AuthFailureHandler authFailureHandler;
+
     @Autowired
-    public SecurityConfig(CustomUserDetailService customUserDetailService,
+    public SecurityConfig(CustomUserDetailService customUserDetailService,AuthFailureHandler authFailureHandler,
             OAuthAuthenticationSuccessHandler oAuthSuccessHandler) {
 
         this.customUserDetailService = customUserDetailService;
 
         this.oAuthSuccessHandler = oAuthSuccessHandler;
+
+        this.authFailureHandler = authFailureHandler;
     }
 
     /*
-     * This method creates a `DaoAuthenticationProvider` bean, which is a type of authentication
-     * provider that uses a `UserDetailsService` to load user details from database .
+     * This method creates a `DaoAuthenticationProvider` bean, which is a type of
+     * authentication
+     * provider that uses a `UserDetailsService` to load user details from database
+     * .
      */
     @Bean
     public AuthenticationProvider authenticationProvider() {
@@ -54,7 +59,8 @@ public class SecurityConfig {
     }
 
     /*
-     * This method creates a `BCryptPasswordEncoder` bean, which is a password encoder that uses the
+     * This method creates a `BCryptPasswordEncoder` bean, which is a password
+     * encoder that uses the
      * BCrypt algorithm to hash and verify passwords.
      */
     @Bean
@@ -89,6 +95,8 @@ public class SecurityConfig {
 
             formlogin.passwordParameter("password");
 
+            formlogin.failureHandler(authFailureHandler);
+
         });
 
         // logout configuration
@@ -109,14 +117,13 @@ public class SecurityConfig {
             oauth2.successHandler(oAuthSuccessHandler);
         });
 
-
         // csrf configuration
         // httpSecurity.csrf(
-        // csrf -> csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()));
+        // csrf ->
+        // csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()));
 
         httpSecurity.sessionManagement(
                 session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED));
-
 
         return httpSecurity.build();
     }

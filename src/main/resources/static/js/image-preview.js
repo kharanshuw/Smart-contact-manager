@@ -5,7 +5,7 @@ console.log("image preview script loaded");
 // The event listener is triggered whenever a user selects a file (e.g., an image) from their device.
 document.querySelector("#profileImage").addEventListener("change", function (event) {
 
-
+ 
     console.log("getting file for preview...");
 
     // Retrieves the first file selected by the user from the file input element.

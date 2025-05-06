@@ -74,11 +74,35 @@ public class ContactServiceImpl implements ContactService {
         try {
             log.info("serching contact by id");
 
-            Contact contact2 = contactRespo.findById(contact.getId()).orElseThrow(() -> {
+            Contact oldContact = contactRespo.findById(contact.getId()).orElseThrow(() -> {
                 return new ResouseNotFound("contact not found with this id" + contact.getId());
             });
 
-            return null;
+            oldContact.setAddress(contact.getAddress());
+
+            oldContact.setName(contact.getName());
+
+            oldContact.setEmail(contact.getEmail());
+
+            oldContact.setPhoneNumber(contact.getPhoneNumber());
+
+            oldContact.setPicture(contact.getPicture());
+
+            oldContact.setDescription(contact.getDescription());
+
+            oldContact.setDescription(contact.getDescription());
+
+            oldContact.setFevorite(contact.isFevorite());
+
+            oldContact.setFacebookLink(contact.getFacebookLink());
+
+            oldContact.setInstagramLink(contact.getInstagramLink());
+
+            oldContact.setCloudinaryImagename(contact.getCloudinaryImagename());
+
+
+
+            return contactRespo.save(oldContact);
         } catch (Exception e) {
             log.error("error in saving contact " + e.toString());
             throw new RuntimeException("error in saving contact " + e.toString());

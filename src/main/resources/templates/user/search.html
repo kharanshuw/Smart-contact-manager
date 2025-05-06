@@ -255,19 +255,30 @@
 
                                 <td class="px-6 py-4">
 
-                                    <a data-th-href="@{'*{/user/contacts/delete}'}">
-                                        <i class="fa-solid fa-trash-can h-6 w-6"></i>
 
-                                    </a>
+
+                                    <!-- delete contact button -->
+                                    <button th:onclick="deletecontactalert([[${c.id}]])" class="btn">
+                                        <i class="fa-solid fa-trash-can h-6 w-6"></i>
+                                    </button>
+
+
+                                    <!-- edit contact button -->
 
                                     <a data-th-href="@{'*{/user/contacts/delete}'}">
                                         <i class="fa-solid fa-pen h-6 w-6"></i>
 
                                     </a>
 
-                                    <button th:onclick=" loadcontactdetails([[${c.id}]])" class="btn">
+
+                                    <!--view contact button -->
+
+                                    <button th:onclick="loadcontactdetails([[${c.id}]])" class="btn">
                                         <i class="fa-solid fa-eye h-6 w-6"></i>
                                     </button>
+
+
+
                                 </td>
 
 

@@ -5,14 +5,9 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
-import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
-@ToString
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class ContactForm {
 
     @NotBlank(message = "name is required")
@@ -28,7 +23,7 @@ public class ContactForm {
     @Pattern(regexp = "^\\d{10}$", message = "Invalid phone number")
     private String phoneNumber;
 
-    
+
     private String address;
 
     private String description;
@@ -40,6 +35,10 @@ public class ContactForm {
     private String instagramLink;
 
     private MultipartFile profileImage;
+
+    private String picture;
+
+
 
     public String getName() {
         return name;
@@ -112,4 +111,15 @@ public class ContactForm {
     public void setProfileImage(MultipartFile profileImage) {
         this.profileImage = profileImage;
     }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
+
+
 }

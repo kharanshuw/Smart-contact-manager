@@ -48,6 +48,7 @@ public class UserServiceImpl implements UserService {
         String passwordString = passwordEncoder.encode(user.getPassword());
 
         user.setPassword(passwordString);
+        user.setEnabled(false);
 
         List<String> roleList = new ArrayList<>();
 

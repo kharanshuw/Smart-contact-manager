@@ -17,41 +17,29 @@ public class UserForm {
 
     @NotEmpty(message = "Email is required")
     @Email(message = "Invalid email address")
-    @Pattern(regexp = "^[a-zA-Z0-9_]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "Invalid email address must follow standard pattern")
-   
-   
+    @Pattern(regexp = "^[a-zA-Z0-9_]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+            message = "Invalid email address must follow standard pattern")
+
+
     /**
-     * ^ matches the start of the string
-     * [a-zA-Z0-9._%+-]+ matches one or more of the following characters:
-     * a-z (lowercase letters)
-     * A-Z (uppercase letters)
-     * 0-9 (digits)
-     * _ (underscore)
-     * @ matches the @ symbol
-     * [a-zA-Z0-9.-]+ matches one or more of the following characters:
-     * a-z (lowercase letters)
-     * A-Z (uppercase letters)
-     * 0-9 (digits)
-     * - (hyphen)
-     * . (dot)
-     * \. matches the dot (.) character (it needs to be escaped with a backslash
-     * because . has a special meaning in regex)
-     * [a-zA-Z]{2,} matches the domain extension (it must be at least 2 characters
-     * long, and can only contain letters)
-     * $ matches the end of the string
+     * ^ matches the start of the string [a-zA-Z0-9._%+-]+ matches one or more of the following
+     * characters: a-z (lowercase letters) A-Z (uppercase letters) 0-9 (digits) _ (underscore) @
+     * matches the @ symbol [a-zA-Z0-9.-]+ matches one or more of the following characters: a-z
+     * (lowercase letters) A-Z (uppercase letters) 0-9 (digits) - (hyphen) . (dot) \. matches the
+     * dot (.) character (it needs to be escaped with a backslash because . has a special meaning in
+     * regex) [a-zA-Z]{2,} matches the domain extension (it must be at least 2 characters long, and
+     * can only contain letters) $ matches the end of the string
      */
     private String email;
 
+
     @NotEmpty(message = "Password is required")
     @Size(min = 8, max = 128, message = "Password must be between 8 and 128 characters")
-    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$", message = "Invalid password must follow standard pattern")
+    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$",
+            message = "Invalid password must follow standard pattern")
     /**
-     * At least 8 characters
-     * At least 1 uppercase letter
-     * At least 1 lowercase letter
-     * At least 1 digit
-     * At least 1 special character (such as !, @, #, etc.)
-     * No whitespace characters
+     * At least 8 characters At least 1 uppercase letter At least 1 lowercase letter At least 1
+     * digit At least 1 special character (such as !, @, #, etc.) No whitespace characters
      */
     private String password;
 

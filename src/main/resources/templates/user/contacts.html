@@ -74,7 +74,7 @@
                     <div data-th-replace="~{message :: messagebox}">
                     </div>
 
-                    
+
                     <div>
 
                         <!-- search form start -->
@@ -261,25 +261,30 @@
 
                                 <td class="px-6 py-4">
 
-                                    <!-- <button th:onclick="deletecontact([[${c.id}]])" class="btn">
 
-                                        <i class="fa-solid fa-trash-can h-6 w-6"></i>
 
-                                    </button> -->
-
+                                    <!-- delete contact button -->
                                     <button th:onclick="deletecontactalert([[${c.id}]])" class="btn">
                                         <i class="fa-solid fa-trash-can h-6 w-6"></i>
                                     </button>
 
-                                    <a data-th-href="@{'*{/user/contacts/delete}'}">
+
+                                    <!-- edit contact button -->
+
+                                    <a th:href="@{/user/contacts/update(id=${c.id})}">
                                         <i class="fa-solid fa-pen h-6 w-6"></i>
 
                                     </a>
+
+
+                                    <!--view contact button -->
 
                                     <button th:onclick="loadcontactdetails([[${c.id}]])" class="btn">
                                         <i class="fa-solid fa-eye h-6 w-6"></i>
                                     </button>
                                 </td>
+
+
                             </tr>
 
 
